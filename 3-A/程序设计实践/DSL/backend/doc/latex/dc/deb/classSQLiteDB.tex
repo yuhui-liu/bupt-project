@@ -1,0 +1,109 @@
+\doxysection{SQLite\+DB类 参考}
+\hypertarget{classSQLiteDB}{}\label{classSQLiteDB}\index{SQLiteDB@{SQLiteDB}}
+
+
+SQLite 数据库接口  
+
+
+
+
+{\ttfamily \#include $<$sqlite\+\_\+interface.\+hpp$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSQLiteDB_a66987ccd4c68115e7a817f6667ae3bbd}{SQLite\+DB}} (const std\+::string \&db\+Name)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\Hypertarget{classSQLiteDB_a7baa2b62855a8922719fa1890c9c85da}\label{classSQLiteDB_a7baa2b62855a8922719fa1890c9c85da} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+SQLite\+DB} ()
+\begin{DoxyCompactList}\small\item\em 析构函数，关闭数据库连接 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classSQLiteDB_a8df57e9dc1df726add7f93ca63874d1f}{query}} (int id, const \mbox{\hyperlink{structDB}{DB}} \&db\+Info) const -\/$>$ std\+::string
+\begin{DoxyCompactList}\small\item\em 执行查询操作，从指定表中获取指定列的值。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classSQLiteDB_a7a620cfe86e74a3ee6d5279031cb4f4c}{write}} (int id, const \mbox{\hyperlink{structDB}{DB}} \&db\+Info, const std\+::string \&content) const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 执行写入操作，将指定内容写入指定表的指定列。 \end{DoxyCompactList}\item 
+\Hypertarget{classSQLiteDB_a51a11e72a2adebcd42d9e8545e81bda7}\label{classSQLiteDB_a51a11e72a2adebcd42d9e8545e81bda7} 
+{\bfseries SQLite\+DB} (const \mbox{\hyperlink{classSQLiteDB}{SQLite\+DB}} \&)=delete
+\item 
+\Hypertarget{classSQLiteDB_ab01a3d33f5138bf28a9f697e17e40671}\label{classSQLiteDB_ab01a3d33f5138bf28a9f697e17e40671} 
+auto {\bfseries operator=} (const \mbox{\hyperlink{classSQLiteDB}{SQLite\+DB}} \&) -\/$>$ \mbox{\hyperlink{classSQLiteDB}{SQLite\+DB}} \&=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}\label{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7} 
+sqlite3 \texorpdfstring{$\ast$}{*} {\bfseries db} \{nullptr\}
+\begin{DoxyCompactList}\small\item\em SQLite 数据库指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+SQLite 数据库接口 
+
+SQLite 数据库接口，用于查询和写入数据库。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classSQLiteDB_a66987ccd4c68115e7a817f6667ae3bbd}\index{SQLiteDB@{SQLiteDB}!SQLiteDB@{SQLiteDB}}
+\index{SQLiteDB@{SQLiteDB}!SQLiteDB@{SQLiteDB}}
+\doxysubsubsection{\texorpdfstring{SQLiteDB()}{SQLiteDB()}}
+{\footnotesize\ttfamily \label{classSQLiteDB_a66987ccd4c68115e7a817f6667ae3bbd} 
+SQLite\+DB\+::\+SQLite\+DB (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{db\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{参数}
+{\em db\+Name} & 数据库名称 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classSQLiteDB_a8df57e9dc1df726add7f93ca63874d1f}\index{SQLiteDB@{SQLiteDB}!query@{query}}
+\index{query@{query}!SQLiteDB@{SQLiteDB}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily \label{classSQLiteDB_a8df57e9dc1df726add7f93ca63874d1f} 
+auto SQLite\+DB\+::query (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{const \mbox{\hyperlink{structDB}{DB}} \&}]{db\+Info}{}\end{DoxyParamCaption}) const -\/$>$ std\+::string\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+执行查询操作，从指定表中获取指定列的值。 
+
+
+\begin{DoxyParams}{参数}
+{\em id} & 要查询的记录的\+ID。 \\
+\hline
+{\em db\+Info} & 数据库信息。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+std\+::string 查询结果，如果未找到数据或发生错误则返回空字符串。 
+\end{DoxyReturn}
+\Hypertarget{classSQLiteDB_a7a620cfe86e74a3ee6d5279031cb4f4c}\index{SQLiteDB@{SQLiteDB}!write@{write}}
+\index{write@{write}!SQLiteDB@{SQLiteDB}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classSQLiteDB_a7a620cfe86e74a3ee6d5279031cb4f4c} 
+auto SQLite\+DB\+::write (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{const \mbox{\hyperlink{structDB}{DB}} \&}]{db\+Info}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+执行写入操作，将指定内容写入指定表的指定列。 
+
+
+\begin{DoxyParams}{参数}
+{\em id} & 要写入的记录的\+ID。 \\
+\hline
+{\em db\+Info} & 数据库信息。 \\
+\hline
+{\em content} & 要写入的内容。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+bool 写入是否成功。 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{sqlite__interface_8hpp}{sqlite\+\_\+interface.\+hpp}}\item 
+src/\mbox{\hyperlink{sqlite__interface_8cpp}{sqlite\+\_\+interface.\+cpp}}\end{DoxyCompactItemize}

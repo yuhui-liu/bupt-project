@@ -1,0 +1,86 @@
+\doxysection{Base\+Exception类 参考}
+\hypertarget{classBaseException}{}\label{classBaseException}\index{BaseException@{BaseException}}
+
+
+异常基类  
+
+
+
+
+{\ttfamily \#include $<$exception.\+hpp$>$}
+
+
+
+类 Base\+Exception 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{d5/d1a/classBaseException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Base\+Exception 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{dd/d04/classBaseException__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBaseException_a9ea89e43ddf7c8437613054ac423933b}{Base\+Exception}} (const std\+::string \&message, const std\+::size\+\_\+t line=0)
+\item 
+\Hypertarget{classBaseException_abf9c6646703fb7dfd4b48a0a34f2faa5}\label{classBaseException_abf9c6646703fb7dfd4b48a0a34f2faa5} 
+auto {\bfseries get\+Line} () const noexcept -\/$>$ std\+::size\+\_\+t
+\item 
+auto \mbox{\hyperlink{classBaseException_a1b05b11d84f69ee0a35c8b4b137e7846}{what}} () const noexcept -\/$>$ const char \texorpdfstring{$\ast$}{*}override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBaseException_ace3bd0a6a065fc7ef778db602c053af3}\label{classBaseException_ace3bd0a6a065fc7ef778db602c053af3} 
+std\+::size\+\_\+t {\bfseries line}
+\item 
+\Hypertarget{classBaseException_a2bb8191832cc0874ae00f9bbaa423903}\label{classBaseException_a2bb8191832cc0874ae00f9bbaa423903} 
+std\+::string {\bfseries detailed\+\_\+message}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+异常基类 
+
+定义了异常基类，\+Lexer\+Exception、\+Parser\+Exception继承自此类 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classBaseException_a9ea89e43ddf7c8437613054ac423933b}\index{BaseException@{BaseException}!BaseException@{BaseException}}
+\index{BaseException@{BaseException}!BaseException@{BaseException}}
+\doxysubsubsection{\texorpdfstring{BaseException()}{BaseException()}}
+{\footnotesize\ttfamily \label{classBaseException_a9ea89e43ddf7c8437613054ac423933b} 
+Base\+Exception\+::\+Base\+Exception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::size\+\_\+t}]{line}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em message} & 异常信息 \\
+\hline
+{\em line} & 行号 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classBaseException_a1b05b11d84f69ee0a35c8b4b137e7846}\index{BaseException@{BaseException}!what@{what}}
+\index{what@{what}!BaseException@{BaseException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{classBaseException_a1b05b11d84f69ee0a35c8b4b137e7846} 
+auto Base\+Exception\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ const char\texorpdfstring{$\ast$}{*}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{返回}
+异常信息 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{exception_8hpp}{exception.\+hpp}}\end{DoxyCompactItemize}

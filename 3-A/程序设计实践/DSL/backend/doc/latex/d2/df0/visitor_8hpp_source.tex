@@ -1,0 +1,38 @@
+\doxysection{visitor.\+hpp}
+\hypertarget{visitor_8hpp_source}{}\label{visitor_8hpp_source}\index{include/visitor.hpp@{include/visitor.hpp}}
+\mbox{\hyperlink{visitor_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ VISITOR\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ VISITOR\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram}{Program}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConstantDefine}{ConstantDefine}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProcedure}{Procedure}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSay}{Say}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classListen}{Listen}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClause}{Clause}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLookup}{Lookup}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classExit}{Exit}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJump}{Jump}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIdentifier}{Identifier}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classString}{String}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVisitor}{Visitor}}\ \{}
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classVisitor}{\string~Visitor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProgram}{Program}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classConstantDefine}{ConstantDefine}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProcedure}{Procedure}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSay}{Say}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListen}{Listen}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classClause}{Clause}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLookup}{Lookup}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classExit}{Exit}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJump}{Jump}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classIdentifier}{Identifier}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classString}{String}}\ \&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ VISITOR\_HPP}}
+
+\end{DoxyCode}

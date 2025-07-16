@@ -1,0 +1,77 @@
+\doxysection{interpreter.\+hpp}
+\hypertarget{interpreter_8hpp_source}{}\label{interpreter_8hpp_source}\index{include/interpreter.hpp@{include/interpreter.hpp}}
+\mbox{\hyperlink{interpreter_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ INTERPRETER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ INTERPRETER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ast_8hpp}{ast.hpp}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sqlite__interface_8hpp}{sqlite\_interface.hpp}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{visitor_8hpp}{visitor.hpp}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInterpreter}{Interpreter}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVisitor}{Visitor}}\ \{}
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classInterpreter_aeb518e633c77d52fdb39d932fe99df29}{Interpreter}}(std::shared\_ptr<Program>\ \mbox{\hyperlink{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}{program}},\ std::string\ \mbox{\hyperlink{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}{mode}},\ std::map<std::string,\ std::string>\ c,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::size\_t>\ p)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}{mode}}(std::move(\mbox{\hyperlink{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}{mode}})),\ \mbox{\hyperlink{classInterpreter_aa4e492b8c13f2cf700dd0ad7abb2e28d}{constants}}(std::move(c)),\ \mbox{\hyperlink{classInterpreter_a6418c92af2a867770770a7687d57ee03}{procedures}}(std::move(p)),\ \mbox{\hyperlink{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}{program}}(std::move(\mbox{\hyperlink{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}{program}}))\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ Visitor\ 接口声明}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProgram}{Program}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classConstantDefine}{ConstantDefine}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProcedure}{Procedure}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSay}{Say}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListen}{Listen}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classClause}{Clause}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLookup}{Lookup}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classExit}{Exit}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJump}{Jump}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classIdentifier}{Identifier}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classString}{String}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Visitor\ 接口声明结束}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_ac47bcb0f1ba98246c48b6c17c92e2fe1}{setSend}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ std::string\&)>\ s)\ \{\ \mbox{\hyperlink{classInterpreter_a2e4c676d785488218fa25420645223f9}{send}}\ =\ std::move(s);\ \}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_aed44e319d6acc68ec728467d667bbb8f}{setInputFromNetwork}}(\textcolor{keyword}{const}\ std::string\&\ input)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a70c449dedd4b03a3b4d69d2c59b1f341}{setUid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ userId)\ \{\ \mbox{\hyperlink{classInterpreter_af5252a94f72103259e3597b7d2776a04}{uid}}\ =\ userId;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba}{clauseAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classClause}{Clause}}\&\ clause)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInterpreter_aec40dd04f71e570b781d52c5918c6d45}{clause\_accepted}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ std::string\ \mbox{\hyperlink{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}{mode}};}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{mutable}\ std::map<std::string,\ std::string>\ \mbox{\hyperlink{classInterpreter_aa4e492b8c13f2cf700dd0ad7abb2e28d}{constants}};}
+\DoxyCodeLine{00070\ \ \ std::map<std::string,\ std::size\_t>\ \mbox{\hyperlink{classInterpreter_a6418c92af2a867770770a7687d57ee03}{procedures}};}
+\DoxyCodeLine{00072\ \ \ std::shared\_ptr<Program>\ \mbox{\hyperlink{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}{program}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_ad725f641a5cf052bac767047cbf7b493}{getCliInput}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{mutable}\ std::string\ \mbox{\hyperlink{classInterpreter_a22c8f851b6fb4d7192a9733b34f1ea12}{input\_buffer}};}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInterpreter_a3c51640a9779576fd1a289ad9a84460e}{input\_received}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInterpreter_adb14f17c7f0015fb5335f2028b47bc96}{real\_input\_received}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{mutable}\ std::atomic<bool>\ \mbox{\hyperlink{classInterpreter_a6cc3fd74480c5d47737dc57d4413c9db}{is\_reading}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{mutable}\ std::mutex\ \mbox{\hyperlink{classInterpreter_a81322f808ca6c8b09d1840734c2eb3ce}{mtx}};}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{mutable}\ std::condition\_variable\ \mbox{\hyperlink{classInterpreter_a18740eabfc9b2b639050b233c78b58ee}{cv}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53}{output}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{mutable}\ std::string\ \mbox{\hyperlink{classInterpreter_ab14e1805c380db7d09e245ff5a9dcbac}{output\_buffer}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{mutable}\ std::map<std::string,\ std::unique\_ptr<SQLiteDB>>\ \mbox{\hyperlink{classInterpreter_a39d37390dea404d834d2bc1f967f16e3}{dbs}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classInterpreter_af4cd87a6447218bec8eda3e52aab9014}{getIdOrString}}(\textcolor{keyword}{const}\ ASTNodePtr\&\ p)\ -\/>\ std::string;}
+\DoxyCodeLine{00097\ \ \ std::function<void(\textcolor{keyword}{const}\ std::string\&)>\ \mbox{\hyperlink{classInterpreter_a2e4c676d785488218fa25420645223f9}{send}};}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ DEFAULTUID\ =\ 101;}
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classInterpreter_af5252a94f72103259e3597b7d2776a04}{uid}}\{DEFAULTUID\};}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INTERPRETER\_HPP}}
+
+\end{DoxyCode}

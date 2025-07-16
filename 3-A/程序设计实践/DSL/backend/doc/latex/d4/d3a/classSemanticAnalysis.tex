@@ -1,0 +1,93 @@
+\doxysection{Semantic\+Analysis类 参考}
+\hypertarget{classSemanticAnalysis}{}\label{classSemanticAnalysis}\index{SemanticAnalysis@{SemanticAnalysis}}
+
+
+语义分析类。分析程序的语义。  
+
+
+
+
+{\ttfamily \#include $<$semantic\+\_\+analysis.\+hpp$>$}
+
+
+
+Semantic\+Analysis 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d4/d35/classSemanticAnalysis__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSemanticAnalysis_ad625a15d1cc924a600b263c78690bc5d}{Semantic\+Analysis}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em 语义分析类的构造函数。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classSemanticAnalysis_a6fb0cb080fd4f048051d490ede946b7a}{get\+Constants}} () const -\/$>$ std\+::map$<$ std\+::string, std\+::string $>$
+\item 
+auto \mbox{\hyperlink{classSemanticAnalysis_a2a8c204fd3a9ac1452fab965231c098a}{get\+Procedures}} () const -\/$>$ std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSemanticAnalysis_af026df91e57dc99742dcccdbc3d9f143}\label{classSemanticAnalysis_af026df91e57dc99742dcccdbc3d9f143} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries constants}
+\begin{DoxyCompactList}\small\item\em 常量表。 \end{DoxyCompactList}\item 
+\Hypertarget{classSemanticAnalysis_a57d21127caf1137af8b862c7923894b4}\label{classSemanticAnalysis_a57d21127caf1137af8b862c7923894b4} 
+std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ {\bfseries procedures}
+\begin{DoxyCompactList}\small\item\em 过程表。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+语义分析类。分析程序的语义。 
+
+检查是否有重复定义的常量和过程；检查main过程是否存在。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classSemanticAnalysis_ad625a15d1cc924a600b263c78690bc5d}\index{SemanticAnalysis@{SemanticAnalysis}!SemanticAnalysis@{SemanticAnalysis}}
+\index{SemanticAnalysis@{SemanticAnalysis}!SemanticAnalysis@{SemanticAnalysis}}
+\doxysubsubsection{\texorpdfstring{SemanticAnalysis()}{SemanticAnalysis()}}
+{\footnotesize\ttfamily \label{classSemanticAnalysis_ad625a15d1cc924a600b263c78690bc5d} 
+Semantic\+Analysis\+::\+Semantic\+Analysis (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ \&}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+语义分析类的构造函数。 
+
+
+\begin{DoxyParams}{参数}
+{\em program} & 指向 \doxylink{classProgram}{Program} 对象的智能指针。 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em \doxylink{classSemanticAnalysisException}{Semantic\+Analysis\+Exception}} & 如果常量或过程重定义，或者没有 \textquotesingle{}main\textquotesingle{} 过程。\\
+\hline
+\end{DoxyExceptions}
+将常量存储在 std\+::map 中，键为常量名，值为常量值。 将过程存储在 std\+::map 中，键为过程名，值为过程在程序中的索引。 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classSemanticAnalysis_a6fb0cb080fd4f048051d490ede946b7a}\index{SemanticAnalysis@{SemanticAnalysis}!getConstants@{getConstants}}
+\index{getConstants@{getConstants}!SemanticAnalysis@{SemanticAnalysis}}
+\doxysubsubsection{\texorpdfstring{getConstants()}{getConstants()}}
+{\footnotesize\ttfamily \label{classSemanticAnalysis_a6fb0cb080fd4f048051d490ede946b7a} 
+auto Semantic\+Analysis\+::get\+Constants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ std\+::map$<$std\+::string, std\+::string$>$\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+\begin{DoxyReturn}{返回}
+构造出的常量表。 
+\end{DoxyReturn}
+\Hypertarget{classSemanticAnalysis_a2a8c204fd3a9ac1452fab965231c098a}\index{SemanticAnalysis@{SemanticAnalysis}!getProcedures@{getProcedures}}
+\index{getProcedures@{getProcedures}!SemanticAnalysis@{SemanticAnalysis}}
+\doxysubsubsection{\texorpdfstring{getProcedures()}{getProcedures()}}
+{\footnotesize\ttfamily \label{classSemanticAnalysis_a2a8c204fd3a9ac1452fab965231c098a} 
+auto Semantic\+Analysis\+::get\+Procedures (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ std\+::map$<$std\+::string, std\+::size\+\_\+t$>$\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+\begin{DoxyReturn}{返回}
+构造出的过程表。 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{semantic__analysis_8hpp}{semantic\+\_\+analysis.\+hpp}}\item 
+src/\mbox{\hyperlink{semantic__analysis_8cpp}{semantic\+\_\+analysis.\+cpp}}\end{DoxyCompactItemize}

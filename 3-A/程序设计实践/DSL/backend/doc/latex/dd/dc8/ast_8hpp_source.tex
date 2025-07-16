@@ -1,0 +1,186 @@
+\doxysection{ast.\+hpp}
+\hypertarget{ast_8hpp_source}{}\label{ast_8hpp_source}\index{include/ast.hpp@{include/ast.hpp}}
+\mbox{\hyperlink{ast_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ AST\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ AST\_HPP}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classASTNode}{\string~ASTNode}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classASTNode_abdf575199be1e3acec431cfa4cd1ff51}{accept}}(\textcolor{keyword}{const}\ \textcolor{keyword}{class}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&\ visitor)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }ASTNodePtr\ =\ std::unique\_ptr<ASTNode>;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram}{Program}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00034\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProgram_aa5fa94cc86426d8a06da89598c555d0c}{addConstant}}(ASTNodePtr\ constant);}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProgram_a8b86bf945546625d7a0442bc9366d3ca}{addProcedure}}(ASTNodePtr\ procedure);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00043\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getConstants()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classProgram_ac0cc39547b34c1c7f001d556f7219045}{constants}};\ \}}
+\DoxyCodeLine{00044\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getProcedures()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classProgram_a1970e1e948b8c7f4cfa5bcdb8862d064}{procedures}};\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ std::vector<ASTNodePtr>\ \mbox{\hyperlink{classProgram_ac0cc39547b34c1c7f001d556f7219045}{constants}};}
+\DoxyCodeLine{00050\ \ \ std::vector<ASTNodePtr>\ \mbox{\hyperlink{classProgram_a1970e1e948b8c7f4cfa5bcdb8862d064}{procedures}};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConstantDefine}{ConstantDefine}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00058\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classConstantDefine_a7a1e24f55c752471f39a9b83fe9dfaeb}{ConstantDefine}}(std::string\ \textcolor{keywordtype}{id},\ std::string\ \mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}})\ :\ \mbox{\hyperlink{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}{id}}(std::move(\mbox{\hyperlink{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}{id}})),\ \mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}}(std::move(\mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}}))\ \{\}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00066\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getId()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}{id}};\ \}}
+\DoxyCodeLine{00067\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getValue()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}};\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ std::string\ \mbox{\hyperlink{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}{id}};}
+\DoxyCodeLine{00073\ \ \ std::string\ \mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}};}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProcedure}{Procedure}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00081\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classProcedure_a71b7d4338e966e12d00b2e1edf5ab169}{Procedure}}(std::string\ \textcolor{keywordtype}{id})\ :\ \mbox{\hyperlink{classProcedure_afd15818cdd3577bd1e8e23db67b9d20d}{id}}(std::move(\mbox{\hyperlink{classProcedure_afd15818cdd3577bd1e8e23db67b9d20d}{id}}))\ \{\}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProcedure_aee9028b2b4c20fa66f69a1804e888d62}{addStatement}}(ASTNodePtr\ statement);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00089\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getStatements()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classProcedure_aae42ae488e6a9922276b15076c673b38}{statements}};\ \}}
+\DoxyCodeLine{00090\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getId()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classProcedure_afd15818cdd3577bd1e8e23db67b9d20d}{id}};\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ std::string\ \mbox{\hyperlink{classProcedure_afd15818cdd3577bd1e8e23db67b9d20d}{id}};}
+\DoxyCodeLine{00096\ \ \ std::vector<ASTNodePtr>\ \mbox{\hyperlink{classProcedure_aae42ae488e6a9922276b15076c673b38}{statements}};}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSay}{Say}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00104\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSay_a32a159d2a73feaf8ab52241b398458b9}{addContent}}(ASTNodePtr\ \mbox{\hyperlink{classSay_ad0b739f01c7b35eaa2cda3b15144f255}{content}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00110\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getContents()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSay_ad0b739f01c7b35eaa2cda3b15144f255}{content}};\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00114\ \ \ std::vector<ASTNodePtr>\ \mbox{\hyperlink{classSay_ad0b739f01c7b35eaa2cda3b15144f255}{content}};}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classListen}{Listen}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00122\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classListen_a8fd50a2c2166cc417dfa85fe9be083b7}{Listen}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}})\ :\ \mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}}(\mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}})\ \{\}}
+\DoxyCodeLine{00125\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListen_aad3c09d66c7cf6b69180be8e63ee06be}{addClause}}(ASTNodePtr\ clause);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00130\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getClauses()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classListen_a9d0be7a6b4301f658529a27784eb0ad7}{clauses}};\ \}}
+\DoxyCodeLine{00131\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getLimit()\ const\ -\/>\ \textcolor{keywordtype}{int}\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}};\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00135\ \ \ std::vector<ASTNodePtr>\ \mbox{\hyperlink{classListen_a9d0be7a6b4301f658529a27784eb0ad7}{clauses}};}
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}};}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClause}{Clause}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00145\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00147\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}}\ \{\ HAS,\ ANYTHING,\ TIMEOUT,\ DEFAULT\ \};}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}}\ \{\ WRITETO,\ JUMP\ \};}
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}}\ \mbox{\hyperlink{classClause_a34a80c68892beb446643fdd6ebd30468}{type}};}
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}}\ \mbox{\hyperlink{classClause_a5d676a019dfd996ccf3d45646f3e2f94}{action}};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ setters}}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ setType(\mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}}\ \mbox{\hyperlink{classClause_a34a80c68892beb446643fdd6ebd30468}{type}});}
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordtype}{void}\ setAction(\mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}}\ \mbox{\hyperlink{classClause_a5d676a019dfd996ccf3d45646f3e2f94}{action}});}
+\DoxyCodeLine{00158\ \ \ \textcolor{keywordtype}{void}\ setBranch(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classClause_a7e8ae21522e6a4c855d8b81cde6522b9}{branch}});}
+\DoxyCodeLine{00159\ \ \ \textcolor{keywordtype}{void}\ setPattern(ASTNodePtr\ \mbox{\hyperlink{classClause_ad49661b31b0e867d48491c85ad591bd7}{pattern}});}
+\DoxyCodeLine{00160\ \ \ \textcolor{keywordtype}{void}\ setDb(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classClause_afb4e6348235b71a24e493feebc4b8a15}{db}});}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{void}\ setTable(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classClause_a58871873e53e4d6e28301986b9f00bc9}{table}});}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{void}\ setColumn(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classClause_acdad62666cc41710990e299769817d88}{column}});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00165\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getType()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_a34a80c68892beb446643fdd6ebd30468}{type}};\ \}}
+\DoxyCodeLine{00166\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getAction()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_a5d676a019dfd996ccf3d45646f3e2f94}{action}};\ \}}
+\DoxyCodeLine{00167\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getBranch()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_a7e8ae21522e6a4c855d8b81cde6522b9}{branch}};\ \}}
+\DoxyCodeLine{00168\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getPattern()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_ad49661b31b0e867d48491c85ad591bd7}{pattern}};\ \}}
+\DoxyCodeLine{00169\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getDb()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_afb4e6348235b71a24e493feebc4b8a15}{db}};\ \}}
+\DoxyCodeLine{00170\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getTable()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_a58871873e53e4d6e28301986b9f00bc9}{table}};\ \}}
+\DoxyCodeLine{00171\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getColumn()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClause_acdad62666cc41710990e299769817d88}{column}};\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00177\ \ \ std::string\ \mbox{\hyperlink{classClause_a7e8ae21522e6a4c855d8b81cde6522b9}{branch}};}
+\DoxyCodeLine{00179\ \ \ std::string\ \mbox{\hyperlink{classClause_afb4e6348235b71a24e493feebc4b8a15}{db}};}
+\DoxyCodeLine{00181\ \ \ std::string\ \mbox{\hyperlink{classClause_a58871873e53e4d6e28301986b9f00bc9}{table}};}
+\DoxyCodeLine{00183\ \ \ std::string\ \mbox{\hyperlink{classClause_acdad62666cc41710990e299769817d88}{column}};}
+\DoxyCodeLine{00185\ \ \ ASTNodePtr\ \mbox{\hyperlink{classClause_ad49661b31b0e867d48491c85ad591bd7}{pattern}};}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLookup}{Lookup}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00193\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{classLookup_aad61e1abc73abefd728fd616fc97a61a}{Lookup}}(std::string\ \mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}},\ std::string\ \mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}},\ std::string\ \mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}})}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}}(std::move(\mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}})),\ \mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}}(std::move(\mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}})),\ \mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}}(std::move(\mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}}))\ \{\}}
+\DoxyCodeLine{00199\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00202\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getValue()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}};\ \}}
+\DoxyCodeLine{00203\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getDb()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}};\ \}}
+\DoxyCodeLine{00204\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getTable()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}};\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00208\ \ \ std::string\ \mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}};}
+\DoxyCodeLine{00210\ \ \ std::string\ \mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}};}
+\DoxyCodeLine{00212\ \ \ std::string\ \mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}};}
+\DoxyCodeLine{00213\ \};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00219\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classExit}{Exit}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00220\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00221\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00222\ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJump}{Jump}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00229\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00231\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classJump_ac4fe3957eadd5cb44c60807c5f2290f1}{Jump}}(std::string\ \textcolor{keywordtype}{id})\ :\ \mbox{\hyperlink{classJump_a8d6edf00bb6626046b7c601e4612025d}{id}}(std::move(\mbox{\hyperlink{classJump_a8d6edf00bb6626046b7c601e4612025d}{id}}))\ \{\}}
+\DoxyCodeLine{00232\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00235\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getId()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJump_a8d6edf00bb6626046b7c601e4612025d}{id}};\ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00239\ \ \ std::string\ \mbox{\hyperlink{classJump_a8d6edf00bb6626046b7c601e4612025d}{id}};}
+\DoxyCodeLine{00240\ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00246\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIdentifier}{Identifier}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00247\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00249\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classIdentifier_ae98ebf2194ff870b798416c75042ea3e}{Identifier}}(std::string\ \textcolor{keywordtype}{id})\ :\ \mbox{\hyperlink{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}{id}}(std::move(\mbox{\hyperlink{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}{id}}))\ \{\}}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00253\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getId()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}{id}};\ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00257\ \ \ std::string\ \mbox{\hyperlink{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}{id}};}
+\DoxyCodeLine{00258\ \};}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00264\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classString}{String}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classASTNode}{ASTNode}}\ \{}
+\DoxyCodeLine{00265\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00267\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classString_a0256158ffb5985f63b03f8ca2b62238b}{String}}(std::string\ \mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}})\ :\ \mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}}(std::move(\mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}}))\ \{\}}
+\DoxyCodeLine{00268\ \ \ \textcolor{keywordtype}{void}\ accept(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVisitor}{Visitor}}\&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00271\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getString()\ const\ -\/>\ const\ auto\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}};\ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00275\ \ \ std::string\ \mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}};}
+\DoxyCodeLine{00276\ \};}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ AST\_HPP}}
+
+\end{DoxyCode}

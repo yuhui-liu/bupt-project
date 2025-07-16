@@ -1,0 +1,3 @@
+[Semantic Error] Redefinition: identifier 'a' is already defined in the current scope
+[Semantic Error] Redefinition: identifier 'a' is already defined in the current scope
+[Semantic Error] Type mismatch: Parameter 2 of call to 'test' has incompatible type: expected 'integer', got 'char'

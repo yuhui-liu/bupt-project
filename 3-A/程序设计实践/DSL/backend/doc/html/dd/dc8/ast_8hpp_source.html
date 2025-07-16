@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/ast.hpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/dc8/ast_8hpp_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ast.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dc8/ast_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef AST_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define AST_HPP</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d3a/classASTNode.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">~ASTNode</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d2/d3a/classASTNode.html#abdf575199be1e3acec431cfa4cd1ff51">   24</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d3a/classASTNode.html#abdf575199be1e3acec431cfa4cd1ff51">accept</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp; visitor) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">using </span>ASTNodePtr = std::unique_ptr&lt;ASTNode&gt;;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../dc/db5/classProgram.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dc/db5/classProgram.html">Program</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/db5/classProgram.html#aa5fa94cc86426d8a06da89598c555d0c">addConstant</a>(ASTNodePtr constant);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/db5/classProgram.html#a8b86bf945546625d7a0442bc9366d3ca">addProcedure</a>(ASTNodePtr procedure);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  [[nodiscard]] <span class="keyword">auto</span> getConstants() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dc/db5/classProgram.html#ac0cc39547b34c1c7f001d556f7219045">constants</a>; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  [[nodiscard]] <span class="keyword">auto</span> getProcedures() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dc/db5/classProgram.html#a1970e1e948b8c7f4cfa5bcdb8862d064">procedures</a>; }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../dc/db5/classProgram.html#ac0cc39547b34c1c7f001d556f7219045">   48</a></span>  std::vector&lt;ASTNodePtr&gt; <a class="code hl_variable" href="../../dc/db5/classProgram.html#ac0cc39547b34c1c7f001d556f7219045">constants</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../dc/db5/classProgram.html#a1970e1e948b8c7f4cfa5bcdb8862d064">   50</a></span>  std::vector&lt;ASTNodePtr&gt; <a class="code hl_variable" href="../../dc/db5/classProgram.html#a1970e1e948b8c7f4cfa5bcdb8862d064">procedures</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d5/d53/classConstantDefine.html">   57</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d5/d53/classConstantDefine.html#a7a1e24f55c752471f39a9b83fe9dfaeb">   62</a></span>  <a class="code hl_function" href="../../d5/d53/classConstantDefine.html#a7a1e24f55c752471f39a9b83fe9dfaeb">ConstantDefine</a>(std::string <span class="keywordtype">id</span>, std::string <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">value</a>) : <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">id</a>(std::move(<a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">id</a>)), <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">value</a>(std::move(<a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">value</a>)) {}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  [[nodiscard]] <span class="keyword">auto</span> getId() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">id</a>; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  [[nodiscard]] <span class="keyword">auto</span> getValue() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">value</a>; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">   71</a></span>  std::string <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">id</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">   73</a></span>  std::string <a class="code hl_variable" href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">value</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d1/d54/classProcedure.html">   80</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d54/classProcedure.html">Procedure</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../d1/d54/classProcedure.html#a71b7d4338e966e12d00b2e1edf5ab169">   83</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/d54/classProcedure.html#a71b7d4338e966e12d00b2e1edf5ab169">Procedure</a>(std::string <span class="keywordtype">id</span>) : <a class="code hl_variable" href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">id</a>(std::move(<a class="code hl_variable" href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">id</a>)) {}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d54/classProcedure.html#aee9028b2b4c20fa66f69a1804e888d62">addStatement</a>(ASTNodePtr statement);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  [[nodiscard]] <span class="keyword">auto</span> getStatements() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d54/classProcedure.html#aae42ae488e6a9922276b15076c673b38">statements</a>; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  [[nodiscard]] <span class="keyword">auto</span> getId() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">id</a>; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">   94</a></span>  std::string <a class="code hl_variable" href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">id</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../d1/d54/classProcedure.html#aae42ae488e6a9922276b15076c673b38">   96</a></span>  std::vector&lt;ASTNodePtr&gt; <a class="code hl_variable" href="../../d1/d54/classProcedure.html#aae42ae488e6a9922276b15076c673b38">statements</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../d7/db9/classSay.html">  103</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/db9/classSay.html">Say</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/db9/classSay.html#a32a159d2a73feaf8ab52241b398458b9">addContent</a>(ASTNodePtr <a class="code hl_variable" href="../../d7/db9/classSay.html#ad0b739f01c7b35eaa2cda3b15144f255">content</a>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  [[nodiscard]] <span class="keyword">auto</span> getContents() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/db9/classSay.html#ad0b739f01c7b35eaa2cda3b15144f255">content</a>; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="../../d7/db9/classSay.html#ad0b739f01c7b35eaa2cda3b15144f255">  114</a></span>  std::vector&lt;ASTNodePtr&gt; <a class="code hl_variable" href="../../d7/db9/classSay.html#ad0b739f01c7b35eaa2cda3b15144f255">content</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="};">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="../../d1/d68/classListen.html">  121</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d68/classListen.html">Listen</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="../../d1/d68/classListen.html#a8fd50a2c2166cc417dfa85fe9be083b7">  124</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/d68/classListen.html#a8fd50a2c2166cc417dfa85fe9be083b7">Listen</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">limit</a>) : <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">limit</a>(<a class="code hl_variable" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">limit</a>) {}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d68/classListen.html#aad3c09d66c7cf6b69180be8e63ee06be">addClause</a>(ASTNodePtr clause);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  [[nodiscard]] <span class="keyword">auto</span> getClauses() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d0be7a6b4301f658529a27784eb0ad7">clauses</a>; }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  [[nodiscard]] <span class="keyword">auto</span> getLimit() const -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">limit</a>; }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d1/d68/classListen.html#a9d0be7a6b4301f658529a27784eb0ad7">  135</a></span>  std::vector&lt;ASTNodePtr&gt; <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d0be7a6b4301f658529a27784eb0ad7">clauses</a>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">  137</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">limit</a>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>};</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="};">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html">  144</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d0/dbe/classClause.html">Clause</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a4f889b644990fa42b52ae1f4b118a185">  147</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a4f889b644990fa42b52ae1f4b118a185">Type</a> { HAS, ANYTHING, TIMEOUT, DEFAULT };</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a0066d758f4c891945fca046aebbdf546">  149</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a0066d758f4c891945fca046aebbdf546">Action</a> { WRITETO, JUMP };</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a34a80c68892beb446643fdd6ebd30468">  151</a></span>  <a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a4f889b644990fa42b52ae1f4b118a185">Type</a> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a34a80c68892beb446643fdd6ebd30468">type</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a5d676a019dfd996ccf3d45646f3e2f94">  153</a></span>  <a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a0066d758f4c891945fca046aebbdf546">Action</a> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a5d676a019dfd996ccf3d45646f3e2f94">action</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">// setters</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">void</span> setType(<a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a4f889b644990fa42b52ae1f4b118a185">Type</a> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a34a80c68892beb446643fdd6ebd30468">type</a>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">void</span> setAction(<a class="code hl_enumeration" href="../../d0/dbe/classClause.html#a0066d758f4c891945fca046aebbdf546">Action</a> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a5d676a019dfd996ccf3d45646f3e2f94">action</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordtype">void</span> setBranch(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="../../d0/dbe/classClause.html#a7e8ae21522e6a4c855d8b81cde6522b9">branch</a>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordtype">void</span> setPattern(ASTNodePtr <a class="code hl_variable" href="../../d0/dbe/classClause.html#ad49661b31b0e867d48491c85ad591bd7">pattern</a>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> setDb(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="../../d0/dbe/classClause.html#afb4e6348235b71a24e493feebc4b8a15">db</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">void</span> setTable(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="../../d0/dbe/classClause.html#a58871873e53e4d6e28301986b9f00bc9">table</a>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span> setColumn(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="../../d0/dbe/classClause.html#acdad62666cc41710990e299769817d88">column</a>);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  [[nodiscard]] <span class="keyword">auto</span> getType() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a34a80c68892beb446643fdd6ebd30468">type</a>; }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  [[nodiscard]] <span class="keyword">auto</span> getAction() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a5d676a019dfd996ccf3d45646f3e2f94">action</a>; }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  [[nodiscard]] <span class="keyword">auto</span> getBranch() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a7e8ae21522e6a4c855d8b81cde6522b9">branch</a>; }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  [[nodiscard]] <span class="keyword">auto</span> getPattern() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#ad49661b31b0e867d48491c85ad591bd7">pattern</a>; }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  [[nodiscard]] <span class="keyword">auto</span> getDb() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#afb4e6348235b71a24e493feebc4b8a15">db</a>; }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  [[nodiscard]] <span class="keyword">auto</span> getTable() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#a58871873e53e4d6e28301986b9f00bc9">table</a>; }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  [[nodiscard]] <span class="keyword">auto</span> getColumn() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/dbe/classClause.html#acdad62666cc41710990e299769817d88">column</a>; }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a7e8ae21522e6a4c855d8b81cde6522b9">  177</a></span>  std::string <a class="code hl_variable" href="../../d0/dbe/classClause.html#a7e8ae21522e6a4c855d8b81cde6522b9">branch</a>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#afb4e6348235b71a24e493feebc4b8a15">  179</a></span>  std::string <a class="code hl_variable" href="../../d0/dbe/classClause.html#afb4e6348235b71a24e493feebc4b8a15">db</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#a58871873e53e4d6e28301986b9f00bc9">  181</a></span>  std::string <a class="code hl_variable" href="../../d0/dbe/classClause.html#a58871873e53e4d6e28301986b9f00bc9">table</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#acdad62666cc41710990e299769817d88">  183</a></span>  std::string <a class="code hl_variable" href="../../d0/dbe/classClause.html#acdad62666cc41710990e299769817d88">column</a>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="../../d0/dbe/classClause.html#ad49661b31b0e867d48491c85ad591bd7">  185</a></span>  ASTNodePtr <a class="code hl_variable" href="../../d0/dbe/classClause.html#ad49661b31b0e867d48491c85ad591bd7">pattern</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>};</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="};">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d3/d08/classLookup.html">  192</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/d08/classLookup.html">Lookup</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="../../d3/d08/classLookup.html#aad61e1abc73abefd728fd616fc97a61a">  197</a></span>  <a class="code hl_function" href="../../d3/d08/classLookup.html#aad61e1abc73abefd728fd616fc97a61a">Lookup</a>(std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">value</a>, std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">db</a>, std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">table</a>)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      : <a class="code hl_variable" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">value</a>(std::move(<a class="code hl_variable" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">value</a>)), <a class="code hl_variable" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">db</a>(std::move(<a class="code hl_variable" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">db</a>)), <a class="code hl_variable" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">table</a>(std::move(<a class="code hl_variable" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">table</a>)) {}</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  [[nodiscard]] <span class="keyword">auto</span> getValue() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">value</a>; }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  [[nodiscard]] <span class="keyword">auto</span> getDb() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">db</a>; }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  [[nodiscard]] <span class="keyword">auto</span> getTable() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">table</a>; }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">  208</a></span>  std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">value</a>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">  210</a></span>  std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">db</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">  212</a></span>  std::string <a class="code hl_variable" href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">table</a>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>};</div>
+</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="};">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="../../dc/d5b/classExit.html">  219</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dc/d5b/classExit.html">Exit</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>};</div>
+</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="};">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="../../d9/d02/classJump.html">  228</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/d02/classJump.html">Jump</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="../../d9/d02/classJump.html#ac4fe3957eadd5cb44c60807c5f2290f1">  231</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d9/d02/classJump.html#ac4fe3957eadd5cb44c60807c5f2290f1">Jump</a>(std::string <span class="keywordtype">id</span>) : <a class="code hl_variable" href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">id</a>(std::move(<a class="code hl_variable" href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">id</a>)) {}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  [[nodiscard]] <span class="keyword">auto</span> getId() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">id</a>; }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">  239</a></span>  std::string <a class="code hl_variable" href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">id</a>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>};</div>
+</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="foldopen" id="foldopen00246" data-start="{" data-end="};">
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="../../d1/de3/classIdentifier.html">  246</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/de3/classIdentifier.html">Identifier</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="../../d1/de3/classIdentifier.html#ae98ebf2194ff870b798416c75042ea3e">  249</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/de3/classIdentifier.html#ae98ebf2194ff870b798416c75042ea3e">Identifier</a>(std::string <span class="keywordtype">id</span>) : <a class="code hl_variable" href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">id</a>(std::move(<a class="code hl_variable" href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">id</a>)) {}</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  [[nodiscard]] <span class="keyword">auto</span> getId() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">id</a>; }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">  257</a></span>  std::string <a class="code hl_variable" href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">id</a>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>};</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="};">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="../../d3/dee/classString.html">  264</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/dee/classString.html">String</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d3a/classASTNode.html">ASTNode</a> {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="../../d3/dee/classString.html#a0256158ffb5985f63b03f8ca2b62238b">  267</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d3/dee/classString.html#a0256158ffb5985f63b03f8ca2b62238b">String</a>(std::string <a class="code hl_variable" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">s</a>) : <a class="code hl_variable" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">s</a>(std::move(<a class="code hl_variable" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">s</a>)) {}</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="keywordtype">void</span> accept(<span class="keyword">const</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  <span class="comment">// getters</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  [[nodiscard]] <span class="keyword">auto</span> getString() const -&gt; const auto&amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">s</a>; }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">  275</a></span>  std::string <a class="code hl_variable" href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">s</a>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>};</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#endif  </span><span class="comment">// AST_HPP</span></div>
+<div class="ttc" id="aclassASTNode_html"><div class="ttname"><a href="../../d2/d3a/classASTNode.html">ASTNode</a></div><div class="ttdoc">抽象语法树结点</div><div class="ttdef"><b>定义</b> ast.hpp:20</div></div>
+<div class="ttc" id="aclassASTNode_html_abdf575199be1e3acec431cfa4cd1ff51"><div class="ttname"><a href="../../d2/d3a/classASTNode.html#abdf575199be1e3acec431cfa4cd1ff51">ASTNode::accept</a></div><div class="ttdeci">virtual void accept(const class Visitor &amp;visitor) const =0</div><div class="ttdoc">接受visitor</div></div>
+<div class="ttc" id="aclassClause_html"><div class="ttname"><a href="../../d0/dbe/classClause.html">Clause</a></div><div class="ttdoc">表示listen语句的子语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:144</div></div>
+<div class="ttc" id="aclassClause_html_a0066d758f4c891945fca046aebbdf546"><div class="ttname"><a href="../../d0/dbe/classClause.html#a0066d758f4c891945fca046aebbdf546">Clause::Action</a></div><div class="ttdeci">Action</div><div class="ttdoc">子语句的动作枚举</div><div class="ttdef"><b>定义</b> ast.hpp:149</div></div>
+<div class="ttc" id="aclassClause_html_a34a80c68892beb446643fdd6ebd30468"><div class="ttname"><a href="../../d0/dbe/classClause.html#a34a80c68892beb446643fdd6ebd30468">Clause::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">子语句的类型</div><div class="ttdef"><b>定义</b> ast.hpp:151</div></div>
+<div class="ttc" id="aclassClause_html_a4f889b644990fa42b52ae1f4b118a185"><div class="ttname"><a href="../../d0/dbe/classClause.html#a4f889b644990fa42b52ae1f4b118a185">Clause::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">子语句的类型枚举</div><div class="ttdef"><b>定义</b> ast.hpp:147</div></div>
+<div class="ttc" id="aclassClause_html_a58871873e53e4d6e28301986b9f00bc9"><div class="ttname"><a href="../../d0/dbe/classClause.html#a58871873e53e4d6e28301986b9f00bc9">Clause::table</a></div><div class="ttdeci">std::string table</div><div class="ttdoc">当动作为WRITETO时，table为写入的表</div><div class="ttdef"><b>定义</b> ast.hpp:181</div></div>
+<div class="ttc" id="aclassClause_html_a5d676a019dfd996ccf3d45646f3e2f94"><div class="ttname"><a href="../../d0/dbe/classClause.html#a5d676a019dfd996ccf3d45646f3e2f94">Clause::action</a></div><div class="ttdeci">Action action</div><div class="ttdoc">子语句的动作</div><div class="ttdef"><b>定义</b> ast.hpp:153</div></div>
+<div class="ttc" id="aclassClause_html_a7e8ae21522e6a4c855d8b81cde6522b9"><div class="ttname"><a href="../../d0/dbe/classClause.html#a7e8ae21522e6a4c855d8b81cde6522b9">Clause::branch</a></div><div class="ttdeci">std::string branch</div><div class="ttdoc">当动作为JUMP时，branch为跳转的过程</div><div class="ttdef"><b>定义</b> ast.hpp:177</div></div>
+<div class="ttc" id="aclassClause_html_acdad62666cc41710990e299769817d88"><div class="ttname"><a href="../../d0/dbe/classClause.html#acdad62666cc41710990e299769817d88">Clause::column</a></div><div class="ttdeci">std::string column</div><div class="ttdoc">当动作为WRITETO时，column为写入的列</div><div class="ttdef"><b>定义</b> ast.hpp:183</div></div>
+<div class="ttc" id="aclassClause_html_ad49661b31b0e867d48491c85ad591bd7"><div class="ttname"><a href="../../d0/dbe/classClause.html#ad49661b31b0e867d48491c85ad591bd7">Clause::pattern</a></div><div class="ttdeci">ASTNodePtr pattern</div><div class="ttdoc">当类型为HAS时，pattern为匹配的模式</div><div class="ttdef"><b>定义</b> ast.hpp:185</div></div>
+<div class="ttc" id="aclassClause_html_afb4e6348235b71a24e493feebc4b8a15"><div class="ttname"><a href="../../d0/dbe/classClause.html#afb4e6348235b71a24e493feebc4b8a15">Clause::db</a></div><div class="ttdeci">std::string db</div><div class="ttdoc">当动作为WRITETO时，db为写入的数据库</div><div class="ttdef"><b>定义</b> ast.hpp:179</div></div>
+<div class="ttc" id="aclassConstantDefine_html"><div class="ttname"><a href="../../d5/d53/classConstantDefine.html">ConstantDefine</a></div><div class="ttdoc">表示常量定义的结点</div><div class="ttdef"><b>定义</b> ast.hpp:57</div></div>
+<div class="ttc" id="aclassConstantDefine_html_a15da70e3c8e2c8584ed96d8e0aee5179"><div class="ttname"><a href="../../d5/d53/classConstantDefine.html#a15da70e3c8e2c8584ed96d8e0aee5179">ConstantDefine::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">常量名</div><div class="ttdef"><b>定义</b> ast.hpp:71</div></div>
+<div class="ttc" id="aclassConstantDefine_html_a1f7e6a5786c01481337c882e33357eeb"><div class="ttname"><a href="../../d5/d53/classConstantDefine.html#a1f7e6a5786c01481337c882e33357eeb">ConstantDefine::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">常量值</div><div class="ttdef"><b>定义</b> ast.hpp:73</div></div>
+<div class="ttc" id="aclassConstantDefine_html_a7a1e24f55c752471f39a9b83fe9dfaeb"><div class="ttname"><a href="../../d5/d53/classConstantDefine.html#a7a1e24f55c752471f39a9b83fe9dfaeb">ConstantDefine::ConstantDefine</a></div><div class="ttdeci">ConstantDefine(std::string id, std::string value)</div><div class="ttdoc">构造函数，对于&quot;id=value&quot;进行构造。</div><div class="ttdef"><b>定义</b> ast.hpp:62</div></div>
+<div class="ttc" id="aclassExit_html"><div class="ttname"><a href="../../dc/d5b/classExit.html">Exit</a></div><div class="ttdoc">表示exit语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:219</div></div>
+<div class="ttc" id="aclassIdentifier_html"><div class="ttname"><a href="../../d1/de3/classIdentifier.html">Identifier</a></div><div class="ttdoc">表示Identifier的结点</div><div class="ttdef"><b>定义</b> ast.hpp:246</div></div>
+<div class="ttc" id="aclassIdentifier_html_a9016373a7257520bc6b62d7be5ce9f93"><div class="ttname"><a href="../../d1/de3/classIdentifier.html#a9016373a7257520bc6b62d7be5ce9f93">Identifier::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">标识符的名字</div><div class="ttdef"><b>定义</b> ast.hpp:257</div></div>
+<div class="ttc" id="aclassIdentifier_html_ae98ebf2194ff870b798416c75042ea3e"><div class="ttname"><a href="../../d1/de3/classIdentifier.html#ae98ebf2194ff870b798416c75042ea3e">Identifier::Identifier</a></div><div class="ttdeci">Identifier(std::string id)</div><div class="ttdef"><b>定义</b> ast.hpp:249</div></div>
+<div class="ttc" id="aclassJump_html"><div class="ttname"><a href="../../d9/d02/classJump.html">Jump</a></div><div class="ttdoc">表示jump语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:228</div></div>
+<div class="ttc" id="aclassJump_html_a8d6edf00bb6626046b7c601e4612025d"><div class="ttname"><a href="../../d9/d02/classJump.html#a8d6edf00bb6626046b7c601e4612025d">Jump::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">jump语句跳转的过程</div><div class="ttdef"><b>定义</b> ast.hpp:239</div></div>
+<div class="ttc" id="aclassJump_html_ac4fe3957eadd5cb44c60807c5f2290f1"><div class="ttname"><a href="../../d9/d02/classJump.html#ac4fe3957eadd5cb44c60807c5f2290f1">Jump::Jump</a></div><div class="ttdeci">Jump(std::string id)</div><div class="ttdef"><b>定义</b> ast.hpp:231</div></div>
+<div class="ttc" id="aclassListen_html"><div class="ttname"><a href="../../d1/d68/classListen.html">Listen</a></div><div class="ttdoc">表示listen语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:121</div></div>
+<div class="ttc" id="aclassListen_html_a8fd50a2c2166cc417dfa85fe9be083b7"><div class="ttname"><a href="../../d1/d68/classListen.html#a8fd50a2c2166cc417dfa85fe9be083b7">Listen::Listen</a></div><div class="ttdeci">Listen(const int limit)</div><div class="ttdef"><b>定义</b> ast.hpp:124</div></div>
+<div class="ttc" id="aclassListen_html_a9d0be7a6b4301f658529a27784eb0ad7"><div class="ttname"><a href="../../d1/d68/classListen.html#a9d0be7a6b4301f658529a27784eb0ad7">Listen::clauses</a></div><div class="ttdeci">std::vector&lt; ASTNodePtr &gt; clauses</div><div class="ttdoc">listen语句的子语句</div><div class="ttdef"><b>定义</b> ast.hpp:135</div></div>
+<div class="ttc" id="aclassListen_html_a9d113860f26f39a04674a95fd6fae6b4"><div class="ttname"><a href="../../d1/d68/classListen.html#a9d113860f26f39a04674a95fd6fae6b4">Listen::limit</a></div><div class="ttdeci">int limit</div><div class="ttdoc">listen语句的时间限制</div><div class="ttdef"><b>定义</b> ast.hpp:137</div></div>
+<div class="ttc" id="aclassListen_html_aad3c09d66c7cf6b69180be8e63ee06be"><div class="ttname"><a href="../../d1/d68/classListen.html#aad3c09d66c7cf6b69180be8e63ee06be">Listen::addClause</a></div><div class="ttdeci">void addClause(ASTNodePtr clause)</div><div class="ttdoc">添加子语句</div><div class="ttdef"><b>定义</b> ast.cpp:21</div></div>
+<div class="ttc" id="aclassLookup_html"><div class="ttname"><a href="../../d3/d08/classLookup.html">Lookup</a></div><div class="ttdoc">表示lookup语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:192</div></div>
+<div class="ttc" id="aclassLookup_html_a16d3e872c21927f453ead45f7270cd3a"><div class="ttname"><a href="../../d3/d08/classLookup.html#a16d3e872c21927f453ead45f7270cd3a">Lookup::table</a></div><div class="ttdeci">std::string table</div><div class="ttdoc">lookup语句查询的表</div><div class="ttdef"><b>定义</b> ast.hpp:212</div></div>
+<div class="ttc" id="aclassLookup_html_a46be6f16fc2c0e703525c16185b67543"><div class="ttname"><a href="../../d3/d08/classLookup.html#a46be6f16fc2c0e703525c16185b67543">Lookup::db</a></div><div class="ttdeci">std::string db</div><div class="ttdoc">lookup语句查询的数据库</div><div class="ttdef"><b>定义</b> ast.hpp:210</div></div>
+<div class="ttc" id="aclassLookup_html_aad61e1abc73abefd728fd616fc97a61a"><div class="ttname"><a href="../../d3/d08/classLookup.html#aad61e1abc73abefd728fd616fc97a61a">Lookup::Lookup</a></div><div class="ttdeci">Lookup(std::string value, std::string db, std::string table)</div><div class="ttdef"><b>定义</b> ast.hpp:197</div></div>
+<div class="ttc" id="aclassLookup_html_af305f6e240ed552dba34cb31bb309a90"><div class="ttname"><a href="../../d3/d08/classLookup.html#af305f6e240ed552dba34cb31bb309a90">Lookup::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">lookup语句查询的值</div><div class="ttdef"><b>定义</b> ast.hpp:208</div></div>
+<div class="ttc" id="aclassProcedure_html"><div class="ttname"><a href="../../d1/d54/classProcedure.html">Procedure</a></div><div class="ttdoc">表示过程的结点</div><div class="ttdef"><b>定义</b> ast.hpp:80</div></div>
+<div class="ttc" id="aclassProcedure_html_a71b7d4338e966e12d00b2e1edf5ab169"><div class="ttname"><a href="../../d1/d54/classProcedure.html#a71b7d4338e966e12d00b2e1edf5ab169">Procedure::Procedure</a></div><div class="ttdeci">Procedure(std::string id)</div><div class="ttdef"><b>定义</b> ast.hpp:83</div></div>
+<div class="ttc" id="aclassProcedure_html_aae42ae488e6a9922276b15076c673b38"><div class="ttname"><a href="../../d1/d54/classProcedure.html#aae42ae488e6a9922276b15076c673b38">Procedure::statements</a></div><div class="ttdeci">std::vector&lt; ASTNodePtr &gt; statements</div><div class="ttdoc">过程的语句</div><div class="ttdef"><b>定义</b> ast.hpp:96</div></div>
+<div class="ttc" id="aclassProcedure_html_aee9028b2b4c20fa66f69a1804e888d62"><div class="ttname"><a href="../../d1/d54/classProcedure.html#aee9028b2b4c20fa66f69a1804e888d62">Procedure::addStatement</a></div><div class="ttdeci">void addStatement(ASTNodePtr statement)</div><div class="ttdoc">添加语句</div><div class="ttdef"><b>定义</b> ast.cpp:17</div></div>
+<div class="ttc" id="aclassProcedure_html_afd15818cdd3577bd1e8e23db67b9d20d"><div class="ttname"><a href="../../d1/d54/classProcedure.html#afd15818cdd3577bd1e8e23db67b9d20d">Procedure::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">过程名</div><div class="ttdef"><b>定义</b> ast.hpp:94</div></div>
+<div class="ttc" id="aclassProgram_html"><div class="ttname"><a href="../../dc/db5/classProgram.html">Program</a></div><div class="ttdoc">表示程序的结点</div><div class="ttdef"><b>定义</b> ast.hpp:33</div></div>
+<div class="ttc" id="aclassProgram_html_a1970e1e948b8c7f4cfa5bcdb8862d064"><div class="ttname"><a href="../../dc/db5/classProgram.html#a1970e1e948b8c7f4cfa5bcdb8862d064">Program::procedures</a></div><div class="ttdeci">std::vector&lt; ASTNodePtr &gt; procedures</div><div class="ttdoc">program含有的过程</div><div class="ttdef"><b>定义</b> ast.hpp:50</div></div>
+<div class="ttc" id="aclassProgram_html_a8b86bf945546625d7a0442bc9366d3ca"><div class="ttname"><a href="../../dc/db5/classProgram.html#a8b86bf945546625d7a0442bc9366d3ca">Program::addProcedure</a></div><div class="ttdeci">void addProcedure(ASTNodePtr procedure)</div><div class="ttdoc">添加过程</div><div class="ttdef"><b>定义</b> ast.cpp:15</div></div>
+<div class="ttc" id="aclassProgram_html_aa5fa94cc86426d8a06da89598c555d0c"><div class="ttname"><a href="../../dc/db5/classProgram.html#aa5fa94cc86426d8a06da89598c555d0c">Program::addConstant</a></div><div class="ttdeci">void addConstant(ASTNodePtr constant)</div><div class="ttdoc">添加常量定义</div><div class="ttdef"><b>定义</b> ast.cpp:13</div></div>
+<div class="ttc" id="aclassProgram_html_ac0cc39547b34c1c7f001d556f7219045"><div class="ttname"><a href="../../dc/db5/classProgram.html#ac0cc39547b34c1c7f001d556f7219045">Program::constants</a></div><div class="ttdeci">std::vector&lt; ASTNodePtr &gt; constants</div><div class="ttdoc">program含有的常量定义</div><div class="ttdef"><b>定义</b> ast.hpp:48</div></div>
+<div class="ttc" id="aclassSay_html"><div class="ttname"><a href="../../d7/db9/classSay.html">Say</a></div><div class="ttdoc">表示say语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:103</div></div>
+<div class="ttc" id="aclassSay_html_a32a159d2a73feaf8ab52241b398458b9"><div class="ttname"><a href="../../d7/db9/classSay.html#a32a159d2a73feaf8ab52241b398458b9">Say::addContent</a></div><div class="ttdeci">void addContent(ASTNodePtr content)</div><div class="ttdoc">添加内容</div><div class="ttdef"><b>定义</b> ast.cpp:19</div></div>
+<div class="ttc" id="aclassSay_html_ad0b739f01c7b35eaa2cda3b15144f255"><div class="ttname"><a href="../../d7/db9/classSay.html#ad0b739f01c7b35eaa2cda3b15144f255">Say::content</a></div><div class="ttdeci">std::vector&lt; ASTNodePtr &gt; content</div><div class="ttdoc">say语句的内容</div><div class="ttdef"><b>定义</b> ast.hpp:114</div></div>
+<div class="ttc" id="aclassString_html"><div class="ttname"><a href="../../d3/dee/classString.html">String</a></div><div class="ttdoc">表示字符串字面量的结点</div><div class="ttdef"><b>定义</b> ast.hpp:264</div></div>
+<div class="ttc" id="aclassString_html_a0256158ffb5985f63b03f8ca2b62238b"><div class="ttname"><a href="../../d3/dee/classString.html#a0256158ffb5985f63b03f8ca2b62238b">String::String</a></div><div class="ttdeci">String(std::string s)</div><div class="ttdef"><b>定义</b> ast.hpp:267</div></div>
+<div class="ttc" id="aclassString_html_a716c83dcd9e6e746f9ad0d68746f3e37"><div class="ttname"><a href="../../d3/dee/classString.html#a716c83dcd9e6e746f9ad0d68746f3e37">String::s</a></div><div class="ttdeci">std::string s</div><div class="ttdoc">字符串字面量</div><div class="ttdef"><b>定义</b> ast.hpp:275</div></div>
+<div class="ttc" id="aclassVisitor_html"><div class="ttname"><a href="../../d4/d14/classVisitor.html">Visitor</a></div><div class="ttdoc">Visitor 类</div><div class="ttdef"><b>定义</b> visitor.hpp:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dd/dc8/ast_8hpp.html">ast.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.input-border {
+  border-color: #a5d6a7;
+  transition: border-color 0.3s;
+}
+
+.input-border:focus {
+  border-color: #489d4b;
+}
+
+.button-border {
+  border-color: #ff5722;
+}
+
+.button-bg {
+  background-color: #ff5722;
+}
+
+.button-bg:hover {
+  background-color: #e64a19;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-border {
+    border-color: #444c68;
+  }
+
+  .input-border:focus {
+    border-color: #939bb8;
+  }
+
+  .button-border {
+    border-color: #bb86fc;
+  }
+
+  .button-bg {
+    background-color: #bb86fc;
+  }
+
+  .button-bg:hover {
+    background-color: #9b59b6;
+  }
+}

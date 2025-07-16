@@ -1,0 +1,47 @@
+\doxysection{lexer.\+hpp}
+\hypertarget{lexer_8hpp_source}{}\label{lexer_8hpp_source}\index{include/lexer.hpp@{include/lexer.hpp}}
+\mbox{\hyperlink{lexer_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LEXER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LEXER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{token_8hpp}{token.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLexer}{Lexer}}\ \{}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLexer_a6e0ea7620ccc8cedf52f0dd8feace5c3}{Lexer}}(std::string);}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLexer_a3c62781b92c4820d6f1143c0e074e61c}{scan}}();}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLexer_a4c5873b01e515aa83484054e641297fa}{printTokens}}();}
+\DoxyCodeLine{00026\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classLexer_a0e14642fb0e83f4978db1c3deea6c8e1}{getTokens}}()\ \textcolor{keyword}{const}\ -\/>\ std::vector<Token>;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ std::string\ \mbox{\hyperlink{classLexer_a08540641066244ccf50cadda4b51db46}{src}};}
+\DoxyCodeLine{00032\ \ \ std::vector<Token>\ \mbox{\hyperlink{classLexer_adfc224cc460a688deb4655f88ccd1bbb}{tokens}};}
+\DoxyCodeLine{00034\ \ \ std::size\_t\ \mbox{\hyperlink{classLexer_a0f66b89537ceb92b00aca7eab68fa4c6}{start}}\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ std::size\_t\ \mbox{\hyperlink{classLexer_ac5075d1e48e4860130b3575c8ee52a19}{current}}\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ std::size\_t\ \mbox{\hyperlink{classLexer_af4f4a53224e8c5116693bffb3e280b5e}{line\_num}}\ =\ 1;}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<std::string\_view,\ TokenType>\ \mbox{\hyperlink{classLexer_ad11f0992738b397639a5b46845e65826}{KEYWORDS}}\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}has"{}},\ TokenType::HAS\},\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}procedure"{}},\ TokenType::PROCEDURE\},\ \{\textcolor{stringliteral}{"{}say"{}},\ TokenType::SAY\},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}listen"{}},\ TokenType::LISTEN\},\ \ \ \{\textcolor{stringliteral}{"{}timelimit"{}},\ TokenType::TIMELIMIT\},\ \{\textcolor{stringliteral}{"{}timeout"{}},\ TokenType::TIMEOUT\},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}default"{}},\ TokenType::DEFAULT\},\ \{\textcolor{stringliteral}{"{}lookup"{}},\ TokenType::LOOKUP\},\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}in"{}},\ TokenType::IN\},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}writeto"{}},\ TokenType::WRITETO\},\ \{\textcolor{stringliteral}{"{}exit"{}},\ TokenType::EXIT\},\ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}anything"{}},\ TokenType::ANYTHING\}\};}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLexer_ae8edcbfeea2de068a3bacbcde21632c6}{scanNextToken}}();}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classLexer_aa956caa52a392f8a59a5a237f9160957}{getNextChar}}()\ -\/>\ char;}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ backward();}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ addToken(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \&);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ addToken(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \&,\ \textcolor{keyword}{const}\ std::string\ \&);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ processString();}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLexer_a27d34416cef6b0d46b828e67b2d4cb9d}{processNumber}}();}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLexer_a983c6984a12571f871dd4fffd2fbb16c}{processKeywordsAndIdentifiers}}();}
+\DoxyCodeLine{00053\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classLexer_a4a00ce5900a7f802a467082f1ac45a79}{isEnd}}()\ const\ -\/>\ \textcolor{keywordtype}{bool};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ LEXER\_HPP}}
+
+\end{DoxyCode}

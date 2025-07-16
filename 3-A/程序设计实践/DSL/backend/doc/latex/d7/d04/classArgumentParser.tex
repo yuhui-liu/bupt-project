@@ -1,0 +1,118 @@
+\doxysection{Argument\+Parser类 参考}
+\hypertarget{classArgumentParser}{}\label{classArgumentParser}\index{ArgumentParser@{ArgumentParser}}
+
+
+解析命令行参数  
+
+
+
+
+{\ttfamily \#include $<$argument\+\_\+parser.\+hpp$>$}
+
+
+
+Argument\+Parser 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{da/dc6/classArgumentParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArgumentParser_af0c93fcd4e06c59c309bc5fb7f73d8e4}{Argument\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em 构造函数，初始化命令行选项描述。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArgumentParser_a5b4da76128eadc43dc0944e0df8a4bbd}{parse}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em 解析命令行参数。 \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentParser_ab2a2ef3f2869c81a7222b472b21ab298}\label{classArgumentParser_ab2a2ef3f2869c81a7222b472b21ab298} 
+auto {\bfseries get\+Script} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classArgumentParser_aed1a7fc408aa2115d05f3e186ad240d2}\label{classArgumentParser_aed1a7fc408aa2115d05f3e186ad240d2} 
+auto {\bfseries get\+Mode} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classArgumentParser_a880ac96f423336eb0953ac9ead4ff7b8}\label{classArgumentParser_a880ac96f423336eb0953ac9ead4ff7b8} 
+auto {\bfseries get\+Desc} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classArgumentParser_a9bddbf503e2bc1750ac97f775f5fdc78}\label{classArgumentParser_a9bddbf503e2bc1750ac97f775f5fdc78} 
+auto {\bfseries get\+Uid} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classArgumentParser_aedec0c55c7bcc907f3c6b6e646519c89}\label{classArgumentParser_aedec0c55c7bcc907f3c6b6e646519c89} 
+po\+::options\+\_\+description {\bfseries desc} \{"{}Options"{}\}
+\begin{DoxyCompactList}\small\item\em 命令行参数描述 \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentParser_abfc6dcacf4fcd345d3f1208f7732e0ac}\label{classArgumentParser_abfc6dcacf4fcd345d3f1208f7732e0ac} 
+po\+::variables\+\_\+map {\bfseries vm}
+\begin{DoxyCompactList}\small\item\em 命令行参数存储 \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentParser_a3d9397c5ba9b7fbf92b28f48e78e1ee6}\label{classArgumentParser_a3d9397c5ba9b7fbf92b28f48e78e1ee6} 
+std\+::string {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em 运行模式 \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentParser_ad18ea4b0cdf7a2005b0d671c91d51f61}\label{classArgumentParser_ad18ea4b0cdf7a2005b0d671c91d51f61} 
+std\+::string {\bfseries script}
+\begin{DoxyCompactList}\small\item\em 脚本文件名 \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentParser_abd40d94224f449d1fc1f4cfcf9054a5e}\label{classArgumentParser_abd40d94224f449d1fc1f4cfcf9054a5e} 
+int {\bfseries uid} \{DEFAULTUID\}
+\begin{DoxyCompactList}\small\item\em 用户id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classArgumentParser_a932fc49c5ff95f476aacb1a11a1df633}\label{classArgumentParser_a932fc49c5ff95f476aacb1a11a1df633} 
+static constexpr int {\bfseries DEFAULTUID} = 101
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+解析命令行参数 
+
+解析命令行参数。包括脚本文件名，运行模式。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classArgumentParser_af0c93fcd4e06c59c309bc5fb7f73d8e4}\index{ArgumentParser@{ArgumentParser}!ArgumentParser@{ArgumentParser}}
+\index{ArgumentParser@{ArgumentParser}!ArgumentParser@{ArgumentParser}}
+\doxysubsubsection{\texorpdfstring{ArgumentParser()}{ArgumentParser()}}
+{\footnotesize\ttfamily \label{classArgumentParser_af0c93fcd4e06c59c309bc5fb7f73d8e4} 
+Argument\+Parser\+::\+Argument\+Parser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+构造函数，初始化命令行选项描述。 
+
+\texorpdfstring{$<$}{<} 显示帮助信息
+
+\texorpdfstring{$<$}{<} 设置模式（浏览器或命令行）
+
+\texorpdfstring{$<$}{<} 设置脚本文件
+
+\texorpdfstring{$<$}{<} 设置用户id
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classArgumentParser_a5b4da76128eadc43dc0944e0df8a4bbd}\index{ArgumentParser@{ArgumentParser}!parse@{parse}}
+\index{parse@{parse}!ArgumentParser@{ArgumentParser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{classArgumentParser_a5b4da76128eadc43dc0944e0df8a4bbd} 
+void Argument\+Parser\+::parse (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+解析命令行参数。 
+
+
+\begin{DoxyParams}{参数}
+{\em argc} & 参数个数。 \\
+\hline
+{\em argv} & 参数数组。 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::invalid\+\_\+argument} & 如果模式无效。 \\
+\hline
+\end{DoxyExceptions}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{argument__parser_8hpp}{argument\+\_\+parser.\+hpp}}\item 
+src/\mbox{\hyperlink{argument__parser_8cpp}{argument\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

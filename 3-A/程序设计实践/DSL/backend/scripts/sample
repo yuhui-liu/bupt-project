@@ -1,0 +1,80 @@
+db="/home/lyh/projects/DSL/backend/scripts/db/1.db"
+complaindb="/home/lyh/projects/DSL/backend/scripts/db/2.db"
+procedure main { # 测试注释
+  say "您好，欢迎致电中国移动"
+  say "请问您有什么问题需要帮助？"
+  say "您可以说：查话费，查流量，办理业务，投诉，退出"
+  listen timelimit 10 {
+    has "话费" ? checkBalance
+    has "流量" ? checkTraffic
+    has "办理" ? business
+    has "投诉" ? complain
+    has "退出" ? goodbye
+    timeout ? silenceProc
+    default ? defaultProc
+  }
+  goodbye
+}
+procedure checkBalance {
+  lookup balance in db:UserInfo
+  say "您的话费余额为", balance
+  say "如果您还有其他问题，请说返回"
+  listen timelimit 10 {
+    has "返回" ? main
+    default ? goodbye
+  }
+}
+procedure checkTraffic {
+  lookup traffic in db:UserInfo
+  say "您的流量余额为", traffic
+  say "如果您还有其他问题，请说返回"
+  listen timelimit 10 {
+    has "返回" ? main
+    default ? goodbye
+  }
+}
+procedure business {
+  say "请问您要办理什么业务？可以选择套餐A或套餐B。"
+  listen timelimit 10 {
+    has "套餐A" ? writeto db:UserInfo:business
+    has "套餐B" ? writeto db:UserInfo:business
+    timeout ? silenceProc
+    default ? defaultProc
+  }
+}
+procedure complain {
+  say "请问您有什么问题需要投诉？"
+  listen timelimit 10 {
+    anything ? writeto complaindb:Complains:content
+    timeout ? silenceProc
+  }
+  say "您的投诉已经记录，我们会尽快处理"
+}
+procedure goodbye {
+  say "感谢您的来电，再会"
+  exit
+}
+procedure silenceProc {
+  say "对不起，我没听清楚，请您再说一遍"
+  listen timelimit 10 {
+    has "话费" ? checkBalance
+    has "流量" ? checkTraffic
+    has "办理" ? business
+    has "投诉" ? complain
+    has "退出" ? goodbye
+    timeout ? goodbye
+    default ? defaultProc
+  }
+}
+procedure defaultProc {
+  say "对不起，我不理解您说的话，您可以说：查话费，查流量，办理业务，投诉，退出"
+  listen timelimit 10 {
+    has "话费" ? checkBalance
+    has "流量" ? checkTraffic
+    has "办理" ? business
+    has "投诉" ? complain
+    has "退出" ? goodbye
+    timeout ? silenceProc
+    default ? goodbye
+  }
+}

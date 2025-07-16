@@ -1,0 +1,74 @@
+\doxysection{String类 参考}
+\hypertarget{classString}{}\label{classString}\index{String@{String}}
+
+
+表示字符串字面量的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 String 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{d5/d58/classString__inherit__graph}
+\end{center}
+\end{figure}
+
+
+String 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d0/de8/classString__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classString_a0256158ffb5985f63b03f8ca2b62238b}{String}} (std\+::string \mbox{\hyperlink{classString_a716c83dcd9e6e746f9ad0d68746f3e37}{s}})
+\item 
+\Hypertarget{classString_a6cb20e246f57a0a66b36f059dabc98e9}\label{classString_a6cb20e246f57a0a66b36f059dabc98e9} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classString_ae952da230bb64085ed873b9cc3a83043}\label{classString_ae952da230bb64085ed873b9cc3a83043} 
+auto {\bfseries get\+String} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classString_a716c83dcd9e6e746f9ad0d68746f3e37}\label{classString_a716c83dcd9e6e746f9ad0d68746f3e37} 
+std\+::string {\bfseries s}
+\begin{DoxyCompactList}\small\item\em 字符串字面量 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示字符串字面量的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classString_a0256158ffb5985f63b03f8ca2b62238b}\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}}
+{\footnotesize\ttfamily \label{classString_a0256158ffb5985f63b03f8ca2b62238b} 
+String\+::\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em s} & 字符串字面量 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{ASTNode类 参考}
+\hypertarget{classASTNode}{}\label{classASTNode}\index{ASTNode@{ASTNode}}
+
+
+抽象语法树结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 ASTNode 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d9f/classASTNode__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classASTNode_abdf575199be1e3acec431cfa4cd1ff51}\label{classASTNode_abdf575199be1e3acec431cfa4cd1ff51} 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+抽象语法树结点 
+
+定义了抽象语法树的结点，所有结点都继承自此类。包含一个accept方法，用于接受visitor。 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\end{DoxyCompactItemize}

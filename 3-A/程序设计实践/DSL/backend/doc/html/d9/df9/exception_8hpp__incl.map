@@ -1,0 +1,9 @@
+<map id="include/exception.hpp" name="include/exception.hpp">
+<area shape="rect" id="Node000001" title="与异常相关的类的定义。" alt="" coords="61,5,226,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,33,70,73,67,68,125,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,79,187,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,31,146,65,141,65,141,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="211,79,270,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,29,215,68,212,72,157,33"/>
+</map>

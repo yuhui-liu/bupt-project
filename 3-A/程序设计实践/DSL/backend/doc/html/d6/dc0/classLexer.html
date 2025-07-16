@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: Lexer类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d6/dc0/classLexer.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../dc/de8/classLexer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Lexer类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>词法分析器类。将字节流转换为 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 序列。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d0/d2e/lexer_8hpp_source.html">lexer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Lexer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d75/classLexer__coll__graph.png" border="0" usemap="#aLexer_coll__map" alt="Collaboration graph"/></div>
+<map name="aLexer_coll__map" id="aLexer_coll__map">
+<area shape="rect" title="词法分析器类。将字节流转换为 Token 序列。" alt="" coords="141,388,198,413"/>
+<area shape="rect" title=" " alt="" coords="31,102,118,127"/>
+<area shape="poly" title=" " alt="" coords="71,141,65,179,61,225,65,276,80,324,93,344,110,361,147,386,144,390,107,365,89,347,75,326,60,277,56,225,59,178,66,140"/>
+<area shape="rect" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。" alt="" coords="112,197,171,223"/>
+<area shape="poly" title=" " alt="" coords="93,137,135,196,131,199,89,140"/>
+<area shape="rect" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" title=" " alt="" coords="77,59,77,102,72,102,72,59"/>
+<area shape="rect" title=" " alt="" coords="90,293,249,318"/>
+<area shape="poly" title=" " alt="" coords="172,332,172,388,167,388,167,332"/>
+<area shape="poly" title=" " alt="" coords="151,235,168,292,163,293,146,237"/>
+<area shape="rect" title=" " alt="" coords="273,285,431,325"/>
+<area shape="poly" title=" " alt="" coords="304,334,193,390,191,386,302,329"/>
+<area shape="rect" title=" " alt="" coords="289,197,415,223"/>
+<area shape="poly" title=" " alt="" coords="355,236,355,285,349,285,349,236"/>
+<area shape="rect" title=" " alt="" coords="269,95,435,135"/>
+<area shape="poly" title=" " alt="" coords="355,149,355,197,349,197,349,149"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6e0ea7620ccc8cedf52f0dd8feace5c3" id="r_a6e0ea7620ccc8cedf52f0dd8feace5c3"><td class="memItemLeft" align="right" valign="top"><a id="a6e0ea7620ccc8cedf52f0dd8feace5c3" name="a6e0ea7620ccc8cedf52f0dd8feace5c3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Lexer</b> (std::string)</td></tr>
+<tr class="memdesc:a6e0ea7620ccc8cedf52f0dd8feace5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个新的 <a class="el" href="../../d6/dc0/classLexer.html" title="词法分析器类。将字节流转换为 Token 序列。">Lexer</a> 对象。 <br /></td></tr>
+<tr class="separator:a6e0ea7620ccc8cedf52f0dd8feace5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c62781b92c4820d6f1143c0e074e61c" id="r_a3c62781b92c4820d6f1143c0e074e61c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c62781b92c4820d6f1143c0e074e61c">scan</a> ()</td></tr>
+<tr class="memdesc:a3c62781b92c4820d6f1143c0e074e61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">扫描输入源代码并生成标记。  <br /></td></tr>
+<tr class="separator:a3c62781b92c4820d6f1143c0e074e61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5873b01e515aa83484054e641297fa" id="r_a4c5873b01e515aa83484054e641297fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c5873b01e515aa83484054e641297fa">printTokens</a> ()</td></tr>
+<tr class="memdesc:a4c5873b01e515aa83484054e641297fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">打印 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 流。  <br /></td></tr>
+<tr class="separator:a4c5873b01e515aa83484054e641297fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e14642fb0e83f4978db1c3deea6c8e1" id="r_a0e14642fb0e83f4978db1c3deea6c8e1"><td class="memItemLeft" align="right" valign="top"><a id="a0e14642fb0e83f4978db1c3deea6c8e1" name="a0e14642fb0e83f4978db1c3deea6c8e1"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>getTokens</b> () const -&gt; std::vector&lt; <a class="el" href="../../d2/d6e/classToken.html">Token</a> &gt;</td></tr>
+<tr class="memdesc:a0e14642fb0e83f4978db1c3deea6c8e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 流 <br /></td></tr>
+<tr class="separator:a0e14642fb0e83f4978db1c3deea6c8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ae8edcbfeea2de068a3bacbcde21632c6" id="r_ae8edcbfeea2de068a3bacbcde21632c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8edcbfeea2de068a3bacbcde21632c6">scanNextToken</a> ()</td></tr>
+<tr class="memdesc:ae8edcbfeea2de068a3bacbcde21632c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">扫描下一个标记（Token）。  <br /></td></tr>
+<tr class="separator:ae8edcbfeea2de068a3bacbcde21632c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa956caa52a392f8a59a5a237f9160957" id="r_aa956caa52a392f8a59a5a237f9160957"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa956caa52a392f8a59a5a237f9160957">getNextChar</a> () -&gt; char</td></tr>
+<tr class="memdesc:aa956caa52a392f8a59a5a237f9160957"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取下一个字符  <br /></td></tr>
+<tr class="separator:aa956caa52a392f8a59a5a237f9160957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e976cbb6f8dc7fd1f8975570fd7bb1f" id="r_a1e976cbb6f8dc7fd1f8975570fd7bb1f"><td class="memItemLeft" align="right" valign="top"><a id="a1e976cbb6f8dc7fd1f8975570fd7bb1f" name="a1e976cbb6f8dc7fd1f8975570fd7bb1f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>backward</b> ()</td></tr>
+<tr class="separator:a1e976cbb6f8dc7fd1f8975570fd7bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacac8d604e5528b8b4d972134d74a95" id="r_afacac8d604e5528b8b4d972134d74a95"><td class="memItemLeft" align="right" valign="top"><a id="afacac8d604e5528b8b4d972134d74a95" name="afacac8d604e5528b8b4d972134d74a95"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addToken</b> (const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;)</td></tr>
+<tr class="separator:afacac8d604e5528b8b4d972134d74a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382252090d3d17a0e51c445d5660a258" id="r_a382252090d3d17a0e51c445d5660a258"><td class="memItemLeft" align="right" valign="top"><a id="a382252090d3d17a0e51c445d5660a258" name="a382252090d3d17a0e51c445d5660a258"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addToken</b> (const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a382252090d3d17a0e51c445d5660a258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232608c65bb6bd52c6aa9d3a32056286" id="r_a232608c65bb6bd52c6aa9d3a32056286"><td class="memItemLeft" align="right" valign="top"><a id="a232608c65bb6bd52c6aa9d3a32056286" name="a232608c65bb6bd52c6aa9d3a32056286"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>processString</b> ()</td></tr>
+<tr class="separator:a232608c65bb6bd52c6aa9d3a32056286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d34416cef6b0d46b828e67b2d4cb9d" id="r_a27d34416cef6b0d46b828e67b2d4cb9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27d34416cef6b0d46b828e67b2d4cb9d">processNumber</a> ()</td></tr>
+<tr class="memdesc:a27d34416cef6b0d46b828e67b2d4cb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理数字字面量的词法分析函数。  <br /></td></tr>
+<tr class="separator:a27d34416cef6b0d46b828e67b2d4cb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983c6984a12571f871dd4fffd2fbb16c" id="r_a983c6984a12571f871dd4fffd2fbb16c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a983c6984a12571f871dd4fffd2fbb16c">processKeywordsAndIdentifiers</a> ()</td></tr>
+<tr class="memdesc:a983c6984a12571f871dd4fffd2fbb16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理关键字和标识符的词法分析函数。  <br /></td></tr>
+<tr class="separator:a983c6984a12571f871dd4fffd2fbb16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a00ce5900a7f802a467082f1ac45a79" id="r_a4a00ce5900a7f802a467082f1ac45a79"><td class="memItemLeft" align="right" valign="top"><a id="a4a00ce5900a7f802a467082f1ac45a79" name="a4a00ce5900a7f802a467082f1ac45a79"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>isEnd</b> () const -&gt; bool</td></tr>
+<tr class="memdesc:a4a00ce5900a7f802a467082f1ac45a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是否到达源代码末尾 <br /></td></tr>
+<tr class="separator:a4a00ce5900a7f802a467082f1ac45a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a08540641066244ccf50cadda4b51db46" id="r_a08540641066244ccf50cadda4b51db46"><td class="memItemLeft" align="right" valign="top"><a id="a08540641066244ccf50cadda4b51db46" name="a08540641066244ccf50cadda4b51db46"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>src</b></td></tr>
+<tr class="memdesc:a08540641066244ccf50cadda4b51db46"><td class="mdescLeft">&#160;</td><td class="mdescRight">源代码字符串。 <br /></td></tr>
+<tr class="separator:a08540641066244ccf50cadda4b51db46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc224cc460a688deb4655f88ccd1bbb" id="r_adfc224cc460a688deb4655f88ccd1bbb"><td class="memItemLeft" align="right" valign="top"><a id="adfc224cc460a688deb4655f88ccd1bbb" name="adfc224cc460a688deb4655f88ccd1bbb"></a>
+std::vector&lt; <a class="el" href="../../d2/d6e/classToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tokens</b></td></tr>
+<tr class="memdesc:adfc224cc460a688deb4655f88ccd1bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 序列。 <br /></td></tr>
+<tr class="separator:adfc224cc460a688deb4655f88ccd1bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f66b89537ceb92b00aca7eab68fa4c6" id="r_a0f66b89537ceb92b00aca7eab68fa4c6"><td class="memItemLeft" align="right" valign="top"><a id="a0f66b89537ceb92b00aca7eab68fa4c6" name="a0f66b89537ceb92b00aca7eab68fa4c6"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> = 0</td></tr>
+<tr class="memdesc:a0f66b89537ceb92b00aca7eab68fa4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前扫描起始位置。 <br /></td></tr>
+<tr class="separator:a0f66b89537ceb92b00aca7eab68fa4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5075d1e48e4860130b3575c8ee52a19" id="r_ac5075d1e48e4860130b3575c8ee52a19"><td class="memItemLeft" align="right" valign="top"><a id="ac5075d1e48e4860130b3575c8ee52a19" name="ac5075d1e48e4860130b3575c8ee52a19"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>current</b> = 0</td></tr>
+<tr class="memdesc:ac5075d1e48e4860130b3575c8ee52a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前扫描位置。 <br /></td></tr>
+<tr class="separator:ac5075d1e48e4860130b3575c8ee52a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f4a53224e8c5116693bffb3e280b5e" id="r_af4f4a53224e8c5116693bffb3e280b5e"><td class="memItemLeft" align="right" valign="top"><a id="af4f4a53224e8c5116693bffb3e280b5e" name="af4f4a53224e8c5116693bffb3e280b5e"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>line_num</b> = 1</td></tr>
+<tr class="memdesc:af4f4a53224e8c5116693bffb3e280b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前行号。 <br /></td></tr>
+<tr class="separator:af4f4a53224e8c5116693bffb3e280b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:ad11f0992738b397639a5b46845e65826" id="r_ad11f0992738b397639a5b46845e65826"><td class="memItemLeft" align="right" valign="top">static const std::map&lt; std::string_view, <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad11f0992738b397639a5b46845e65826">KEYWORDS</a></td></tr>
+<tr class="memdesc:ad11f0992738b397639a5b46845e65826"><td class="mdescLeft">&#160;</td><td class="mdescRight">关键字表。  <br /></td></tr>
+<tr class="separator:ad11f0992738b397639a5b46845e65826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>词法分析器类。将字节流转换为 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 序列。 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="aa956caa52a392f8a59a5a237f9160957" name="aa956caa52a392f8a59a5a237f9160957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa956caa52a392f8a59a5a237f9160957">&#9670;&#160;</a></span>getNextChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Lexer::getNextChar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取下一个字符 </p>
+<p>该函数从源代码字符串中获取当前位置的字符，并将当前位置向前移动一位。</p>
+<dl class="section return"><dt>返回</dt><dd>char 返回当前位置的字符 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_aa956caa52a392f8a59a5a237f9160957_icgraph.png" border="0" usemap="#ad6/dc0/classLexer_aa956caa52a392f8a59a5a237f9160957_icgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_aa956caa52a392f8a59a5a237f9160957_icgraph" id="ad6/dc0/classLexer_aa956caa52a392f8a59a5a237f9160957_icgraph">
+<area shape="rect" title="获取下一个字符" alt="" coords="609,70,756,95"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a983c6984a12571f871dd4fffd2fbb16c" title="处理关键字和标识符的词法分析函数。" alt="" coords="359,5,561,45"/>
+<area shape="poly" title=" " alt="" coords="619,69,537,48,539,43,620,64"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#ae8edcbfeea2de068a3bacbcde21632c6" title="扫描下一个标记（Token）。" alt="" coords="148,70,311,95"/>
+<area shape="poly" title=" " alt="" coords="595,85,311,85,311,80,595,80"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a27d34416cef6b0d46b828e67b2d4cb9d" title="处理数字字面量的词法分析函数。" alt="" coords="377,121,543,146"/>
+<area shape="poly" title=" " alt="" coords="613,101,517,123,516,118,612,96"/>
+<area shape="poly" title=" " alt="" coords="366,51,282,73,281,67,365,46"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a3c62781b92c4820d6f1143c0e074e61c" title="扫描输入源代码并生成标记。" alt="" coords="5,70,100,95"/>
+<area shape="poly" title=" " alt="" coords="134,85,100,85,100,80,134,80"/>
+<area shape="poly" title=" " alt="" coords="387,120,287,98,288,93,388,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c5873b01e515aa83484054e641297fa" name="a4c5873b01e515aa83484054e641297fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5873b01e515aa83484054e641297fa">&#9670;&#160;</a></span>printTokens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::printTokens </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>打印 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 流。 </p>
+<p>该函数用于打印 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 流中的所有 Token。 每个 <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a> 的格式为：行号 类型 值。 </p>
+
+</div>
+</div>
+<a id="a983c6984a12571f871dd4fffd2fbb16c" name="a983c6984a12571f871dd4fffd2fbb16c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983c6984a12571f871dd4fffd2fbb16c">&#9670;&#160;</a></span>processKeywordsAndIdentifiers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::processKeywordsAndIdentifiers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理关键字和标识符的词法分析函数。 </p>
+<p>该函数用于处理源代码中的关键字和标识符。它会读取字符直到标识符结束， 并将其作为一个关键字或标识符类型的Token添加到Token流中。</p>
+<p>具体步骤如下：</p><ol type="1">
+<li>读取连续的字母字符，直到遇到非字母字符或到达源代码末尾。</li>
+<li>将读取到的字符串作为关键字或标识符类型的Token添加到Token流中。</li>
+</ol>
+<dl class="section note"><dt>注解</dt><dd>该函数假设源代码中的关键字和标识符格式正确，不进行格式校验。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_cgraph.png" border="0" usemap="#ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_cgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_cgraph" id="ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_cgraph">
+<area shape="rect" title="处理关键字和标识符的词法分析函数。" alt="" coords="5,23,208,63"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="256,5,403,31"/>
+<area shape="poly" title=" " alt="" coords="208,29,242,25,242,31,209,34"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="279,55,379,80"/>
+<area shape="poly" title=" " alt="" coords="209,52,265,58,265,63,208,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_icgraph.png" border="0" usemap="#ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_icgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_icgraph" id="ad6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_icgraph">
+<area shape="rect" title="处理关键字和标识符的词法分析函数。" alt="" coords="359,5,561,45"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#ae8edcbfeea2de068a3bacbcde21632c6" title="扫描下一个标记（Token）。" alt="" coords="148,13,311,38"/>
+<area shape="poly" title=" " alt="" coords="345,28,311,28,311,23,345,23"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a3c62781b92c4820d6f1143c0e074e61c" title="扫描输入源代码并生成标记。" alt="" coords="5,13,100,38"/>
+<area shape="poly" title=" " alt="" coords="134,28,100,28,100,23,134,23"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a27d34416cef6b0d46b828e67b2d4cb9d" name="a27d34416cef6b0d46b828e67b2d4cb9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d34416cef6b0d46b828e67b2d4cb9d">&#9670;&#160;</a></span>processNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::processNumber </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理数字字面量的词法分析函数。 </p>
+<p>该函数用于处理源代码中的数字字面量，包括整数和浮点数。它会读取字符直到数字结束， 并将其作为一个数字类型的Token添加到Token流中。</p>
+<p>具体步骤如下：</p><ol type="1">
+<li>读取连续的数字字符，直到遇到非数字字符或到达源代码末尾。</li>
+<li>如果遇到小数点，继续读取后续的数字字符，处理浮点数。</li>
+<li>将读取到的数字字面量作为Token添加到Token流中。</li>
+</ol>
+<dl class="section note"><dt>注解</dt><dd>该函数假设源代码中的数字字面量格式正确，不进行格式校验。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_cgraph.png" border="0" usemap="#ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_cgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_cgraph" id="ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_cgraph">
+<area shape="rect" title="处理数字字面量的词法分析函数。" alt="" coords="5,31,172,56"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="220,5,367,31"/>
+<area shape="poly" title=" " alt="" coords="172,30,206,26,206,31,172,36"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="243,55,343,80"/>
+<area shape="poly" title=" " alt="" coords="172,50,230,57,229,63,172,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_icgraph.png" border="0" usemap="#ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_icgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_icgraph" id="ad6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_icgraph">
+<area shape="rect" title="处理数字字面量的词法分析函数。" alt="" coords="359,5,525,31"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#ae8edcbfeea2de068a3bacbcde21632c6" title="扫描下一个标记（Token）。" alt="" coords="148,5,311,31"/>
+<area shape="poly" title=" " alt="" coords="345,21,311,21,311,15,345,15"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a3c62781b92c4820d6f1143c0e074e61c" title="扫描输入源代码并生成标记。" alt="" coords="5,5,100,31"/>
+<area shape="poly" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c62781b92c4820d6f1143c0e074e61c" name="a3c62781b92c4820d6f1143c0e074e61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c62781b92c4820d6f1143c0e074e61c">&#9670;&#160;</a></span>scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::scan </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>扫描输入源代码并生成标记。 </p>
+<p>该函数从当前位置开始迭代输入源代码，并扫描下一个标记，直到到达输入的末尾。 一旦所有标记都被扫描完毕，将添加一个EOF（文件结束）标记以表示输入的结束。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_a3c62781b92c4820d6f1143c0e074e61c_cgraph.png" border="0" usemap="#ad6/dc0/classLexer_a3c62781b92c4820d6f1143c0e074e61c_cgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_a3c62781b92c4820d6f1143c0e074e61c_cgraph" id="ad6/dc0/classLexer_a3c62781b92c4820d6f1143c0e074e61c_cgraph">
+<area shape="rect" title="扫描输入源代码并生成标记。" alt="" coords="5,5,100,31"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="633,31,733,56"/>
+<area shape="poly" title=" " alt="" coords="100,13,301,9,431,11,562,19,620,28,619,33,561,25,430,17,301,14,100,18"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#ae8edcbfeea2de068a3bacbcde21632c6" title="扫描下一个标记（Token）。" alt="" coords="148,56,311,81"/>
+<area shape="poly" title=" " alt="" coords="99,28,172,50,171,55,97,33"/>
+<area shape="poly" title=" " alt="" coords="282,53,358,41,498,34,619,37,619,42,498,40,359,46,283,59"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="609,113,756,139"/>
+<area shape="poly" title=" " alt="" coords="245,80,293,120,325,140,360,155,395,164,432,168,506,166,575,155,631,140,633,145,576,160,507,171,432,173,394,169,358,161,322,145,289,124,242,84"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a983c6984a12571f871dd4fffd2fbb16c" title="处理关键字和标识符的词法分析函数。" alt="" coords="359,106,561,146"/>
+<area shape="poly" title=" " alt="" coords="282,79,367,100,365,105,281,84"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a27d34416cef6b0d46b828e67b2d4cb9d" title="处理数字字面量的词法分析函数。" alt="" coords="377,56,543,81"/>
+<area shape="poly" title=" " alt="" coords="311,66,363,66,363,71,311,71"/>
+<area shape="poly" title=" " alt="" coords="526,103,560,92,639,59,641,64,562,96,528,108"/>
+<area shape="poly" title=" " alt="" coords="562,123,595,123,595,129,562,129"/>
+<area shape="poly" title=" " alt="" coords="544,57,619,48,619,53,544,62"/>
+<area shape="poly" title=" " alt="" coords="513,79,562,91,621,107,620,112,561,97,512,84"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae8edcbfeea2de068a3bacbcde21632c6" name="ae8edcbfeea2de068a3bacbcde21632c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8edcbfeea2de068a3bacbcde21632c6">&#9670;&#160;</a></span>scanNextToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lexer::scanNextToken </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>扫描下一个标记（Token）。 </p>
+<p>该函数通过读取下一个字符来确定并生成相应的标记（Token）。 根据读取到的字符，执行不同的处理逻辑：</p><ul>
+<li>空格、制表符和回车符：跳过，不做处理。</li>
+<li>换行符：增加行号计数。</li>
+<li>特定符号（如 '=', ',', '?', '{', '}', ':'）：添加相应的标记。</li>
+<li>双引号：处理字符串。</li>
+<li>井号：跳过注释内容，直到行尾。</li>
+<li>数字：处理数字。</li>
+<li>字母：处理关键字和标识符。</li>
+<li>其他字符：抛出未知字符异常。</li>
+</ul>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../dd/d1e/classLexerException.html" title="词法分析异常">LexerException</a></td><td>当遇到未知字符时抛出异常。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_cgraph.png" border="0" usemap="#ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_cgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_cgraph" id="ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_cgraph">
+<area shape="rect" title="扫描下一个标记（Token）。" alt="" coords="5,66,168,92"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="467,37,613,62"/>
+<area shape="poly" title=" " alt="" coords="106,64,154,37,184,25,215,15,272,5,317,3,419,15,488,30,487,36,418,20,317,9,272,10,217,20,186,30,157,42,109,69"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="490,94,590,120"/>
+<area shape="poly" title=" " alt="" coords="112,89,159,112,217,130,273,139,317,140,418,130,476,120,477,125,419,135,317,145,272,144,215,135,157,117,110,94"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a983c6984a12571f871dd4fffd2fbb16c" title="处理关键字和标识符的词法分析函数。" alt="" coords="216,30,419,70"/>
+<area shape="poly" title=" " alt="" coords="168,66,202,62,203,67,169,71"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a27d34416cef6b0d46b828e67b2d4cb9d" title="处理数字字面量的词法分析函数。" alt="" coords="234,94,401,120"/>
+<area shape="poly" title=" " alt="" coords="169,86,220,93,220,98,168,92"/>
+<area shape="poly" title=" " alt="" coords="419,47,452,47,452,52,419,52"/>
+<area shape="poly" title=" " alt="" coords="396,67,477,88,476,93,395,72"/>
+<area shape="poly" title=" " alt="" coords="369,92,418,79,477,63,479,69,419,84,370,97"/>
+<area shape="poly" title=" " alt="" coords="401,104,476,104,476,110,401,110"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_icgraph.png" border="0" usemap="#ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_icgraph" alt=""/></div>
+<map name="ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_icgraph" id="ad6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_icgraph">
+<area shape="rect" title="扫描下一个标记（Token）。" alt="" coords="148,5,311,31"/>
+<area shape="rect" href="../../d6/dc0/classLexer.html#a3c62781b92c4820d6f1143c0e074e61c" title="扫描输入源代码并生成标记。" alt="" coords="5,5,100,31"/>
+<area shape="poly" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad11f0992738b397639a5b46845e65826" name="ad11f0992738b397639a5b46845e65826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11f0992738b397639a5b46845e65826">&#9670;&#160;</a></span>KEYWORDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt;std::string_view, <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a>&gt; Lexer::KEYWORDS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{</div>
+<div class="line">      {<span class="stringliteral">&quot;has&quot;</span>, TokenType::HAS},         {<span class="stringliteral">&quot;procedure&quot;</span>, TokenType::PROCEDURE}, {<span class="stringliteral">&quot;say&quot;</span>, TokenType::SAY},</div>
+<div class="line">      {<span class="stringliteral">&quot;listen&quot;</span>, TokenType::LISTEN},   {<span class="stringliteral">&quot;timelimit&quot;</span>, TokenType::TIMELIMIT}, {<span class="stringliteral">&quot;timeout&quot;</span>, TokenType::TIMEOUT},</div>
+<div class="line">      {<span class="stringliteral">&quot;default&quot;</span>, TokenType::DEFAULT}, {<span class="stringliteral">&quot;lookup&quot;</span>, TokenType::LOOKUP},       {<span class="stringliteral">&quot;in&quot;</span>, TokenType::IN},</div>
+<div class="line">      {<span class="stringliteral">&quot;writeto&quot;</span>, TokenType::WRITETO}, {<span class="stringliteral">&quot;exit&quot;</span>, TokenType::EXIT},           {<span class="stringliteral">&quot;anything&quot;</span>, TokenType::ANYTHING}}</div>
+</div><!-- fragment -->
+<p>关键字表。 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="../../d0/d2e/lexer_8hpp_source.html">lexer.hpp</a></li>
+<li>src/<a class="el" href="../../d4/d79/lexer_8cpp.html">lexer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/dc0/classLexer.html">Lexer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+\doxysection{network.\+hpp}
+\hypertarget{network_8hpp_source}{}\label{network_8hpp_source}\index{include/network.hpp@{include/network.hpp}}
+\mbox{\hyperlink{network_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ NETWORK\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ NETWORK\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <boost/beast/core.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <boost/beast/core/error.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <boost/beast/websocket.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <boost/beast/websocket/stream.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ast_8hpp}{ast.hpp}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{interpreter_8hpp}{interpreter.hpp}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }beast\ =\ boost::beast;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ from\ <boost/beast.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }websocket\ =\ beast::websocket;\ \ \textcolor{comment}{//\ from\ <boost/beast/websocket.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }net\ =\ boost::asio;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ from\ <boost/asio.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }tcp\ =\ boost::asio::ip::tcp;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }MessageQueue\ =\ std::deque<std::string>;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebSocketServer}{WebSocketServer}}\ \{}
+\DoxyCodeLine{00037\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classWebSocketServer_a7edd3ade91361f43e9b7b10c2f86ac75}{WebSocketServer}}(net::io\_context\&,\ \textcolor{keyword}{const}\ tcp::endpoint\&,\ std::shared\_ptr<Program>,\ std::map<std::string,\ std::string>\&,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::size\_t>\&);}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketServer_a2c749866a6dbd92e4b54a422d1b58de9}{run}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e}{doAccept}}();}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketServer_ae675bf0cca76459e3f9c7747b192145f}{fail}}(\textcolor{keyword}{const}\ beast::error\_code\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00046\ \ \ tcp::acceptor\ \mbox{\hyperlink{classWebSocketServer_af0fe6d9d438d6e0b08c334548d2a2e9b}{acceptor}};}
+\DoxyCodeLine{00048\ \ \ std::shared\_ptr<Program>\ \mbox{\hyperlink{classWebSocketServer_a8e7cf0ac7590ab82362b81663bdd5bd8}{program}};}
+\DoxyCodeLine{00050\ \ \ std::map<std::string,\ std::string>\&\ \mbox{\hyperlink{classWebSocketServer_a4a6b5cdf47ee455c95421de572d68f18}{constants}};}
+\DoxyCodeLine{00052\ \ \ std::map<std::string,\ std::size\_t>\&\ \mbox{\hyperlink{classWebSocketServer_a3117d07d4eb03a30a3b3221d09954ada}{procedures}};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebSocketSession}{WebSocketSession}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<WebSocketSession>\ \{}
+\DoxyCodeLine{00062\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{classWebSocketSession_a07f984d95ba590b509fb414332acf3f4}{WebSocketSession}}(tcp::socket\ socket,\ \textcolor{keyword}{const}\ std::shared\_ptr<Program>\&\ \mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}},\ std::map<std::string,\ std::string>\ c,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::size\_t>\ p)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classWebSocketSession_a2e90735fc4e174aedc0a5b1ea854cfd1}{ws}}(std::move(socket)),\ \mbox{\hyperlink{classWebSocketSession_a7e22b4a0826accfafbda191bb9070d07}{interpreter}}(\mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}},\ \textcolor{stringliteral}{"{}browser"{}},\ std::move(c),\ std::move(p)),\ \mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}}(\mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}})\ \{\}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_aa60a520432526e90b74fd97713469a56}{run}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2}{onAccept}}(\textcolor{keyword}{const}\ beast::error\_code\&);}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997}{doRead}}();}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca}{onRead}}(\textcolor{keyword}{const}\ beast::error\_code\&,\ std::size\_t);}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d}{onWrite}}(\textcolor{keyword}{const}\ beast::error\_code\&,\ std::size\_t);}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_afa424ac9c7515c33ce8cc1baaeccfeb5}{fail}}(\textcolor{keyword}{const}\ beast::error\_code\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00079\ \ \ websocket::stream<tcp::socket>\ \mbox{\hyperlink{classWebSocketSession_a2e90735fc4e174aedc0a5b1ea854cfd1}{ws}};}
+\DoxyCodeLine{00081\ \ \ beast::flat\_buffer\ \mbox{\hyperlink{classWebSocketSession_a276a9b0080cc1feb67618d82a1d0161c}{buffer}};}
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{classInterpreter}{Interpreter}}\ \mbox{\hyperlink{classWebSocketSession_a7e22b4a0826accfafbda191bb9070d07}{interpreter}};}
+\DoxyCodeLine{00085\ \ \ std::shared\_ptr<Program>\ \mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}};}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWebSocketSession_a2d685b67a6ef95b4e53b726e89df56db}{send}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00088\ \ \ MessageQueue\ \mbox{\hyperlink{classWebSocketSession_a795337cc2dd1334df3002ed1202be8c2}{write\_msgs}};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ NETWORK\_HPP}}
+
+\end{DoxyCode}

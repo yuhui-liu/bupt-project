@@ -1,0 +1,554 @@
+\doxysection{Interpreter类 参考}
+\hypertarget{classInterpreter}{}\label{classInterpreter}\index{Interpreter@{Interpreter}}
+
+
+解释器类。解释程序并执行。  
+
+
+
+
+{\ttfamily \#include $<$interpreter.\+hpp$>$}
+
+
+
+类 Interpreter 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{d2/dec/classInterpreter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Interpreter 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d5c/classInterpreter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInterpreter_aeb518e633c77d52fdb39d932fe99df29}{Interpreter}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ \mbox{\hyperlink{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}{program}}, std\+::string \mbox{\hyperlink{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}{mode}}, std\+::map$<$ std\+::string, std\+::string $>$ c, std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ p)
+\begin{DoxyCompactList}\small\item\em 构造一个新的 \doxylink{classInterpreter}{Interpreter} 对象。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{visit}} (const \mbox{\hyperlink{classProgram}{Program}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问程序节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a68e3617359a3ee32b32cbafe6c51bc27}{visit}} (const \mbox{\hyperlink{classConstantDefine}{Constant\+Define}} \&) const override
+\item 
+void \mbox{\hyperlink{classInterpreter_a7b61633fe7f29930c6bcf9f3536aa1ca}{visit}} (const \mbox{\hyperlink{classProcedure}{Procedure}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问过程节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3}{visit}} (const \mbox{\hyperlink{classSay}{Say}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Say节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a896f4210d4266df9230882a915136f96}{visit}} (const \mbox{\hyperlink{classListen}{Listen}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Listen节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a2a8806650393c36a7a3a99054c8e51e2}{visit}} (const \mbox{\hyperlink{classClause}{Clause}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Clause节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a349c524fe4b7fe8f3b0e59397d26dba0}{visit}} (const \mbox{\hyperlink{classLookup}{Lookup}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Lookup节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_ace94a23d08476ad3eb37d03a1ebb47ed}{visit}} (const \mbox{\hyperlink{classExit}{Exit}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Exit节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a3b97da51e60edcf7bbe918b3cb8447f1}{visit}} (const \mbox{\hyperlink{classJump}{Jump}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Jump节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a2c3ffcab9e4863807cd6d50206d66b92}{visit}} (const \mbox{\hyperlink{classIdentifier}{Identifier}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+Identifier节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a126f1143cec9d5e62a84f7ce68399d8f}{visit}} (const \mbox{\hyperlink{classString}{String}} \&) const override
+\begin{DoxyCompactList}\small\item\em 访问\+String节点 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_ac47bcb0f1ba98246c48b6c17c92e2fe1}\label{classInterpreter_ac47bcb0f1ba98246c48b6c17c92e2fe1} 
+void {\bfseries set\+Send} (std\+::function$<$ void(const std\+::string \&)$>$ s)
+\begin{DoxyCompactList}\small\item\em 设置 send 回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_aed44e319d6acc68ec728467d667bbb8f}{set\+Input\+From\+Network}} (const std\+::string \&input) const
+\begin{DoxyCompactList}\small\item\em 设置网络输入 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a70c449dedd4b03a3b4d69d2c59b1f341}\label{classInterpreter_a70c449dedd4b03a3b4d69d2c59b1f341} 
+void {\bfseries set\+Uid} (const int user\+Id)
+\begin{DoxyCompactList}\small\item\em 设置用户id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classVisitor}{Visitor}}}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba}{clause\+Action}} (const \mbox{\hyperlink{classClause}{Clause}} \&clause) const
+\begin{DoxyCompactList}\small\item\em 执行\+Clause节点的操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_ad725f641a5cf052bac767047cbf7b493}{get\+Cli\+Input}} () const
+\begin{DoxyCompactList}\small\item\em 获取\+CLI输入 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53}{output}} () const
+\begin{DoxyCompactList}\small\item\em 输出缓冲区内容 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static auto \mbox{\hyperlink{classInterpreter_af4cd87a6447218bec8eda3e52aab9014}{get\+Id\+Or\+String}} (const ASTNode\+Ptr \&p) -\/$>$ std\+::string
+\begin{DoxyCompactList}\small\item\em 获取标识符或字符串 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classInterpreter_aec40dd04f71e570b781d52c5918c6d45}\label{classInterpreter_aec40dd04f71e570b781d52c5918c6d45} 
+bool {\bfseries clause\+\_\+accepted} \{false\}
+\begin{DoxyCompactList}\small\item\em 标识当前\+Clause是否被接受 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a22731a37463e70b822ba79e6ecbbb125}\label{classInterpreter_a22731a37463e70b822ba79e6ecbbb125} 
+std\+::string {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em 当前运行模式 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_aa4e492b8c13f2cf700dd0ad7abb2e28d}\label{classInterpreter_aa4e492b8c13f2cf700dd0ad7abb2e28d} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries constants}
+\begin{DoxyCompactList}\small\item\em 常量表 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a6418c92af2a867770770a7687d57ee03}\label{classInterpreter_a6418c92af2a867770770a7687d57ee03} 
+std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ {\bfseries procedures}
+\begin{DoxyCompactList}\small\item\em 过程表 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a46a354b5759e7d83428e4687cdbb928a}\label{classInterpreter_a46a354b5759e7d83428e4687cdbb928a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ {\bfseries program}
+\begin{DoxyCompactList}\small\item\em 待解释的程序 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a22c8f851b6fb4d7192a9733b34f1ea12}\label{classInterpreter_a22c8f851b6fb4d7192a9733b34f1ea12} 
+std\+::string {\bfseries input\+\_\+buffer}
+\begin{DoxyCompactList}\small\item\em 输入缓冲区 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a3c51640a9779576fd1a289ad9a84460e}\label{classInterpreter_a3c51640a9779576fd1a289ad9a84460e} 
+bool {\bfseries input\+\_\+received} \{false\}
+\begin{DoxyCompactList}\small\item\em 收到输入标志 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_adb14f17c7f0015fb5335f2028b47bc96}\label{classInterpreter_adb14f17c7f0015fb5335f2028b47bc96} 
+bool {\bfseries real\+\_\+input\+\_\+received} \{false\}
+\begin{DoxyCompactList}\small\item\em 真实输入接收标志，用于同步时防止混淆 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a6cc3fd74480c5d47737dc57d4413c9db}\label{classInterpreter_a6cc3fd74480c5d47737dc57d4413c9db} 
+std\+::atomic$<$ bool $>$ {\bfseries is\+\_\+reading} \{false\}
+\begin{DoxyCompactList}\small\item\em 正在读取输入标志 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a81322f808ca6c8b09d1840734c2eb3ce}\label{classInterpreter_a81322f808ca6c8b09d1840734c2eb3ce} 
+std\+::mutex {\bfseries mtx}
+\begin{DoxyCompactList}\small\item\em 互斥量，用于保护输入缓冲区 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a18740eabfc9b2b639050b233c78b58ee}\label{classInterpreter_a18740eabfc9b2b639050b233c78b58ee} 
+std\+::condition\+\_\+variable {\bfseries cv}
+\begin{DoxyCompactList}\small\item\em 条件变量，用于等待输入 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_ab14e1805c380db7d09e245ff5a9dcbac}\label{classInterpreter_ab14e1805c380db7d09e245ff5a9dcbac} 
+std\+::string {\bfseries output\+\_\+buffer}
+\begin{DoxyCompactList}\small\item\em 输出缓冲区 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a39d37390dea404d834d2bc1f967f16e3}\label{classInterpreter_a39d37390dea404d834d2bc1f967f16e3} 
+std\+::map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSQLiteDB}{SQLite\+DB}} $>$ $>$ {\bfseries dbs}
+\begin{DoxyCompactList}\small\item\em 数据库连接 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_a2e4c676d785488218fa25420645223f9}\label{classInterpreter_a2e4c676d785488218fa25420645223f9} 
+std\+::function$<$ void(const std\+::string \&)$>$ {\bfseries send}
+\begin{DoxyCompactList}\small\item\em 回调函数，用于向网络发送数据 \end{DoxyCompactList}\item 
+\Hypertarget{classInterpreter_af5252a94f72103259e3597b7d2776a04}\label{classInterpreter_af5252a94f72103259e3597b7d2776a04} 
+int {\bfseries uid} \{DEFAULTUID\}
+\begin{DoxyCompactList}\small\item\em 用户id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classInterpreter_a810b89e8d39cf8a4a1f44b67588a2f08}\label{classInterpreter_a810b89e8d39cf8a4a1f44b67588a2f08} 
+static constexpr int {\bfseries DEFAULTUID} = 101
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+解释器类。解释程序并执行。 
+
+解释器类，继承自 \doxylink{classVisitor}{Visitor} 类，用于解释程序并执行。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classInterpreter_aeb518e633c77d52fdb39d932fe99df29}\index{Interpreter@{Interpreter}!Interpreter@{Interpreter}}
+\index{Interpreter@{Interpreter}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{Interpreter()}{Interpreter()}}
+{\footnotesize\ttfamily \label{classInterpreter_aeb518e633c77d52fdb39d932fe99df29} 
+Interpreter\+::\+Interpreter (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$}]{program}{, }\item[{std\+::string}]{mode}{, }\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{c}{, }\item[{std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造一个新的 \doxylink{classInterpreter}{Interpreter} 对象。 
+
+
+\begin{DoxyParams}{参数}
+{\em program} & 待解释的程序。 \\
+\hline
+{\em mode} & 运行模式。可能的值为 "{}cli"{} 或 "{}browser"{}。 \\
+\hline
+{\em c} & 常量表。 \\
+\hline
+{\em p} & 过程表。 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba}\index{Interpreter@{Interpreter}!clauseAction@{clauseAction}}
+\index{clauseAction@{clauseAction}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{clauseAction()}{clauseAction()}}
+{\footnotesize\ttfamily \label{classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba} 
+void Interpreter\+::clause\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClause}{Clause}} \&}]{clause}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+执行\+Clause节点的操作 
+
+根据\+Clause节点的类型执行相应的操作。
+\begin{DoxyItemize}
+\item 如果是\+JUMP类型，则跳转到指定的过程。
+\item 如果是\+WRITETO类型，则将输入写入指定的数据库。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{参数}
+{\em clause} & 要执行操作的\+Clause节点\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果指定的过程不存在。 \\
+\hline
+\end{DoxyExceptions}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{dd/dea/classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_ad725f641a5cf052bac767047cbf7b493}\index{Interpreter@{Interpreter}!getCliInput@{getCliInput}}
+\index{getCliInput@{getCliInput}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{getCliInput()}{getCliInput()}}
+{\footnotesize\ttfamily \label{classInterpreter_ad725f641a5cf052bac767047cbf7b493} 
+void Interpreter\+::get\+Cli\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+获取\+CLI输入 
+
+在新的线程中尝试获取\+CLI输入，并将其存储到输入缓冲区。 得到输入后，设置输入接收标志为true，并通知等待的cv。 如果有之前的输入正在读取，则不再获取输入。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dd/dea/classInterpreter_ad725f641a5cf052bac767047cbf7b493_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_af4cd87a6447218bec8eda3e52aab9014}\index{Interpreter@{Interpreter}!getIdOrString@{getIdOrString}}
+\index{getIdOrString@{getIdOrString}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{getIdOrString()}{getIdOrString()}}
+{\footnotesize\ttfamily \label{classInterpreter_af4cd87a6447218bec8eda3e52aab9014} 
+auto Interpreter\+::get\+Id\+Or\+String (\begin{DoxyParamCaption}\item[{const ASTNode\+Ptr \&}]{p}{}\end{DoxyParamCaption}) -\/$>$ std\+::string\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+获取标识符或字符串 
+
+根据节点的类型返回标识符或字符串。
+
+
+\begin{DoxyParams}{参数}
+{\em p} & 要获取的节点\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+标识符或字符串 
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dea/classInterpreter_af4cd87a6447218bec8eda3e52aab9014_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53}\index{Interpreter@{Interpreter}!output@{output}}
+\index{output@{output}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53} 
+void Interpreter\+::output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+输出缓冲区内容 
+
+针对不同的模式，调用不同的方法输出缓冲区内容。
+\begin{DoxyItemize}
+\item 如果是\+CLI模式，则直接输出到标准输出。
+\item 如果是浏览器模式，则调用send回调函数发送到浏览器。 
+\end{DoxyItemize}这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{dd/dea/classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_aed44e319d6acc68ec728467d667bbb8f}\index{Interpreter@{Interpreter}!setInputFromNetwork@{setInputFromNetwork}}
+\index{setInputFromNetwork@{setInputFromNetwork}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{setInputFromNetwork()}{setInputFromNetwork()}}
+{\footnotesize\ttfamily \label{classInterpreter_aed44e319d6acc68ec728467d667bbb8f} 
+void Interpreter\+::set\+Input\+From\+Network (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption}) const}
+
+
+
+设置网络输入 
+
+设置网络输入，并通知等待的cv。此方法供外部调用。
+
+
+\begin{DoxyParams}{参数}
+{\em input} & 要设置的输入 \\
+\hline
+\end{DoxyParams}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dea/classInterpreter_aed44e319d6acc68ec728467d667bbb8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_a2a8806650393c36a7a3a99054c8e51e2}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a2a8806650393c36a7a3a99054c8e51e2} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClause}{Clause}} \&}]{clause}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Clause节点 
+
+该方法用于访问\+Clause节点，并根据输入的状态执行相应的操作。
+\begin{DoxyItemize}
+\item 如果没有接收到输入，且\+Clause节点的类型是\+TIMEOUT，则执行操作。
+\item 如果接收到输入，且\+Clause节点的类型是\+ANYTHING或\+DEFAULT，则执行操作。
+\item 如果接收到输入，且\+Clause节点的类型是\+HAS，则检查输入是否包含指定的模式，如果包含则执行操作。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{参数}
+{\em clause} & 要访问的\+Clause节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dea/classInterpreter_a2a8806650393c36a7a3a99054c8e51e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_a68e3617359a3ee32b32cbafe6c51bc27}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a68e3617359a3ee32b32cbafe6c51bc27} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classConstantDefine}{Constant\+Define}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_ace94a23d08476ad3eb37d03a1ebb47ed}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_ace94a23d08476ad3eb37d03a1ebb47ed} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classExit}{Exit}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Exit节点 
+
+该方法用于访问\+Exit节点，并抛出\+Exit\+Exception异常以退出程序。
+
+
+\begin{DoxyExceptions}{异常}
+{\em \doxylink{classExitException}{Exit\+Exception}} & 总是抛出此异常以退出程序。 \\
+\hline
+\end{DoxyExceptions}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a2c3ffcab9e4863807cd6d50206d66b92}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a2c3ffcab9e4863807cd6d50206d66b92} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIdentifier}{Identifier}} \&}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Identifier节点 
+
+该方法用于访问\+Identifier节点，并将其值添加到输出缓冲区。
+
+
+\begin{DoxyParams}{参数}
+{\em id} & 要访问的\+Identifier节点\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果指定的标识符未定义。 \\
+\hline
+\end{DoxyExceptions}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a3b97da51e60edcf7bbe918b3cb8447f1}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a3b97da51e60edcf7bbe918b3cb8447f1} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJump}{Jump}} \&}]{jump}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Jump节点 
+
+该方法用于访问\+Jump节点，并跳转到指定的过程。
+
+
+\begin{DoxyParams}{参数}
+{\em jump} & 要访问的\+Jump节点\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果指定的过程不存在。 \\
+\hline
+\end{DoxyExceptions}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a896f4210d4266df9230882a915136f96}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a896f4210d4266df9230882a915136f96} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classListen}{Listen}} \&}]{listen}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Listen节点 
+
+该方法用于访问\+Listen节点，并根据模式获取输入。 然后遍历每个\+Clause节点，根据输入的状态执行相应的操作。 使用条件变量cv等待输入。
+
+
+\begin{DoxyParams}{参数}
+{\em listen} & 要访问的\+Listen节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{dd/dea/classInterpreter_a896f4210d4266df9230882a915136f96_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_a349c524fe4b7fe8f3b0e59397d26dba0}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a349c524fe4b7fe8f3b0e59397d26dba0} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLookup}{Lookup}} \&}]{lookup}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Lookup节点 
+
+该方法用于访问\+Lookup节点，并从指定的数据库中查询值。
+
+
+\begin{DoxyParams}{参数}
+{\em lookup} & 要访问的\+Lookup节点\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果查询的数据库不存在。 \\
+\hline
+\end{DoxyExceptions}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a7b61633fe7f29930c6bcf9f3536aa1ca}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a7b61633fe7f29930c6bcf9f3536aa1ca} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProcedure}{Procedure}} \&}]{procedure}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问过程节点 
+
+该方法用于访问过程节点，并调用每个语句的accept方法。
+
+
+\begin{DoxyParams}{参数}
+{\em procedure} & 要访问的过程节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a90d980f97d8d50b2410062abb87ed0da} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProgram}{Program}} \&}]{program}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问程序节点 
+
+该方法用于访问程序节点，并调用main过程的accept方法。
+
+
+\begin{DoxyParams}{参数}
+{\em program} & 要访问的程序节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSay}{Say}} \&}]{say}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+Say节点 
+
+该方法用于访问\+Say节点，并调用每个内容的accept方法。 结束后输出缓冲区的内容。
+
+
+\begin{DoxyParams}{参数}
+{\em say} & 要访问的\+Say节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{dd/dea/classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classInterpreter_a126f1143cec9d5e62a84f7ce68399d8f}\index{Interpreter@{Interpreter}!visit@{visit}}
+\index{visit@{visit}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily \label{classInterpreter_a126f1143cec9d5e62a84f7ce68399d8f} 
+void Interpreter\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classString}{String}} \&}]{s}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+访问\+String节点 
+
+该方法用于访问\+String节点，并将其值添加到输出缓冲区。
+
+
+\begin{DoxyParams}{参数}
+{\em s} & 要访问的\+String节点 \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{interpreter_8hpp}{interpreter.\+hpp}}\item 
+src/\mbox{\hyperlink{interpreter_8cpp}{interpreter.\+cpp}}\end{DoxyCompactItemize}

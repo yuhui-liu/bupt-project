@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/token.hpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d44/token_8hpp.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle"><div class="title">token.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>该文件定义了标记（Token）类和标记类型枚举（Token_t）。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+token.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d82/token_8hpp__incl.png" border="0" usemap="#ainclude_2token_8hpp" alt=""/></div>
+<map name="ainclude_2token_8hpp" id="ainclude_2token_8hpp">
+<area shape="rect" title="该文件定义了标记（Token）类和标记类型枚举（Token_t）。" alt="" coords="61,5,199,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" title=" " alt="" coords="117,33,68,72,64,68,114,29"/>
+<area shape="rect" title=" " alt="" coords="101,79,159,104"/>
+<area shape="poly" title=" " alt="" coords="133,31,133,65,127,65,127,31"/>
+<area shape="rect" title=" " alt="" coords="184,79,244,104"/>
+<area shape="poly" title=" " alt="" coords="145,29,191,67,188,72,142,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d70/token_8hpp__dep__incl.png" border="0" usemap="#ainclude_2token_8hppdep" alt=""/></div>
+<map name="ainclude_2token_8hppdep" id="ainclude_2token_8hppdep">
+<area shape="rect" title="该文件定义了标记（Token）类和标记类型枚举（Token_t）。" alt="" coords="160,5,297,31"/>
+<area shape="rect" href="../../d0/d2e/lexer_8hpp.html" title="Lexer 类的声明。" alt="" coords="5,79,137,104"/>
+<area shape="poly" title=" " alt="" coords="192,39,98,81,96,76,190,34"/>
+<area shape="rect" href="../../d4/d79/lexer_8cpp.html" title="Lexer 类的实现。" alt="" coords="92,152,195,177"/>
+<area shape="poly" title=" " alt="" coords="217,44,152,153,148,150,212,42"/>
+<area shape="rect" href="../../d1/d46/parser_8hpp.html" title="Parser 类的声明。" alt="" coords="213,79,354,104"/>
+<area shape="poly" title=" " alt="" coords="248,40,277,77,272,80,244,43"/>
+<area shape="rect" href="../../dc/ddd/parser_8cpp.html" title="Parser 类的实现。" alt="" coords="259,152,371,177"/>
+<area shape="poly" title=" " alt="" coords="307,33,341,50,368,77,373,88,373,99,365,120,349,139,333,154,329,150,345,135,360,117,368,98,368,89,364,80,338,54,304,37"/>
+<area shape="poly" title=" " alt="" coords="95,112,134,150,130,154,91,116"/>
+<area shape="poly" title=" " alt="" coords="297,116,313,151,308,153,292,118"/>
+</map>
+</div>
+</div>
+<p><a href="../../d4/d44/token_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6e/classToken.html">Token</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">该类表示一个标记（Token）。  <a href="../../d2/d6e/classToken.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:aa520fbf142ba1e7e659590c07da31921" id="r_aa520fbf142ba1e7e659590c07da31921"><td class="memItemLeft" align="right" valign="top"><a id="aa520fbf142ba1e7e659590c07da31921" name="aa520fbf142ba1e7e659590c07da31921"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa520fbf142ba1e7e659590c07da31921">TokenType</a> { <br />
+&#160;&#160;<b>EQUAL</b>
+, <b>COMMA</b>
+, <b>QUESTION</b>
+, <b>LBRACE</b>
+, <br />
+&#160;&#160;<b>RBRACE</b>
+, <b>COLON</b>
+, <b>HAS</b>
+, <b>PROCEDURE</b>
+, <br />
+&#160;&#160;<b>SAY</b>
+, <b>LISTEN</b>
+, <b>TIMELIMIT</b>
+, <b>TIMEOUT</b>
+, <br />
+&#160;&#160;<b>DEFAULT</b>
+, <b>LOOKUP</b>
+, <b>IN</b>
+, <b>WRITETO</b>
+, <br />
+&#160;&#160;<b>EXIT</b>
+, <b>ANYTHING</b>
+, <b>STRING</b>
+, <b>NUMBER</b>
+, <br />
+&#160;&#160;<b>IDENTIFIER</b>
+, <b>EOF_</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:aa520fbf142ba1e7e659590c07da31921"><td class="mdescLeft">&#160;</td><td class="mdescRight">该枚举表示标记的类型。 <br /></td></tr>
+<tr class="separator:aa520fbf142ba1e7e659590c07da31921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>该文件定义了标记（Token）类和标记类型枚举（Token_t）。 </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d4/d44/token_8hpp.html">token.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

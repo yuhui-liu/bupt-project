@@ -1,0 +1,81 @@
+\doxysection{Token类 参考}
+\hypertarget{classToken}{}\label{classToken}\index{Token@{Token}}
+
+
+该类表示一个标记（\+Token）。  
+
+
+
+
+{\ttfamily \#include $<$token.\+hpp$>$}
+
+
+
+Token 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{d0/d52/classToken__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classToken_ab1bf3eae36a076f418dfe2ae7dfcec04}{Token}} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} token\+\_\+t, std\+::string s, const std\+::size\+\_\+t line\+Num)
+\item 
+\mbox{\hyperlink{classToken_a00b067250b19bf076b72e424cf4284ec}{Token}} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} token\+\_\+t, const std\+::size\+\_\+t line\+Num)
+\item 
+\Hypertarget{classToken_a1de73f46f33923a80c1fb135dc896657}\label{classToken_a1de73f46f33923a80c1fb135dc896657} 
+auto {\bfseries operator==} (const \mbox{\hyperlink{classToken}{Token}} \&other) const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 重载等于运算符 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a}\label{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a} 
+\mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em 标记类型 \end{DoxyCompactList}\item 
+\Hypertarget{classToken_a4b7142147b8598f8e24c404928d9263b}\label{classToken_a4b7142147b8598f8e24c404928d9263b} 
+std\+::string {\bfseries value}
+\begin{DoxyCompactList}\small\item\em 标记值 \end{DoxyCompactList}\item 
+\Hypertarget{classToken_ade6deee497c3814a319db092bc0f4f7f}\label{classToken_ade6deee497c3814a319db092bc0f4f7f} 
+std\+::size\+\_\+t {\bfseries line}
+\begin{DoxyCompactList}\small\item\em 标记所在行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+该类表示一个标记（\+Token）。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classToken_ab1bf3eae36a076f418dfe2ae7dfcec04}\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classToken_ab1bf3eae36a076f418dfe2ae7dfcec04} 
+Token\+::\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{token\+\_\+t}{, }\item[{std\+::string}]{s}{, }\item[{const std\+::size\+\_\+t}]{line\+Num}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em token\+\_\+t} & 标记类型 \\
+\hline
+{\em s} & 标记值 \\
+\hline
+{\em line\+Num} & 标记所在行号 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classToken_a00b067250b19bf076b72e424cf4284ec}\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classToken_a00b067250b19bf076b72e424cf4284ec} 
+Token\+::\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{token\+\_\+t}{, }\item[{const std\+::size\+\_\+t}]{line\+Num}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em token\+\_\+t} & 标记类型 \\
+\hline
+{\em line\+Num} & 标记所在行号 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{token_8hpp}{token.\+hpp}}\end{DoxyCompactItemize}

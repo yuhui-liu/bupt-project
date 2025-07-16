@@ -1,0 +1,95 @@
+@layer tailwind-base, antd;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+.login-input .ant-input,
+.login-input .ant-input-password {
+  transition: all 0.3s ease;
+}
+
+.login-input .ant-input:hover,
+.login-input .ant-input-password:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: rgba(102, 126, 234, 0.5) !important;
+}
+
+.login-input .ant-input:focus,
+.login-input .ant-input-password:focus,
+.login-input .ant-input-focused {
+  background-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(102, 126, 234, 0.8) !important;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 背景动画 - 已移除以提升性能 */
+
+/* 保留基本淡入效果，但简化动画 */
+.login-container {
+  opacity: 1;
+}
+
+.login-title {
+  opacity: 1;
+}
+
+/* 链接样式 */
+a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 24px 20px !important;
+  }
+  
+  .login-title {
+    font-size: 2rem !important;
+  }
+  
+  /* 手机端输入框调整 */
+  .login-input .ant-input,
+  .login-input .ant-input-password {
+    font-size: 16px !important; /* 防止iOS缩放 */
+  }
+  
+  /* 手机端按钮调整 */
+  .login-button {
+    height: 50px !important;
+    font-size: 16px !important;
+  }
+}
+
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */

@@ -1,0 +1,101 @@
+\doxysection{Program类 参考}
+\hypertarget{classProgram}{}\label{classProgram}\index{Program@{Program}}
+
+
+表示程序的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Program 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{de/dca/classProgram__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Program 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d0/d48/classProgram__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classProgram_aa5fa94cc86426d8a06da89598c555d0c}{add\+Constant}} (ASTNode\+Ptr constant)
+\begin{DoxyCompactList}\small\item\em 添加常量定义 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProgram_a8b86bf945546625d7a0442bc9366d3ca}{add\+Procedure}} (ASTNode\+Ptr procedure)
+\begin{DoxyCompactList}\small\item\em 添加过程 \end{DoxyCompactList}\item 
+\Hypertarget{classProgram_ae11e15e75cad6e912a518a7bdd2c0c66}\label{classProgram_ae11e15e75cad6e912a518a7bdd2c0c66} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classProgram_a232ae5fd4d7ea32d0af46957e43a356d}\label{classProgram_a232ae5fd4d7ea32d0af46957e43a356d} 
+auto {\bfseries get\+Constants} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classProgram_a35b1fdb2b6adb635658308ec81d94e08}\label{classProgram_a35b1fdb2b6adb635658308ec81d94e08} 
+auto {\bfseries get\+Procedures} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classProgram_ac0cc39547b34c1c7f001d556f7219045}\label{classProgram_ac0cc39547b34c1c7f001d556f7219045} 
+std\+::vector$<$ ASTNode\+Ptr $>$ {\bfseries constants}
+\begin{DoxyCompactList}\small\item\em program含有的常量定义 \end{DoxyCompactList}\item 
+\Hypertarget{classProgram_a1970e1e948b8c7f4cfa5bcdb8862d064}\label{classProgram_a1970e1e948b8c7f4cfa5bcdb8862d064} 
+std\+::vector$<$ ASTNode\+Ptr $>$ {\bfseries procedures}
+\begin{DoxyCompactList}\small\item\em program含有的过程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示程序的结点 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classProgram_aa5fa94cc86426d8a06da89598c555d0c}\index{Program@{Program}!addConstant@{addConstant}}
+\index{addConstant@{addConstant}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{addConstant()}{addConstant()}}
+{\footnotesize\ttfamily \label{classProgram_aa5fa94cc86426d8a06da89598c555d0c} 
+void Program\+::add\+Constant (\begin{DoxyParamCaption}\item[{ASTNode\+Ptr}]{constant}{}\end{DoxyParamCaption})}
+
+
+
+添加常量定义 
+
+
+\begin{DoxyParams}{参数}
+{\em constant} & 常量定义 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classProgram_a8b86bf945546625d7a0442bc9366d3ca}\index{Program@{Program}!addProcedure@{addProcedure}}
+\index{addProcedure@{addProcedure}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{addProcedure()}{addProcedure()}}
+{\footnotesize\ttfamily \label{classProgram_a8b86bf945546625d7a0442bc9366d3ca} 
+void Program\+::add\+Procedure (\begin{DoxyParamCaption}\item[{ASTNode\+Ptr}]{procedure}{}\end{DoxyParamCaption})}
+
+
+
+添加过程 
+
+
+\begin{DoxyParams}{参数}
+{\em procedure} & 过程 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

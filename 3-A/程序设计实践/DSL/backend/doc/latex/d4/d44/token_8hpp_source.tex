@@ -1,0 +1,52 @@
+\doxysection{token.\+hpp}
+\hypertarget{token_8hpp_source}{}\label{token_8hpp_source}\index{include/token.hpp@{include/token.hpp}}
+\mbox{\hyperlink{token_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TOKEN\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TOKEN\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \{}
+\DoxyCodeLine{00017\ \ \ EQUAL,\ \ \ \ \ \ \ \textcolor{comment}{//\ =}}
+\DoxyCodeLine{00018\ \ \ COMMA,\ \ \ \ \ \ \ \textcolor{comment}{//\ ,}}
+\DoxyCodeLine{00019\ \ \ QUESTION,\ \ \ \ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{00020\ \ \ LBRACE,\ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00021\ \ \ RBRACE,\ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00022\ \ \ COLON,\ \ \ \ \ \ \ \textcolor{comment}{//\ :}}
+\DoxyCodeLine{00023\ \ \ HAS,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ has}}
+\DoxyCodeLine{00024\ \ \ PROCEDURE,\ \ \ \textcolor{comment}{//\ procedure}}
+\DoxyCodeLine{00025\ \ \ SAY,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ say}}
+\DoxyCodeLine{00026\ \ \ LISTEN,\ \ \ \ \ \ \textcolor{comment}{//\ listen}}
+\DoxyCodeLine{00027\ \ \ TIMELIMIT,\ \ \ \textcolor{comment}{//\ timelimit}}
+\DoxyCodeLine{00028\ \ \ TIMEOUT,\ \ \ \ \ \textcolor{comment}{//\ timeout}}
+\DoxyCodeLine{00029\ \ \ DEFAULT,\ \ \ \ \ \textcolor{comment}{//\ default}}
+\DoxyCodeLine{00030\ \ \ LOOKUP,\ \ \ \ \ \ \textcolor{comment}{//\ lookup}}
+\DoxyCodeLine{00031\ \ \ IN,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in}}
+\DoxyCodeLine{00032\ \ \ WRITETO,\ \ \ \ \ \textcolor{comment}{//\ writeto}}
+\DoxyCodeLine{00033\ \ \ EXIT,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ exit}}
+\DoxyCodeLine{00034\ \ \ ANYTHING,\ \ \ \ \textcolor{comment}{//\ anything}}
+\DoxyCodeLine{00035\ \ \ STRING,\ \ \ \ \ \ \textcolor{comment}{//\ "{}"{}}}
+\DoxyCodeLine{00036\ \ \ NUMBER,\ \ \ \ \ \ \textcolor{comment}{//\ 123}}
+\DoxyCodeLine{00037\ \ \ IDENTIFIER,\ \ \textcolor{comment}{//\ any\ identifier}}
+\DoxyCodeLine{00038\ \ \ EOF\_\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ end-\/of-\/file}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classToken}{Token}}\ \{}
+\DoxyCodeLine{00046\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classToken_ab1bf3eae36a076f418dfe2ae7dfcec04}{Token}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ token\_t,\ std::string\ s,\ \textcolor{keyword}{const}\ std::size\_t\ lineNum)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a}{type}}(token\_t),\ \mbox{\hyperlink{classToken_a4b7142147b8598f8e24c404928d9263b}{value}}(std::move(s)),\ \mbox{\hyperlink{classToken_ade6deee497c3814a319db092bc0f4f7f}{line}}(lineNum)\{\};}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classToken_a00b067250b19bf076b72e424cf4284ec}{Token}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ token\_t,\ \textcolor{keyword}{const}\ std::size\_t\ lineNum)\ :\ \mbox{\hyperlink{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a}{type}}(token\_t),\ \mbox{\hyperlink{classToken_ade6deee497c3814a319db092bc0f4f7f}{line}}(lineNum)\{\};}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \mbox{\hyperlink{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a}{type}};}
+\DoxyCodeLine{00058\ \ \ std::string\ \mbox{\hyperlink{classToken_a4b7142147b8598f8e24c404928d9263b}{value}};}
+\DoxyCodeLine{00060\ \ \ std::size\_t\ \mbox{\hyperlink{classToken_ade6deee497c3814a319db092bc0f4f7f}{line}};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classToken_a1de73f46f33923a80c1fb135dc896657}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classToken}{Token}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keywordtype}{bool}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classToken_a67919af9f3a80dc0b28a0ab1e6d5bf8a}{type}}\ ==\ other.type\ \&\&\ \mbox{\hyperlink{classToken_ade6deee497c3814a319db092bc0f4f7f}{line}}\ ==\ other.line\ \&\&\ \mbox{\hyperlink{classToken_a4b7142147b8598f8e24c404928d9263b}{value}}\ ==\ other.value;}
+\DoxyCodeLine{00064\ \ \ \}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TOKEN\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: Visitor类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d14/classVisitor.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="../../df/d61/classVisitor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Visitor类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="../../d4/d14/classVisitor.html" title="Visitor 类">Visitor</a> 类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/df0/visitor_8hpp_source.html">visitor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 Visitor 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/dc8/classVisitor__inherit__graph.png" border="0" usemap="#aVisitor_inherit__map" alt="Inheritance graph"/></div>
+<map name="aVisitor_inherit__map" id="aVisitor_inherit__map">
+<area shape="rect" title="Visitor 类" alt="" coords="69,5,133,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html" title="解释器类。解释程序并执行。" alt="" coords="5,79,96,104"/>
+<area shape="poly" title=" " alt="" coords="87,44,61,80,57,77,83,41"/>
+<area shape="rect" href="../../d0/de5/classPrinter.html" title="打印AST的访问者类" alt="" coords="121,79,186,104"/>
+<area shape="poly" title=" " alt="" coords="120,40,147,77,143,80,116,43"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0fde41ed4c321bac34f14a14b1f6102f" id="r_a0fde41ed4c321bac34f14a14b1f6102f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fde41ed4c321bac34f14a14b1f6102f">visit</a> (const <a class="el" href="../../dc/db5/classProgram.html">Program</a> &amp;) const =0</td></tr>
+<tr class="separator:a0fde41ed4c321bac34f14a14b1f6102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7058af06073f5f8d7e9b1874e277365d" id="r_a7058af06073f5f8d7e9b1874e277365d"><td class="memItemLeft" align="right" valign="top"><a id="a7058af06073f5f8d7e9b1874e277365d" name="a7058af06073f5f8d7e9b1874e277365d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (const <a class="el" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a> &amp;) const =0</td></tr>
+<tr class="separator:a7058af06073f5f8d7e9b1874e277365d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ddfc95a6e08fa5c603d856137a5e5e2" id="r_a5ddfc95a6e08fa5c603d856137a5e5e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ddfc95a6e08fa5c603d856137a5e5e2">visit</a> (const <a class="el" href="../../d1/d54/classProcedure.html">Procedure</a> &amp;) const =0</td></tr>
+<tr class="separator:a5ddfc95a6e08fa5c603d856137a5e5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96870494200bde65c265f3eca64d866b" id="r_a96870494200bde65c265f3eca64d866b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96870494200bde65c265f3eca64d866b">visit</a> (const <a class="el" href="../../d7/db9/classSay.html">Say</a> &amp;) const =0</td></tr>
+<tr class="separator:a96870494200bde65c265f3eca64d866b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdf56d243ff87c1852407f1dc37b41c8" id="r_afdf56d243ff87c1852407f1dc37b41c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdf56d243ff87c1852407f1dc37b41c8">visit</a> (const <a class="el" href="../../d1/d68/classListen.html">Listen</a> &amp;) const =0</td></tr>
+<tr class="separator:afdf56d243ff87c1852407f1dc37b41c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4342d7919fe5cebe1f47ff84759a5ba8" id="r_a4342d7919fe5cebe1f47ff84759a5ba8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4342d7919fe5cebe1f47ff84759a5ba8">visit</a> (const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;) const =0</td></tr>
+<tr class="separator:a4342d7919fe5cebe1f47ff84759a5ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a5df35644d24cf038f6999074e43b5" id="r_a11a5df35644d24cf038f6999074e43b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11a5df35644d24cf038f6999074e43b5">visit</a> (const <a class="el" href="../../d3/d08/classLookup.html">Lookup</a> &amp;) const =0</td></tr>
+<tr class="separator:a11a5df35644d24cf038f6999074e43b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914dc3903122c943f3c05ab329959b7d" id="r_a914dc3903122c943f3c05ab329959b7d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a914dc3903122c943f3c05ab329959b7d">visit</a> (const <a class="el" href="../../dc/d5b/classExit.html">Exit</a> &amp;) const =0</td></tr>
+<tr class="separator:a914dc3903122c943f3c05ab329959b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5b68b958f7c5dc7d389043ec8509d2" id="r_a5c5b68b958f7c5dc7d389043ec8509d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c5b68b958f7c5dc7d389043ec8509d2">visit</a> (const <a class="el" href="../../d9/d02/classJump.html">Jump</a> &amp;) const =0</td></tr>
+<tr class="separator:a5c5b68b958f7c5dc7d389043ec8509d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2507d3e92390c34eec652b952bee80c2" id="r_a2507d3e92390c34eec652b952bee80c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2507d3e92390c34eec652b952bee80c2">visit</a> (const <a class="el" href="../../d1/de3/classIdentifier.html">Identifier</a> &amp;) const =0</td></tr>
+<tr class="separator:a2507d3e92390c34eec652b952bee80c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7340723a4eea8b53a61360df2e6b6d56" id="r_a7340723a4eea8b53a61360df2e6b6d56"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7340723a4eea8b53a61360df2e6b6d56">visit</a> (const <a class="el" href="../../d3/dee/classString.html">String</a> &amp;) const =0</td></tr>
+<tr class="separator:a7340723a4eea8b53a61360df2e6b6d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d4/d14/classVisitor.html" title="Visitor 类">Visitor</a> 类 </p>
+<p><a class="el" href="../../d4/d14/classVisitor.html" title="Visitor 类">Visitor</a> 类，使用访问者模式，用于访问 AST 中的各个结点。 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a4342d7919fe5cebe1f47ff84759a5ba8" name="a4342d7919fe5cebe1f47ff84759a5ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4342d7919fe5cebe1f47ff84759a5ba8">&#9670;&#160;</a></span>visit() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a2a8806650393c36a7a3a99054c8e51e2">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a914dc3903122c943f3c05ab329959b7d" name="a914dc3903122c943f3c05ab329959b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914dc3903122c943f3c05ab329959b7d">&#9670;&#160;</a></span>visit() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d5b/classExit.html">Exit</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#ace94a23d08476ad3eb37d03a1ebb47ed">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a2507d3e92390c34eec652b952bee80c2" name="a2507d3e92390c34eec652b952bee80c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2507d3e92390c34eec652b952bee80c2">&#9670;&#160;</a></span>visit() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/de3/classIdentifier.html">Identifier</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a2c3ffcab9e4863807cd6d50206d66b92">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a5c5b68b958f7c5dc7d389043ec8509d2" name="a5c5b68b958f7c5dc7d389043ec8509d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c5b68b958f7c5dc7d389043ec8509d2">&#9670;&#160;</a></span>visit() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d02/classJump.html">Jump</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a3b97da51e60edcf7bbe918b3cb8447f1">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="afdf56d243ff87c1852407f1dc37b41c8" name="afdf56d243ff87c1852407f1dc37b41c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf56d243ff87c1852407f1dc37b41c8">&#9670;&#160;</a></span>visit() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d68/classListen.html">Listen</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a896f4210d4266df9230882a915136f96">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a11a5df35644d24cf038f6999074e43b5" name="a11a5df35644d24cf038f6999074e43b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a5df35644d24cf038f6999074e43b5">&#9670;&#160;</a></span>visit() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d08/classLookup.html">Lookup</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a349c524fe4b7fe8f3b0e59397d26dba0">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a5ddfc95a6e08fa5c603d856137a5e5e2" name="a5ddfc95a6e08fa5c603d856137a5e5e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ddfc95a6e08fa5c603d856137a5e5e2">&#9670;&#160;</a></span>visit() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d54/classProcedure.html">Procedure</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a7b61633fe7f29930c6bcf9f3536aa1ca">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a0fde41ed4c321bac34f14a14b1f6102f" name="a0fde41ed4c321bac34f14a14b1f6102f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fde41ed4c321bac34f14a14b1f6102f">&#9670;&#160;</a></span>visit() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/db5/classProgram.html">Program</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a96870494200bde65c265f3eca64d866b" name="a96870494200bde65c265f3eca64d866b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96870494200bde65c265f3eca64d866b">&#9670;&#160;</a></span>visit() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/db9/classSay.html">Say</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a6723b4d5c85ea8ff4b28ae4c793258e3">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a7340723a4eea8b53a61360df2e6b6d56" name="a7340723a4eea8b53a61360df2e6b6d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7340723a4eea8b53a61360df2e6b6d56">&#9670;&#160;</a></span>visit() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Visitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dee/classString.html">String</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../dd/dea/classInterpreter.html#a126f1143cec9d5e62a84f7ce68399d8f">Interpreter</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="../../d2/df0/visitor_8hpp_source.html">visitor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d4/d14/classVisitor.html">Visitor</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

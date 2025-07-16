@@ -1,0 +1,277 @@
+\doxysection{Lexer类 参考}
+\hypertarget{classLexer}{}\label{classLexer}\index{Lexer@{Lexer}}
+
+
+词法分析器类。将字节流转换为 \doxylink{classToken}{Token} 序列。  
+
+
+
+
+{\ttfamily \#include $<$lexer.\+hpp$>$}
+
+
+
+Lexer 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d75/classLexer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLexer_a6e0ea7620ccc8cedf52f0dd8feace5c3}\label{classLexer_a6e0ea7620ccc8cedf52f0dd8feace5c3} 
+{\bfseries Lexer} (std\+::string)
+\begin{DoxyCompactList}\small\item\em 构造一个新的 \doxylink{classLexer}{Lexer} 对象。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLexer_a3c62781b92c4820d6f1143c0e074e61c}{scan}} ()
+\begin{DoxyCompactList}\small\item\em 扫描输入源代码并生成标记。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLexer_a4c5873b01e515aa83484054e641297fa}{print\+Tokens}} ()
+\begin{DoxyCompactList}\small\item\em 打印 \doxylink{classToken}{Token} 流。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_a0e14642fb0e83f4978db1c3deea6c8e1}\label{classLexer_a0e14642fb0e83f4978db1c3deea6c8e1} 
+auto {\bfseries get\+Tokens} () const -\/$>$ std\+::vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$
+\begin{DoxyCompactList}\small\item\em 获取 \doxylink{classToken}{Token} 流 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLexer_ae8edcbfeea2de068a3bacbcde21632c6}{scan\+Next\+Token}} ()
+\begin{DoxyCompactList}\small\item\em 扫描下一个标记（\+Token）。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classLexer_aa956caa52a392f8a59a5a237f9160957}{get\+Next\+Char}} () -\/$>$ char
+\begin{DoxyCompactList}\small\item\em 获取下一个字符 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_a1e976cbb6f8dc7fd1f8975570fd7bb1f}\label{classLexer_a1e976cbb6f8dc7fd1f8975570fd7bb1f} 
+void {\bfseries backward} ()
+\item 
+\Hypertarget{classLexer_afacac8d604e5528b8b4d972134d74a95}\label{classLexer_afacac8d604e5528b8b4d972134d74a95} 
+void {\bfseries add\+Token} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&)
+\item 
+\Hypertarget{classLexer_a382252090d3d17a0e51c445d5660a258}\label{classLexer_a382252090d3d17a0e51c445d5660a258} 
+void {\bfseries add\+Token} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&, const std\+::string \&)
+\item 
+\Hypertarget{classLexer_a232608c65bb6bd52c6aa9d3a32056286}\label{classLexer_a232608c65bb6bd52c6aa9d3a32056286} 
+void {\bfseries process\+String} ()
+\item 
+void \mbox{\hyperlink{classLexer_a27d34416cef6b0d46b828e67b2d4cb9d}{process\+Number}} ()
+\begin{DoxyCompactList}\small\item\em 处理数字字面量的词法分析函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLexer_a983c6984a12571f871dd4fffd2fbb16c}{process\+Keywords\+And\+Identifiers}} ()
+\begin{DoxyCompactList}\small\item\em 处理关键字和标识符的词法分析函数。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_a4a00ce5900a7f802a467082f1ac45a79}\label{classLexer_a4a00ce5900a7f802a467082f1ac45a79} 
+auto {\bfseries is\+End} () const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 判断是否到达源代码末尾 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLexer_a08540641066244ccf50cadda4b51db46}\label{classLexer_a08540641066244ccf50cadda4b51db46} 
+std\+::string {\bfseries src}
+\begin{DoxyCompactList}\small\item\em 源代码字符串。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_adfc224cc460a688deb4655f88ccd1bbb}\label{classLexer_adfc224cc460a688deb4655f88ccd1bbb} 
+std\+::vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ {\bfseries tokens}
+\begin{DoxyCompactList}\small\item\em \doxylink{classToken}{Token} 序列。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_a0f66b89537ceb92b00aca7eab68fa4c6}\label{classLexer_a0f66b89537ceb92b00aca7eab68fa4c6} 
+std\+::size\+\_\+t {\bfseries start} = 0
+\begin{DoxyCompactList}\small\item\em 当前扫描起始位置。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_ac5075d1e48e4860130b3575c8ee52a19}\label{classLexer_ac5075d1e48e4860130b3575c8ee52a19} 
+std\+::size\+\_\+t {\bfseries current} = 0
+\begin{DoxyCompactList}\small\item\em 当前扫描位置。 \end{DoxyCompactList}\item 
+\Hypertarget{classLexer_af4f4a53224e8c5116693bffb3e280b5e}\label{classLexer_af4f4a53224e8c5116693bffb3e280b5e} 
+std\+::size\+\_\+t {\bfseries line\+\_\+num} = 1
+\begin{DoxyCompactList}\small\item\em 当前行号。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::map$<$ std\+::string\+\_\+view, \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{classLexer_ad11f0992738b397639a5b46845e65826}{KEYWORDS}}
+\begin{DoxyCompactList}\small\item\em 关键字表。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+词法分析器类。将字节流转换为 \doxylink{classToken}{Token} 序列。 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classLexer_aa956caa52a392f8a59a5a237f9160957}\index{Lexer@{Lexer}!getNextChar@{getNextChar}}
+\index{getNextChar@{getNextChar}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{getNextChar()}{getNextChar()}}
+{\footnotesize\ttfamily \label{classLexer_aa956caa52a392f8a59a5a237f9160957} 
+auto Lexer\+::get\+Next\+Char (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ char\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+获取下一个字符 
+
+该函数从源代码字符串中获取当前位置的字符，并将当前位置向前移动一位。
+
+\begin{DoxyReturn}{返回}
+char 返回当前位置的字符 
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_aa956caa52a392f8a59a5a237f9160957_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a4c5873b01e515aa83484054e641297fa}\index{Lexer@{Lexer}!printTokens@{printTokens}}
+\index{printTokens@{printTokens}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{printTokens()}{printTokens()}}
+{\footnotesize\ttfamily \label{classLexer_a4c5873b01e515aa83484054e641297fa} 
+void Lexer\+::print\+Tokens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+打印 \doxylink{classToken}{Token} 流。 
+
+该函数用于打印 \doxylink{classToken}{Token} 流中的所有 Token。 每个 \doxylink{classToken}{Token} 的格式为：行号 类型 值。 \Hypertarget{classLexer_a983c6984a12571f871dd4fffd2fbb16c}\index{Lexer@{Lexer}!processKeywordsAndIdentifiers@{processKeywordsAndIdentifiers}}
+\index{processKeywordsAndIdentifiers@{processKeywordsAndIdentifiers}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{processKeywordsAndIdentifiers()}{processKeywordsAndIdentifiers()}}
+{\footnotesize\ttfamily \label{classLexer_a983c6984a12571f871dd4fffd2fbb16c} 
+void Lexer\+::process\+Keywords\+And\+Identifiers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理关键字和标识符的词法分析函数。 
+
+该函数用于处理源代码中的关键字和标识符。它会读取字符直到标识符结束， 并将其作为一个关键字或标识符类型的\+Token添加到\+Token流中。
+
+具体步骤如下：
+\begin{DoxyEnumerate}
+\item 读取连续的字母字符，直到遇到非字母字符或到达源代码末尾。
+\item 将读取到的字符串作为关键字或标识符类型的\+Token添加到\+Token流中。
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{注解}
+该函数假设源代码中的关键字和标识符格式正确，不进行格式校验。 
+\end{DoxyNote}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_a983c6984a12571f871dd4fffd2fbb16c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a27d34416cef6b0d46b828e67b2d4cb9d}\index{Lexer@{Lexer}!processNumber@{processNumber}}
+\index{processNumber@{processNumber}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{processNumber()}{processNumber()}}
+{\footnotesize\ttfamily \label{classLexer_a27d34416cef6b0d46b828e67b2d4cb9d} 
+void Lexer\+::process\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理数字字面量的词法分析函数。 
+
+该函数用于处理源代码中的数字字面量，包括整数和浮点数。它会读取字符直到数字结束， 并将其作为一个数字类型的\+Token添加到\+Token流中。
+
+具体步骤如下：
+\begin{DoxyEnumerate}
+\item 读取连续的数字字符，直到遇到非数字字符或到达源代码末尾。
+\item 如果遇到小数点，继续读取后续的数字字符，处理浮点数。
+\item 将读取到的数字字面量作为\+Token添加到\+Token流中。
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{注解}
+该函数假设源代码中的数字字面量格式正确，不进行格式校验。 
+\end{DoxyNote}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_a27d34416cef6b0d46b828e67b2d4cb9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a3c62781b92c4820d6f1143c0e074e61c}\index{Lexer@{Lexer}!scan@{scan}}
+\index{scan@{scan}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily \label{classLexer_a3c62781b92c4820d6f1143c0e074e61c} 
+void Lexer\+::scan (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+扫描输入源代码并生成标记。 
+
+该函数从当前位置开始迭代输入源代码，并扫描下一个标记，直到到达输入的末尾。 一旦所有标记都被扫描完毕，将添加一个\+EOF（文件结束）标记以表示输入的结束。 函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_a3c62781b92c4820d6f1143c0e074e61c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_ae8edcbfeea2de068a3bacbcde21632c6}\index{Lexer@{Lexer}!scanNextToken@{scanNextToken}}
+\index{scanNextToken@{scanNextToken}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{scanNextToken()}{scanNextToken()}}
+{\footnotesize\ttfamily \label{classLexer_ae8edcbfeea2de068a3bacbcde21632c6} 
+void Lexer\+::scan\+Next\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+扫描下一个标记（\+Token）。 
+
+该函数通过读取下一个字符来确定并生成相应的标记（\+Token）。 根据读取到的字符，执行不同的处理逻辑：
+\begin{DoxyItemize}
+\item 空格、制表符和回车符：跳过，不做处理。
+\item 换行符：增加行号计数。
+\item 特定符号（如 \textquotesingle{}=\textquotesingle{}, \textquotesingle{},\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}\{\textquotesingle{}, \textquotesingle{}\}\textquotesingle{}, \textquotesingle{}\+:\textquotesingle{}）：添加相应的标记。
+\item 双引号：处理字符串。
+\item 井号：跳过注释内容，直到行尾。
+\item 数字：处理数字。
+\item 字母：处理关键字和标识符。
+\item 其他字符：抛出未知字符异常。
+\end{DoxyItemize}
+
+
+\begin{DoxyExceptions}{异常}
+{\em \doxylink{classLexerException}{Lexer\+Exception}} & 当遇到未知字符时抛出异常。 \\
+\hline
+\end{DoxyExceptions}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{d6/dc0/classLexer_ae8edcbfeea2de068a3bacbcde21632c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{classLexer_ad11f0992738b397639a5b46845e65826}\index{Lexer@{Lexer}!KEYWORDS@{KEYWORDS}}
+\index{KEYWORDS@{KEYWORDS}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{KEYWORDS}{KEYWORDS}}
+{\footnotesize\ttfamily \label{classLexer_ad11f0992738b397639a5b46845e65826} 
+const std\+::map$<$std\+::string\+\_\+view, \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ Lexer\+::\+KEYWORDS\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}has"{}},\ TokenType::HAS\},\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}procedure"{}},\ TokenType::PROCEDURE\},\ \{\textcolor{stringliteral}{"{}say"{}},\ TokenType::SAY\},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}listen"{}},\ TokenType::LISTEN\},\ \ \ \{\textcolor{stringliteral}{"{}timelimit"{}},\ TokenType::TIMELIMIT\},\ \{\textcolor{stringliteral}{"{}timeout"{}},\ TokenType::TIMEOUT\},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}default"{}},\ TokenType::DEFAULT\},\ \{\textcolor{stringliteral}{"{}lookup"{}},\ TokenType::LOOKUP\},\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}in"{}},\ TokenType::IN\},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}writeto"{}},\ TokenType::WRITETO\},\ \{\textcolor{stringliteral}{"{}exit"{}},\ TokenType::EXIT\},\ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}anything"{}},\ TokenType::ANYTHING\}\}}
+
+\end{DoxyCode}
+
+
+关键字表。 
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{lexer_8hpp}{lexer.\+hpp}}\item 
+src/\mbox{\hyperlink{lexer_8cpp}{lexer.\+cpp}}\end{DoxyCompactItemize}

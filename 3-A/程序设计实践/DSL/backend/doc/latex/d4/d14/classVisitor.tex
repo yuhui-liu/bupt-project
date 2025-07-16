@@ -1,0 +1,159 @@
+\doxysection{Visitor类 参考}
+\hypertarget{classVisitor}{}\label{classVisitor}\index{Visitor@{Visitor}}
+
+
+\doxylink{classVisitor}{Visitor} 类  
+
+
+
+
+{\ttfamily \#include $<$visitor.\+hpp$>$}
+
+
+
+类 Visitor 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{dc/dc8/classVisitor__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a0fde41ed4c321bac34f14a14b1f6102f}{visit}} (const \mbox{\hyperlink{classProgram}{Program}} \&) const =0
+\item 
+\Hypertarget{classVisitor_a7058af06073f5f8d7e9b1874e277365d}\label{classVisitor_a7058af06073f5f8d7e9b1874e277365d} 
+virtual void {\bfseries visit} (const \mbox{\hyperlink{classConstantDefine}{Constant\+Define}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a5ddfc95a6e08fa5c603d856137a5e5e2}{visit}} (const \mbox{\hyperlink{classProcedure}{Procedure}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a96870494200bde65c265f3eca64d866b}{visit}} (const \mbox{\hyperlink{classSay}{Say}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_afdf56d243ff87c1852407f1dc37b41c8}{visit}} (const \mbox{\hyperlink{classListen}{Listen}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a4342d7919fe5cebe1f47ff84759a5ba8}{visit}} (const \mbox{\hyperlink{classClause}{Clause}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a11a5df35644d24cf038f6999074e43b5}{visit}} (const \mbox{\hyperlink{classLookup}{Lookup}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a914dc3903122c943f3c05ab329959b7d}{visit}} (const \mbox{\hyperlink{classExit}{Exit}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a5c5b68b958f7c5dc7d389043ec8509d2}{visit}} (const \mbox{\hyperlink{classJump}{Jump}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a2507d3e92390c34eec652b952bee80c2}{visit}} (const \mbox{\hyperlink{classIdentifier}{Identifier}} \&) const =0
+\item 
+virtual void \mbox{\hyperlink{classVisitor_a7340723a4eea8b53a61360df2e6b6d56}{visit}} (const \mbox{\hyperlink{classString}{String}} \&) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\doxylink{classVisitor}{Visitor} 类 
+
+\doxylink{classVisitor}{Visitor} 类，使用访问者模式，用于访问 AST 中的各个结点。 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classVisitor_a4342d7919fe5cebe1f47ff84759a5ba8}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a4342d7919fe5cebe1f47ff84759a5ba8} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClause}{Clause}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a2a8806650393c36a7a3a99054c8e51e2}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a914dc3903122c943f3c05ab329959b7d}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a914dc3903122c943f3c05ab329959b7d} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classExit}{Exit}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_ace94a23d08476ad3eb37d03a1ebb47ed}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a2507d3e92390c34eec652b952bee80c2}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a2507d3e92390c34eec652b952bee80c2} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIdentifier}{Identifier}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a2c3ffcab9e4863807cd6d50206d66b92}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a5c5b68b958f7c5dc7d389043ec8509d2}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a5c5b68b958f7c5dc7d389043ec8509d2} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJump}{Jump}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a3b97da51e60edcf7bbe918b3cb8447f1}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_afdf56d243ff87c1852407f1dc37b41c8}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \label{classVisitor_afdf56d243ff87c1852407f1dc37b41c8} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classListen}{Listen}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a896f4210d4266df9230882a915136f96}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a11a5df35644d24cf038f6999074e43b5}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a11a5df35644d24cf038f6999074e43b5} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLookup}{Lookup}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a349c524fe4b7fe8f3b0e59397d26dba0}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a5ddfc95a6e08fa5c603d856137a5e5e2}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a5ddfc95a6e08fa5c603d856137a5e5e2} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProcedure}{Procedure}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a7b61633fe7f29930c6bcf9f3536aa1ca}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a0fde41ed4c321bac34f14a14b1f6102f}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a0fde41ed4c321bac34f14a14b1f6102f} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProgram}{Program}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a90d980f97d8d50b2410062abb87ed0da}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a96870494200bde65c265f3eca64d866b}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a96870494200bde65c265f3eca64d866b} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSay}{Say}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3}{Interpreter}} 内被实现.
+
+\Hypertarget{classVisitor_a7340723a4eea8b53a61360df2e6b6d56}\index{Visitor@{Visitor}!visit@{visit}}
+\index{visit@{visit}!Visitor@{Visitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \label{classVisitor_a7340723a4eea8b53a61360df2e6b6d56} 
+virtual void Visitor\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classString}{String}} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{classInterpreter_a126f1143cec9d5e62a84f7ce68399d8f}{Interpreter}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{visitor_8hpp}{visitor.\+hpp}}\end{DoxyCompactItemize}

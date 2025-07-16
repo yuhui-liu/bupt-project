@@ -1,0 +1,5 @@
+<map id="include/network.hpp" name="include/network.hpp">
+<area shape="rect" id="Node000001" title="WebSocket 服务器和会话类的声明。" alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000002" href="$dc/d8a/network_8cpp.html" title="网络部分的实现。使用WebSocket协议实现前后端通信。" alt="" coords="20,79,145,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,44,85,79,80,79,80,44"/>
+</map>

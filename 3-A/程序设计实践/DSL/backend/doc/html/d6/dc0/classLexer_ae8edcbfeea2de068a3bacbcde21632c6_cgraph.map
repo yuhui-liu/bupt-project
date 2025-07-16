@@ -1,0 +1,15 @@
+<map id="Lexer::scanNextToken" name="Lexer::scanNextToken">
+<area shape="rect" id="Node000001" title="扫描下一个标记（Token）。" alt="" coords="5,66,168,92"/>
+<area shape="rect" id="Node000002" href="$d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="467,37,613,62"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,64,154,37,184,25,215,15,272,5,317,3,419,15,488,30,487,36,418,20,317,9,272,10,217,20,186,30,157,42,109,69"/>
+<area shape="rect" id="Node000003" href="$d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="490,94,590,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,89,159,112,217,130,273,139,317,140,418,130,476,120,477,125,419,135,317,145,272,144,215,135,157,117,110,94"/>
+<area shape="rect" id="Node000004" href="$d6/dc0/classLexer.html#a983c6984a12571f871dd4fffd2fbb16c" title="处理关键字和标识符的词法分析函数。" alt="" coords="216,30,419,70"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,66,202,62,203,67,169,71"/>
+<area shape="rect" id="Node000005" href="$d6/dc0/classLexer.html#a27d34416cef6b0d46b828e67b2d4cb9d" title="处理数字字面量的词法分析函数。" alt="" coords="234,94,401,120"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="169,86,220,93,220,98,168,92"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="419,47,452,47,452,52,419,52"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="396,67,477,88,476,93,395,72"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="369,92,418,79,477,63,479,69,419,84,370,97"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="401,104,476,104,476,110,401,110"/>
+</map>

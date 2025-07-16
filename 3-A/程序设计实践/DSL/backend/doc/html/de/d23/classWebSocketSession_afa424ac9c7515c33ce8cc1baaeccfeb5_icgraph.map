@@ -1,0 +1,18 @@
+<map id="WebSocketSession::fail" name="WebSocketSession::fail">
+<area shape="rect" id="Node000001" title="处理错误" alt="" coords="983,31,1155,56"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#a74a5fea9db2a070da22dd570fd1eebe2" title="处理 WebSocket 连接接受事件" alt="" coords="225,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1000,31,934,21,800,12,665,9,436,15,436,9,665,4,800,7,935,15,1001,25"/>
+<area shape="rect" id="Node000004" href="$de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="733,31,933,56"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="969,46,933,46,933,41,969,41"/>
+<area shape="rect" id="Node000006" href="$de/d23/classWebSocketSession.html#aa142263d3ee614b76eaaabee72dd4e3d" title="处理写事件" alt="" coords="732,104,935,129"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="1014,63,876,106,874,101,1013,58"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#aa60a520432526e90b74fd97713469a56" title="启动 WebSocket 会话" alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,21,178,21,178,15,212,15"/>
+<area shape="rect" id="Node000005" href="$de/d23/classWebSocketSession.html#aa9aab05a7bc6aa4674d03a4a8c66f997" title="开始读取数据" alt="" coords="484,31,684,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="719,55,684,55,684,50,719,50"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="470,35,436,31,437,26,471,29"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="698,32,733,32,733,37,698,37"/>
+<area shape="poly" id="edge8_Node000006_Node000006" title=" " alt="" coords="876,95,864,86,833,83,808,85,795,90,792,95,799,102,795,106,787,96,791,86,807,80,833,77,866,81,879,91"/>
+<area shape="rect" id="Node000007" href="$de/d23/classWebSocketSession.html#a2d685b67a6ef95b4e53b726e89df56db" title="发送消息" alt="" coords="493,104,675,129"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="718,119,676,119,676,114,718,114"/>
+</map>

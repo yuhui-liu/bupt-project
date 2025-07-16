@@ -1,0 +1,74 @@
+\doxysection{Identifier类 参考}
+\hypertarget{classIdentifier}{}\label{classIdentifier}\index{Identifier@{Identifier}}
+
+
+表示\+Identifier的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Identifier 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{dc/d6b/classIdentifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Identifier 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{dd/dfa/classIdentifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIdentifier_ae98ebf2194ff870b798416c75042ea3e}{Identifier}} (std\+::string \mbox{\hyperlink{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}{id}})
+\item 
+\Hypertarget{classIdentifier_ad37a1309f8c82a3f38e16137ea81f0d4}\label{classIdentifier_ad37a1309f8c82a3f38e16137ea81f0d4} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classIdentifier_ab4590e92564479049507ebe7394747f2}\label{classIdentifier_ab4590e92564479049507ebe7394747f2} 
+auto {\bfseries get\+Id} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93}\label{classIdentifier_a9016373a7257520bc6b62d7be5ce9f93} 
+std\+::string {\bfseries id}
+\begin{DoxyCompactList}\small\item\em 标识符的名字 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示\+Identifier的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classIdentifier_ae98ebf2194ff870b798416c75042ea3e}\index{Identifier@{Identifier}!Identifier@{Identifier}}
+\index{Identifier@{Identifier}!Identifier@{Identifier}}
+\doxysubsubsection{\texorpdfstring{Identifier()}{Identifier()}}
+{\footnotesize\ttfamily \label{classIdentifier_ae98ebf2194ff870b798416c75042ea3e} 
+Identifier\+::\+Identifier (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em id} & 标识符的名字 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

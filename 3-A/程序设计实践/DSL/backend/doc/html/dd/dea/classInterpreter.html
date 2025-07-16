@@ -1,0 +1,1037 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: Interpreter类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/dea/classInterpreter.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../d7/d2b/classInterpreter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Interpreter类 参考<span class="mlabels"><span class="mlabel">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>解释器类。解释程序并执行。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d42/interpreter_8hpp_source.html">interpreter.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 Interpreter 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dec/classInterpreter__inherit__graph.png" border="0" usemap="#aInterpreter_inherit__map" alt="Inheritance graph"/></div>
+<map name="aInterpreter_inherit__map" id="aInterpreter_inherit__map">
+<area shape="rect" title="解释器类。解释程序并执行。" alt="" coords="5,79,96,104"/>
+<area shape="rect" href="../../d4/d14/classVisitor.html" title="Visitor 类" alt="" coords="19,5,83,31"/>
+<area shape="poly" title=" " alt="" coords="53,44,53,79,48,79,48,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+Interpreter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d5c/classInterpreter__coll__graph.png" border="0" usemap="#aInterpreter_coll__map" alt="Collaboration graph"/></div>
+<map name="aInterpreter_coll__map" id="aInterpreter_coll__map">
+<area shape="rect" title="解释器类。解释程序并执行。" alt="" coords="1477,247,1568,272"/>
+<area shape="rect" href="../../d4/d14/classVisitor.html" title="Visitor 类" alt="" coords="1205,5,1269,31"/>
+<area shape="poly" title=" " alt="" coords="1283,17,1324,23,1370,34,1416,53,1455,83,1485,124,1505,171,1517,214,1522,246,1517,247,1512,215,1500,172,1480,127,1451,87,1413,58,1368,39,1323,28,1283,22"/>
+<area shape="rect" title=" " alt="" coords="861,180,947,205"/>
+<area shape="poly" title=" " alt="" coords="961,184,1033,179,1123,176,1193,177,1263,183,1352,197,1404,207,1454,224,1499,244,1497,249,1452,228,1403,212,1352,202,1263,189,1193,182,1123,182,1033,185,961,190"/>
+<area shape="rect" title=" " alt="" coords="1156,211,1319,251"/>
+<area shape="poly" title=" " alt="" coords="961,199,1034,209,1156,222,1155,227,1033,214,960,204"/>
+<area shape="rect" title=" " alt="" coords="1156,275,1319,315"/>
+<area shape="poly" title=" " alt="" coords="952,208,1034,237,1158,273,1157,278,1033,242,950,213"/>
+<area shape="rect" title=" " alt="" coords="1123,55,1352,95"/>
+<area shape="poly" title=" " alt="" coords="952,173,1122,111,1176,93,1177,98,1124,117,954,178"/>
+<area shape="rect" title=" " alt="" coords="509,173,647,213"/>
+<area shape="poly" title=" " alt="" coords="661,190,860,190,860,195,661,195"/>
+<area shape="poly" title=" " alt="" coords="1333,238,1478,252,1477,258,1332,243"/>
+<area shape="poly" title=" " alt="" coords="1332,285,1453,270,1477,266,1478,271,1454,275,1333,290"/>
+<area shape="rect" title=" " alt="" coords="1135,340,1339,365"/>
+<area shape="poly" title=" " alt="" coords="1338,335,1396,321,1452,301,1480,286,1503,270,1506,274,1483,291,1454,306,1397,326,1339,340"/>
+<area shape="rect" href="../../dc/db5/classProgram.html" title="表示程序的结点" alt="" coords="865,340,943,365"/>
+<area shape="poly" title=" " alt="" coords="957,350,1135,350,1135,355,957,355"/>
+<area shape="rect" href="../../d2/d3a/classASTNode.html" title="抽象语法树结点" alt="" coords="5,340,87,365"/>
+<area shape="poly" title=" " alt="" coords="100,344,111,343,297,336,443,335,775,343,865,348,865,353,775,349,443,340,297,341,111,349,100,349"/>
+<area shape="rect" title=" " alt="" coords="157,365,365,391"/>
+<area shape="poly" title=" " alt="" coords="101,357,111,358,157,364,157,369,110,363,100,362"/>
+<area shape="rect" title=" " alt="" coords="479,365,677,391"/>
+<area shape="poly" title=" " alt="" coords="691,377,774,373,864,358,865,364,775,378,691,382"/>
+<area shape="poly" title=" " alt="" coords="379,375,478,375,478,381,379,381"/>
+<area shape="rect" title=" " alt="" coords="1161,389,1314,415"/>
+<area shape="poly" title=" " alt="" coords="1327,391,1391,375,1423,363,1452,346,1472,329,1489,309,1513,271,1517,274,1493,312,1476,333,1455,351,1425,368,1393,381,1329,397"/>
+<area shape="rect" title=" " alt="" coords="1191,439,1283,464"/>
+<area shape="poly" title=" " alt="" coords="1297,449,1335,446,1375,438,1416,423,1452,401,1479,371,1498,335,1510,299,1516,272,1522,273,1515,301,1503,337,1483,374,1455,405,1418,428,1377,443,1335,451,1297,455"/>
+<area shape="poly" title=" " alt="" coords="1365,97,1412,116,1455,143,1479,167,1498,196,1520,246,1515,248,1493,198,1475,171,1452,147,1410,121,1363,102"/>
+<area shape="rect" title=" " alt="" coords="799,61,1009,87"/>
+<area shape="poly" title=" " alt="" coords="1023,72,1123,72,1123,78,1023,77"/>
+<area shape="rect" href="../../dc/deb/classSQLiteDB.html" title="SQLite 数据库接口" alt="" coords="537,61,619,87"/>
+<area shape="poly" title=" " alt="" coords="633,71,799,71,799,77,633,77"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aeb518e633c77d52fdb39d932fe99df29" id="r_aeb518e633c77d52fdb39d932fe99df29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb518e633c77d52fdb39d932fe99df29">Interpreter</a> (std::shared_ptr&lt; <a class="el" href="../../dc/db5/classProgram.html">Program</a> &gt; <a class="el" href="#a46a354b5759e7d83428e4687cdbb928a">program</a>, std::string <a class="el" href="#a22731a37463e70b822ba79e6ecbbb125">mode</a>, std::map&lt; std::string, std::string &gt; c, std::map&lt; std::string, std::size_t &gt; p)</td></tr>
+<tr class="memdesc:aeb518e633c77d52fdb39d932fe99df29"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个新的 <a class="el" href="../../dd/dea/classInterpreter.html" title="解释器类。解释程序并执行。">Interpreter</a> 对象。  <br /></td></tr>
+<tr class="separator:aeb518e633c77d52fdb39d932fe99df29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d980f97d8d50b2410062abb87ed0da" id="r_a90d980f97d8d50b2410062abb87ed0da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90d980f97d8d50b2410062abb87ed0da">visit</a> (const <a class="el" href="../../dc/db5/classProgram.html">Program</a> &amp;) const override</td></tr>
+<tr class="memdesc:a90d980f97d8d50b2410062abb87ed0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问程序节点  <br /></td></tr>
+<tr class="separator:a90d980f97d8d50b2410062abb87ed0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e3617359a3ee32b32cbafe6c51bc27" id="r_a68e3617359a3ee32b32cbafe6c51bc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68e3617359a3ee32b32cbafe6c51bc27">visit</a> (const <a class="el" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a> &amp;) const override</td></tr>
+<tr class="separator:a68e3617359a3ee32b32cbafe6c51bc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b61633fe7f29930c6bcf9f3536aa1ca" id="r_a7b61633fe7f29930c6bcf9f3536aa1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b61633fe7f29930c6bcf9f3536aa1ca">visit</a> (const <a class="el" href="../../d1/d54/classProcedure.html">Procedure</a> &amp;) const override</td></tr>
+<tr class="memdesc:a7b61633fe7f29930c6bcf9f3536aa1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问过程节点  <br /></td></tr>
+<tr class="separator:a7b61633fe7f29930c6bcf9f3536aa1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6723b4d5c85ea8ff4b28ae4c793258e3" id="r_a6723b4d5c85ea8ff4b28ae4c793258e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6723b4d5c85ea8ff4b28ae4c793258e3">visit</a> (const <a class="el" href="../../d7/db9/classSay.html">Say</a> &amp;) const override</td></tr>
+<tr class="memdesc:a6723b4d5c85ea8ff4b28ae4c793258e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Say节点  <br /></td></tr>
+<tr class="separator:a6723b4d5c85ea8ff4b28ae4c793258e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896f4210d4266df9230882a915136f96" id="r_a896f4210d4266df9230882a915136f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a896f4210d4266df9230882a915136f96">visit</a> (const <a class="el" href="../../d1/d68/classListen.html">Listen</a> &amp;) const override</td></tr>
+<tr class="memdesc:a896f4210d4266df9230882a915136f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Listen节点  <br /></td></tr>
+<tr class="separator:a896f4210d4266df9230882a915136f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8806650393c36a7a3a99054c8e51e2" id="r_a2a8806650393c36a7a3a99054c8e51e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a8806650393c36a7a3a99054c8e51e2">visit</a> (const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;) const override</td></tr>
+<tr class="memdesc:a2a8806650393c36a7a3a99054c8e51e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Clause节点  <br /></td></tr>
+<tr class="separator:a2a8806650393c36a7a3a99054c8e51e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349c524fe4b7fe8f3b0e59397d26dba0" id="r_a349c524fe4b7fe8f3b0e59397d26dba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a349c524fe4b7fe8f3b0e59397d26dba0">visit</a> (const <a class="el" href="../../d3/d08/classLookup.html">Lookup</a> &amp;) const override</td></tr>
+<tr class="memdesc:a349c524fe4b7fe8f3b0e59397d26dba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Lookup节点  <br /></td></tr>
+<tr class="separator:a349c524fe4b7fe8f3b0e59397d26dba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace94a23d08476ad3eb37d03a1ebb47ed" id="r_ace94a23d08476ad3eb37d03a1ebb47ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace94a23d08476ad3eb37d03a1ebb47ed">visit</a> (const <a class="el" href="../../dc/d5b/classExit.html">Exit</a> &amp;) const override</td></tr>
+<tr class="memdesc:ace94a23d08476ad3eb37d03a1ebb47ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Exit节点  <br /></td></tr>
+<tr class="separator:ace94a23d08476ad3eb37d03a1ebb47ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b97da51e60edcf7bbe918b3cb8447f1" id="r_a3b97da51e60edcf7bbe918b3cb8447f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b97da51e60edcf7bbe918b3cb8447f1">visit</a> (const <a class="el" href="../../d9/d02/classJump.html">Jump</a> &amp;) const override</td></tr>
+<tr class="memdesc:a3b97da51e60edcf7bbe918b3cb8447f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Jump节点  <br /></td></tr>
+<tr class="separator:a3b97da51e60edcf7bbe918b3cb8447f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3ffcab9e4863807cd6d50206d66b92" id="r_a2c3ffcab9e4863807cd6d50206d66b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c3ffcab9e4863807cd6d50206d66b92">visit</a> (const <a class="el" href="../../d1/de3/classIdentifier.html">Identifier</a> &amp;) const override</td></tr>
+<tr class="memdesc:a2c3ffcab9e4863807cd6d50206d66b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问Identifier节点  <br /></td></tr>
+<tr class="separator:a2c3ffcab9e4863807cd6d50206d66b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126f1143cec9d5e62a84f7ce68399d8f" id="r_a126f1143cec9d5e62a84f7ce68399d8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a126f1143cec9d5e62a84f7ce68399d8f">visit</a> (const <a class="el" href="../../d3/dee/classString.html">String</a> &amp;) const override</td></tr>
+<tr class="memdesc:a126f1143cec9d5e62a84f7ce68399d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问String节点  <br /></td></tr>
+<tr class="separator:a126f1143cec9d5e62a84f7ce68399d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47bcb0f1ba98246c48b6c17c92e2fe1" id="r_ac47bcb0f1ba98246c48b6c17c92e2fe1"><td class="memItemLeft" align="right" valign="top"><a id="ac47bcb0f1ba98246c48b6c17c92e2fe1" name="ac47bcb0f1ba98246c48b6c17c92e2fe1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSend</b> (std::function&lt; void(const std::string &amp;)&gt; s)</td></tr>
+<tr class="memdesc:ac47bcb0f1ba98246c48b6c17c92e2fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 send 回调函数 <br /></td></tr>
+<tr class="separator:ac47bcb0f1ba98246c48b6c17c92e2fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed44e319d6acc68ec728467d667bbb8f" id="r_aed44e319d6acc68ec728467d667bbb8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed44e319d6acc68ec728467d667bbb8f">setInputFromNetwork</a> (const std::string &amp;input) const</td></tr>
+<tr class="memdesc:aed44e319d6acc68ec728467d667bbb8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置网络输入  <br /></td></tr>
+<tr class="separator:aed44e319d6acc68ec728467d667bbb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c449dedd4b03a3b4d69d2c59b1f341" id="r_a70c449dedd4b03a3b4d69d2c59b1f341"><td class="memItemLeft" align="right" valign="top"><a id="a70c449dedd4b03a3b4d69d2c59b1f341" name="a70c449dedd4b03a3b4d69d2c59b1f341"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setUid</b> (const int userId)</td></tr>
+<tr class="memdesc:a70c449dedd4b03a3b4d69d2c59b1f341"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置用户id <br /></td></tr>
+<tr class="separator:a70c449dedd4b03a3b4d69d2c59b1f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classVisitor"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classVisitor')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:afc55e6e1c0811ffa159a6f7b21feeeba" id="r_afc55e6e1c0811ffa159a6f7b21feeeba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc55e6e1c0811ffa159a6f7b21feeeba">clauseAction</a> (const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;clause) const</td></tr>
+<tr class="memdesc:afc55e6e1c0811ffa159a6f7b21feeeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行Clause节点的操作  <br /></td></tr>
+<tr class="separator:afc55e6e1c0811ffa159a6f7b21feeeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad725f641a5cf052bac767047cbf7b493" id="r_ad725f641a5cf052bac767047cbf7b493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad725f641a5cf052bac767047cbf7b493">getCliInput</a> () const</td></tr>
+<tr class="memdesc:ad725f641a5cf052bac767047cbf7b493"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取CLI输入  <br /></td></tr>
+<tr class="separator:ad725f641a5cf052bac767047cbf7b493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a606afcff5f90e3cae3e17cd45f4e53" id="r_a2a606afcff5f90e3cae3e17cd45f4e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a606afcff5f90e3cae3e17cd45f4e53">output</a> () const</td></tr>
+<tr class="memdesc:a2a606afcff5f90e3cae3e17cd45f4e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出缓冲区内容  <br /></td></tr>
+<tr class="separator:a2a606afcff5f90e3cae3e17cd45f4e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:af4cd87a6447218bec8eda3e52aab9014" id="r_af4cd87a6447218bec8eda3e52aab9014"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4cd87a6447218bec8eda3e52aab9014">getIdOrString</a> (const ASTNodePtr &amp;p) -&gt; std::string</td></tr>
+<tr class="memdesc:af4cd87a6447218bec8eda3e52aab9014"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取标识符或字符串  <br /></td></tr>
+<tr class="separator:af4cd87a6447218bec8eda3e52aab9014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aec40dd04f71e570b781d52c5918c6d45" id="r_aec40dd04f71e570b781d52c5918c6d45"><td class="memItemLeft" align="right" valign="top"><a id="aec40dd04f71e570b781d52c5918c6d45" name="aec40dd04f71e570b781d52c5918c6d45"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>clause_accepted</b> {false}</td></tr>
+<tr class="memdesc:aec40dd04f71e570b781d52c5918c6d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">标识当前Clause是否被接受 <br /></td></tr>
+<tr class="separator:aec40dd04f71e570b781d52c5918c6d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22731a37463e70b822ba79e6ecbbb125" id="r_a22731a37463e70b822ba79e6ecbbb125"><td class="memItemLeft" align="right" valign="top"><a id="a22731a37463e70b822ba79e6ecbbb125" name="a22731a37463e70b822ba79e6ecbbb125"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mode</b></td></tr>
+<tr class="memdesc:a22731a37463e70b822ba79e6ecbbb125"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前运行模式 <br /></td></tr>
+<tr class="separator:a22731a37463e70b822ba79e6ecbbb125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e492b8c13f2cf700dd0ad7abb2e28d" id="r_aa4e492b8c13f2cf700dd0ad7abb2e28d"><td class="memItemLeft" align="right" valign="top"><a id="aa4e492b8c13f2cf700dd0ad7abb2e28d" name="aa4e492b8c13f2cf700dd0ad7abb2e28d"></a>
+std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>constants</b></td></tr>
+<tr class="memdesc:aa4e492b8c13f2cf700dd0ad7abb2e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">常量表 <br /></td></tr>
+<tr class="separator:aa4e492b8c13f2cf700dd0ad7abb2e28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6418c92af2a867770770a7687d57ee03" id="r_a6418c92af2a867770770a7687d57ee03"><td class="memItemLeft" align="right" valign="top"><a id="a6418c92af2a867770770a7687d57ee03" name="a6418c92af2a867770770a7687d57ee03"></a>
+std::map&lt; std::string, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>procedures</b></td></tr>
+<tr class="memdesc:a6418c92af2a867770770a7687d57ee03"><td class="mdescLeft">&#160;</td><td class="mdescRight">过程表 <br /></td></tr>
+<tr class="separator:a6418c92af2a867770770a7687d57ee03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a354b5759e7d83428e4687cdbb928a" id="r_a46a354b5759e7d83428e4687cdbb928a"><td class="memItemLeft" align="right" valign="top"><a id="a46a354b5759e7d83428e4687cdbb928a" name="a46a354b5759e7d83428e4687cdbb928a"></a>
+std::shared_ptr&lt; <a class="el" href="../../dc/db5/classProgram.html">Program</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>program</b></td></tr>
+<tr class="memdesc:a46a354b5759e7d83428e4687cdbb928a"><td class="mdescLeft">&#160;</td><td class="mdescRight">待解释的程序 <br /></td></tr>
+<tr class="separator:a46a354b5759e7d83428e4687cdbb928a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c8f851b6fb4d7192a9733b34f1ea12" id="r_a22c8f851b6fb4d7192a9733b34f1ea12"><td class="memItemLeft" align="right" valign="top"><a id="a22c8f851b6fb4d7192a9733b34f1ea12" name="a22c8f851b6fb4d7192a9733b34f1ea12"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>input_buffer</b></td></tr>
+<tr class="memdesc:a22c8f851b6fb4d7192a9733b34f1ea12"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入缓冲区 <br /></td></tr>
+<tr class="separator:a22c8f851b6fb4d7192a9733b34f1ea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c51640a9779576fd1a289ad9a84460e" id="r_a3c51640a9779576fd1a289ad9a84460e"><td class="memItemLeft" align="right" valign="top"><a id="a3c51640a9779576fd1a289ad9a84460e" name="a3c51640a9779576fd1a289ad9a84460e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>input_received</b> {false}</td></tr>
+<tr class="memdesc:a3c51640a9779576fd1a289ad9a84460e"><td class="mdescLeft">&#160;</td><td class="mdescRight">收到输入标志 <br /></td></tr>
+<tr class="separator:a3c51640a9779576fd1a289ad9a84460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb14f17c7f0015fb5335f2028b47bc96" id="r_adb14f17c7f0015fb5335f2028b47bc96"><td class="memItemLeft" align="right" valign="top"><a id="adb14f17c7f0015fb5335f2028b47bc96" name="adb14f17c7f0015fb5335f2028b47bc96"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>real_input_received</b> {false}</td></tr>
+<tr class="memdesc:adb14f17c7f0015fb5335f2028b47bc96"><td class="mdescLeft">&#160;</td><td class="mdescRight">真实输入接收标志，用于同步时防止混淆 <br /></td></tr>
+<tr class="separator:adb14f17c7f0015fb5335f2028b47bc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc3fd74480c5d47737dc57d4413c9db" id="r_a6cc3fd74480c5d47737dc57d4413c9db"><td class="memItemLeft" align="right" valign="top"><a id="a6cc3fd74480c5d47737dc57d4413c9db" name="a6cc3fd74480c5d47737dc57d4413c9db"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>is_reading</b> {false}</td></tr>
+<tr class="memdesc:a6cc3fd74480c5d47737dc57d4413c9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">正在读取输入标志 <br /></td></tr>
+<tr class="separator:a6cc3fd74480c5d47737dc57d4413c9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81322f808ca6c8b09d1840734c2eb3ce" id="r_a81322f808ca6c8b09d1840734c2eb3ce"><td class="memItemLeft" align="right" valign="top"><a id="a81322f808ca6c8b09d1840734c2eb3ce" name="a81322f808ca6c8b09d1840734c2eb3ce"></a>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>mtx</b></td></tr>
+<tr class="memdesc:a81322f808ca6c8b09d1840734c2eb3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">互斥量，用于保护输入缓冲区 <br /></td></tr>
+<tr class="separator:a81322f808ca6c8b09d1840734c2eb3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18740eabfc9b2b639050b233c78b58ee" id="r_a18740eabfc9b2b639050b233c78b58ee"><td class="memItemLeft" align="right" valign="top"><a id="a18740eabfc9b2b639050b233c78b58ee" name="a18740eabfc9b2b639050b233c78b58ee"></a>
+std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>cv</b></td></tr>
+<tr class="memdesc:a18740eabfc9b2b639050b233c78b58ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">条件变量，用于等待输入 <br /></td></tr>
+<tr class="separator:a18740eabfc9b2b639050b233c78b58ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14e1805c380db7d09e245ff5a9dcbac" id="r_ab14e1805c380db7d09e245ff5a9dcbac"><td class="memItemLeft" align="right" valign="top"><a id="ab14e1805c380db7d09e245ff5a9dcbac" name="ab14e1805c380db7d09e245ff5a9dcbac"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>output_buffer</b></td></tr>
+<tr class="memdesc:ab14e1805c380db7d09e245ff5a9dcbac"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出缓冲区 <br /></td></tr>
+<tr class="separator:ab14e1805c380db7d09e245ff5a9dcbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d37390dea404d834d2bc1f967f16e3" id="r_a39d37390dea404d834d2bc1f967f16e3"><td class="memItemLeft" align="right" valign="top"><a id="a39d37390dea404d834d2bc1f967f16e3" name="a39d37390dea404d834d2bc1f967f16e3"></a>
+std::map&lt; std::string, std::unique_ptr&lt; <a class="el" href="../../dc/deb/classSQLiteDB.html">SQLiteDB</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dbs</b></td></tr>
+<tr class="memdesc:a39d37390dea404d834d2bc1f967f16e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据库连接 <br /></td></tr>
+<tr class="separator:a39d37390dea404d834d2bc1f967f16e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4c676d785488218fa25420645223f9" id="r_a2e4c676d785488218fa25420645223f9"><td class="memItemLeft" align="right" valign="top"><a id="a2e4c676d785488218fa25420645223f9" name="a2e4c676d785488218fa25420645223f9"></a>
+std::function&lt; void(const std::string &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>send</b></td></tr>
+<tr class="memdesc:a2e4c676d785488218fa25420645223f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">回调函数，用于向网络发送数据 <br /></td></tr>
+<tr class="separator:a2e4c676d785488218fa25420645223f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5252a94f72103259e3597b7d2776a04" id="r_af5252a94f72103259e3597b7d2776a04"><td class="memItemLeft" align="right" valign="top"><a id="af5252a94f72103259e3597b7d2776a04" name="af5252a94f72103259e3597b7d2776a04"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>uid</b> {DEFAULTUID}</td></tr>
+<tr class="memdesc:af5252a94f72103259e3597b7d2776a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户id <br /></td></tr>
+<tr class="separator:af5252a94f72103259e3597b7d2776a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a810b89e8d39cf8a4a1f44b67588a2f08" id="r_a810b89e8d39cf8a4a1f44b67588a2f08"><td class="memItemLeft" align="right" valign="top"><a id="a810b89e8d39cf8a4a1f44b67588a2f08" name="a810b89e8d39cf8a4a1f44b67588a2f08"></a>
+static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULTUID</b> = 101</td></tr>
+<tr class="separator:a810b89e8d39cf8a4a1f44b67588a2f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>解释器类。解释程序并执行。 </p>
+<p>解释器类，继承自 <a class="el" href="../../d4/d14/classVisitor.html" title="Visitor 类">Visitor</a> 类，用于解释程序并执行。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aeb518e633c77d52fdb39d932fe99df29" name="aeb518e633c77d52fdb39d932fe99df29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb518e633c77d52fdb39d932fe99df29">&#9670;&#160;</a></span>Interpreter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Interpreter::Interpreter </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../dc/db5/classProgram.html">Program</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; std::string, std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; std::string, std::size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造一个新的 <a class="el" href="../../dd/dea/classInterpreter.html" title="解释器类。解释程序并执行。">Interpreter</a> 对象。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">program</td><td>待解释的程序。 </td></tr>
+    <tr><td class="paramname">mode</td><td>运行模式。可能的值为 "cli" 或 "browser"。 </td></tr>
+    <tr><td class="paramname">c</td><td>常量表。 </td></tr>
+    <tr><td class="paramname">p</td><td>过程表。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afc55e6e1c0811ffa159a6f7b21feeeba" name="afc55e6e1c0811ffa159a6f7b21feeeba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc55e6e1c0811ffa159a6f7b21feeeba">&#9670;&#160;</a></span>clauseAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::clauseAction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>clause</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行Clause节点的操作 </p>
+<p>根据Clause节点的类型执行相应的操作。</p><ul>
+<li>如果是JUMP类型，则跳转到指定的过程。</li>
+<li>如果是WRITETO类型，则将输入写入指定的数据库。</li>
+</ul>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clause</td><td>要执行操作的Clause节点</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果指定的过程不存在。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba_icgraph.png" border="0" usemap="#add/dea/classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba_icgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba_icgraph" id="add/dea/classInterpreter_afc55e6e1c0811ffa159a6f7b21feeeba_icgraph">
+<area shape="rect" title="执行Clause节点的操作" alt="" coords="180,5,363,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#a2a8806650393c36a7a3a99054c8e51e2" title="访问Clause节点" alt="" coords="5,5,132,31"/>
+<area shape="poly" title=" " alt="" coords="166,21,132,21,132,15,166,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad725f641a5cf052bac767047cbf7b493" name="ad725f641a5cf052bac767047cbf7b493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad725f641a5cf052bac767047cbf7b493">&#9670;&#160;</a></span>getCliInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::getCliInput </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取CLI输入 </p>
+<p>在新的线程中尝试获取CLI输入，并将其存储到输入缓冲区。 得到输入后，设置输入接收标志为true，并通知等待的cv。 如果有之前的输入正在读取，则不再获取输入。 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_ad725f641a5cf052bac767047cbf7b493_icgraph.png" border="0" usemap="#add/dea/classInterpreter_ad725f641a5cf052bac767047cbf7b493_icgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_ad725f641a5cf052bac767047cbf7b493_icgraph" id="add/dea/classInterpreter_ad725f641a5cf052bac767047cbf7b493_icgraph">
+<area shape="rect" title="获取CLI输入" alt="" coords="180,5,351,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#a896f4210d4266df9230882a915136f96" title="访问Listen节点" alt="" coords="5,5,132,31"/>
+<area shape="poly" title=" " alt="" coords="166,21,132,21,132,15,166,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af4cd87a6447218bec8eda3e52aab9014" name="af4cd87a6447218bec8eda3e52aab9014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4cd87a6447218bec8eda3e52aab9014">&#9670;&#160;</a></span>getIdOrString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Interpreter::getIdOrString </td>
+          <td>(</td>
+          <td class="paramtype">const ASTNodePtr &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td> -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取标识符或字符串 </p>
+<p>根据节点的类型返回标识符或字符串。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>要获取的节点</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>标识符或字符串 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_af4cd87a6447218bec8eda3e52aab9014_icgraph.png" border="0" usemap="#add/dea/classInterpreter_af4cd87a6447218bec8eda3e52aab9014_icgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_af4cd87a6447218bec8eda3e52aab9014_icgraph" id="add/dea/classInterpreter_af4cd87a6447218bec8eda3e52aab9014_icgraph">
+<area shape="rect" title="获取标识符或字符串" alt="" coords="180,5,365,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#a2a8806650393c36a7a3a99054c8e51e2" title="访问Clause节点" alt="" coords="5,5,132,31"/>
+<area shape="poly" title=" " alt="" coords="166,21,132,21,132,15,166,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a606afcff5f90e3cae3e17cd45f4e53" name="a2a606afcff5f90e3cae3e17cd45f4e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a606afcff5f90e3cae3e17cd45f4e53">&#9670;&#160;</a></span>output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::output </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>输出缓冲区内容 </p>
+<p>针对不同的模式，调用不同的方法输出缓冲区内容。</p><ul>
+<li>如果是CLI模式，则直接输出到标准输出。</li>
+<li>如果是浏览器模式，则调用send回调函数发送到浏览器。 </li>
+</ul>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53_icgraph.png" border="0" usemap="#add/dea/classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53_icgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53_icgraph" id="add/dea/classInterpreter_a2a606afcff5f90e3cae3e17cd45f4e53_icgraph">
+<area shape="rect" title="输出缓冲区内容" alt="" coords="180,5,321,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#a6723b4d5c85ea8ff4b28ae4c793258e3" title="访问Say节点" alt="" coords="5,5,132,31"/>
+<area shape="poly" title=" " alt="" coords="167,21,132,21,132,15,167,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aed44e319d6acc68ec728467d667bbb8f" name="aed44e319d6acc68ec728467d667bbb8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed44e319d6acc68ec728467d667bbb8f">&#9670;&#160;</a></span>setInputFromNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::setInputFromNetwork </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置网络输入 </p>
+<p>设置网络输入，并通知等待的cv。此方法供外部调用。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>要设置的输入 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_aed44e319d6acc68ec728467d667bbb8f_icgraph.png" border="0" usemap="#add/dea/classInterpreter_aed44e319d6acc68ec728467d667bbb8f_icgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_aed44e319d6acc68ec728467d667bbb8f_icgraph" id="add/dea/classInterpreter_aed44e319d6acc68ec728467d667bbb8f_icgraph">
+<area shape="rect" title="设置网络输入" alt="" coords="980,5,1165,45"/>
+<area shape="rect" href="../../de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="732,13,932,38"/>
+<area shape="poly" title=" " alt="" coords="966,28,932,28,932,23,966,23"/>
+<area shape="rect" href="../../de/d23/classWebSocketSession.html#aa9aab05a7bc6aa4674d03a4a8c66f997" title="开始读取数据" alt="" coords="484,13,684,38"/>
+<area shape="poly" title=" " alt="" coords="719,37,684,37,684,32,719,32"/>
+<area shape="poly" title=" " alt="" coords="698,14,732,14,732,19,698,19"/>
+<area shape="rect" href="../../de/d23/classWebSocketSession.html#a74a5fea9db2a070da22dd570fd1eebe2" title="处理 WebSocket 连接接受事件" alt="" coords="225,13,436,38"/>
+<area shape="poly" title=" " alt="" coords="470,28,436,28,436,23,470,23"/>
+<area shape="rect" href="../../de/d23/classWebSocketSession.html#aa60a520432526e90b74fd97713469a56" title="启动 WebSocket 会话" alt="" coords="5,13,177,38"/>
+<area shape="poly" title=" " alt="" coords="212,28,178,28,178,23,212,23"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a8806650393c36a7a3a99054c8e51e2" name="a2a8806650393c36a7a3a99054c8e51e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8806650393c36a7a3a99054c8e51e2">&#9670;&#160;</a></span>visit() <span class="overload">[1/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dbe/classClause.html">Clause</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>clause</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Clause节点 </p>
+<p>该方法用于访问Clause节点，并根据输入的状态执行相应的操作。</p><ul>
+<li>如果没有接收到输入，且Clause节点的类型是TIMEOUT，则执行操作。</li>
+<li>如果接收到输入，且Clause节点的类型是ANYTHING或DEFAULT，则执行操作。</li>
+<li>如果接收到输入，且Clause节点的类型是HAS，则检查输入是否包含指定的模式，如果包含则执行操作。</li>
+</ul>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clause</td><td>要访问的Clause节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_a2a8806650393c36a7a3a99054c8e51e2_cgraph.png" border="0" usemap="#add/dea/classInterpreter_a2a8806650393c36a7a3a99054c8e51e2_cgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_a2a8806650393c36a7a3a99054c8e51e2_cgraph" id="add/dea/classInterpreter_a2a8806650393c36a7a3a99054c8e51e2_cgraph">
+<area shape="rect" title="访问Clause节点" alt="" coords="5,31,132,56"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#afc55e6e1c0811ffa159a6f7b21feeeba" title="执行Clause节点的操作" alt="" coords="181,5,364,31"/>
+<area shape="poly" title=" " alt="" coords="132,33,167,28,168,34,132,38"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#af4cd87a6447218bec8eda3e52aab9014" title="获取标识符或字符串" alt="" coords="180,55,365,80"/>
+<area shape="poly" title=" " alt="" coords="132,48,167,52,166,57,132,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a68e3617359a3ee32b32cbafe6c51bc27" name="a68e3617359a3ee32b32cbafe6c51bc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e3617359a3ee32b32cbafe6c51bc27">&#9670;&#160;</a></span>visit() <span class="overload">[2/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="ace94a23d08476ad3eb37d03a1ebb47ed" name="ace94a23d08476ad3eb37d03a1ebb47ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace94a23d08476ad3eb37d03a1ebb47ed">&#9670;&#160;</a></span>visit() <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d5b/classExit.html">Exit</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Exit节点 </p>
+<p>该方法用于访问Exit节点，并抛出ExitException异常以退出程序。</p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d2/d5f/classExitException.html" title="退出异常">ExitException</a></td><td>总是抛出此异常以退出程序。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a2c3ffcab9e4863807cd6d50206d66b92" name="a2c3ffcab9e4863807cd6d50206d66b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3ffcab9e4863807cd6d50206d66b92">&#9670;&#160;</a></span>visit() <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/de3/classIdentifier.html">Identifier</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Identifier节点 </p>
+<p>该方法用于访问Identifier节点，并将其值添加到输出缓冲区。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>要访问的Identifier节点</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果指定的标识符未定义。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a3b97da51e60edcf7bbe918b3cb8447f1" name="a3b97da51e60edcf7bbe918b3cb8447f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b97da51e60edcf7bbe918b3cb8447f1">&#9670;&#160;</a></span>visit() <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d02/classJump.html">Jump</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>jump</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Jump节点 </p>
+<p>该方法用于访问Jump节点，并跳转到指定的过程。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jump</td><td>要访问的Jump节点</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果指定的过程不存在。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a896f4210d4266df9230882a915136f96" name="a896f4210d4266df9230882a915136f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a896f4210d4266df9230882a915136f96">&#9670;&#160;</a></span>visit() <span class="overload">[6/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d68/classListen.html">Listen</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>listen</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Listen节点 </p>
+<p>该方法用于访问Listen节点，并根据模式获取输入。 然后遍历每个Clause节点，根据输入的状态执行相应的操作。 使用条件变量cv等待输入。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listen</td><td>要访问的Listen节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_a896f4210d4266df9230882a915136f96_cgraph.png" border="0" usemap="#add/dea/classInterpreter_a896f4210d4266df9230882a915136f96_cgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_a896f4210d4266df9230882a915136f96_cgraph" id="add/dea/classInterpreter_a896f4210d4266df9230882a915136f96_cgraph">
+<area shape="rect" title="访问Listen节点" alt="" coords="5,5,132,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#ad725f641a5cf052bac767047cbf7b493" title="获取CLI输入" alt="" coords="180,5,351,31"/>
+<area shape="poly" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a349c524fe4b7fe8f3b0e59397d26dba0" name="a349c524fe4b7fe8f3b0e59397d26dba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349c524fe4b7fe8f3b0e59397d26dba0">&#9670;&#160;</a></span>visit() <span class="overload">[7/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d08/classLookup.html">Lookup</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lookup</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Lookup节点 </p>
+<p>该方法用于访问Lookup节点，并从指定的数据库中查询值。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lookup</td><td>要访问的Lookup节点</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果查询的数据库不存在。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a7b61633fe7f29930c6bcf9f3536aa1ca" name="a7b61633fe7f29930c6bcf9f3536aa1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b61633fe7f29930c6bcf9f3536aa1ca">&#9670;&#160;</a></span>visit() <span class="overload">[8/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d54/classProcedure.html">Procedure</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>procedure</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问过程节点 </p>
+<p>该方法用于访问过程节点，并调用每个语句的accept方法。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">procedure</td><td>要访问的过程节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a90d980f97d8d50b2410062abb87ed0da" name="a90d980f97d8d50b2410062abb87ed0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d980f97d8d50b2410062abb87ed0da">&#9670;&#160;</a></span>visit() <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/db5/classProgram.html">Program</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问程序节点 </p>
+<p>该方法用于访问程序节点，并调用main过程的accept方法。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">program</td><td>要访问的程序节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<a id="a6723b4d5c85ea8ff4b28ae4c793258e3" name="a6723b4d5c85ea8ff4b28ae4c793258e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6723b4d5c85ea8ff4b28ae4c793258e3">&#9670;&#160;</a></span>visit() <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/db9/classSay.html">Say</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>say</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问Say节点 </p>
+<p>该方法用于访问Say节点，并调用每个内容的accept方法。 结束后输出缓冲区的内容。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">say</td><td>要访问的Say节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dea/classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3_cgraph.png" border="0" usemap="#add/dea/classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3_cgraph" alt=""/></div>
+<map name="add/dea/classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3_cgraph" id="add/dea/classInterpreter_a6723b4d5c85ea8ff4b28ae4c793258e3_cgraph">
+<area shape="rect" title="访问Say节点" alt="" coords="5,5,132,31"/>
+<area shape="rect" href="../../dd/dea/classInterpreter.html#a2a606afcff5f90e3cae3e17cd45f4e53" title="输出缓冲区内容" alt="" coords="180,5,321,31"/>
+<area shape="poly" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a126f1143cec9d5e62a84f7ce68399d8f" name="a126f1143cec9d5e62a84f7ce68399d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126f1143cec9d5e62a84f7ce68399d8f">&#9670;&#160;</a></span>visit() <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interpreter::visit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dee/classString.html">String</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问String节点 </p>
+<p>该方法用于访问String节点，并将其值添加到输出缓冲区。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>要访问的String节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="../../db/d42/interpreter_8hpp_source.html">interpreter.hpp</a></li>
+<li>src/<a class="el" href="../../d2/de2/interpreter_8cpp.html">interpreter.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/dea/classInterpreter.html">Interpreter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

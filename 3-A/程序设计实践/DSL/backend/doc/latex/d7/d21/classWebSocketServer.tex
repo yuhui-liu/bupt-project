@@ -1,0 +1,148 @@
+\doxysection{Web\+Socket\+Server类 参考}
+\hypertarget{classWebSocketServer}{}\label{classWebSocketServer}\index{WebSocketServer@{WebSocketServer}}
+
+
+Web\+Socket 服务器类  
+
+
+
+
+{\ttfamily \#include $<$network.\+hpp$>$}
+
+
+
+Web\+Socket\+Server 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d51/classWebSocketServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSocketServer_a7edd3ade91361f43e9b7b10c2f86ac75}{Web\+Socket\+Server}} (net\+::io\+\_\+context \&, const tcp\+::endpoint \&, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$, std\+::map$<$ std\+::string, std\+::string $>$ \&, std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ \&)
+\begin{DoxyCompactList}\small\item\em Web\+Socket 服务器类的构造函数。 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketServer_a2c749866a6dbd92e4b54a422d1b58de9}\label{classWebSocketServer_a2c749866a6dbd92e4b54a422d1b58de9} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em 启动服务器 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e}{do\+Accept}} ()
+\begin{DoxyCompactList}\small\item\em 接受新连接 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWebSocketServer_ae675bf0cca76459e3f9c7747b192145f}{fail}} (const beast\+::error\+\_\+code \&, const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em 处理错误 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWebSocketServer_af0fe6d9d438d6e0b08c334548d2a2e9b}\label{classWebSocketServer_af0fe6d9d438d6e0b08c334548d2a2e9b} 
+tcp\+::acceptor {\bfseries acceptor}
+\begin{DoxyCompactList}\small\item\em 接收器 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketServer_a8e7cf0ac7590ab82362b81663bdd5bd8}\label{classWebSocketServer_a8e7cf0ac7590ab82362b81663bdd5bd8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ {\bfseries program}
+\begin{DoxyCompactList}\small\item\em 指向program的智能指针 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketServer_a4a6b5cdf47ee455c95421de572d68f18}\label{classWebSocketServer_a4a6b5cdf47ee455c95421de572d68f18} 
+std\+::map$<$ std\+::string, std\+::string $>$ \& {\bfseries constants}
+\begin{DoxyCompactList}\small\item\em 常量表 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketServer_a3117d07d4eb03a30a3b3221d09954ada}\label{classWebSocketServer_a3117d07d4eb03a30a3b3221d09954ada} 
+std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ \& {\bfseries procedures}
+\begin{DoxyCompactList}\small\item\em 过程表 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+Web\+Socket 服务器类 
+
+该类表示一个\+Web\+Socket服务器，用于接收客户端的连接。 每个客户端连接后，服务器会创建一个\+Web\+Socket\+Session对象与之通信。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classWebSocketServer_a7edd3ade91361f43e9b7b10c2f86ac75}\index{WebSocketServer@{WebSocketServer}!WebSocketServer@{WebSocketServer}}
+\index{WebSocketServer@{WebSocketServer}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{WebSocketServer()}{WebSocketServer()}}
+{\footnotesize\ttfamily \label{classWebSocketServer_a7edd3ade91361f43e9b7b10c2f86ac75} 
+Web\+Socket\+Server\+::\+Web\+Socket\+Server (\begin{DoxyParamCaption}\item[{net\+::io\+\_\+context \&}]{ioc}{, }\item[{const tcp\+::endpoint \&}]{endpoint}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$}]{program}{, }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{c}{, }\item[{std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Web\+Socket 服务器类的构造函数。 
+
+
+\begin{DoxyParams}{参数}
+{\em ioc} & IO 上下文 \\
+\hline
+{\em endpoint} & 服务器端点 \\
+\hline
+{\em program} & 程序指针 \\
+\hline
+{\em c} & 常量表 \\
+\hline
+{\em p} & 过程表 \\
+\hline
+\end{DoxyParams}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/classWebSocketServer_a7edd3ade91361f43e9b7b10c2f86ac75_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e}\index{WebSocketServer@{WebSocketServer}!doAccept@{doAccept}}
+\index{doAccept@{doAccept}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{doAccept()}{doAccept()}}
+{\footnotesize\ttfamily \label{classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e} 
+void Web\+Socket\+Server\+::do\+Accept (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+接受新连接 
+
+该函数会异步接受新的连接，并创建一个 \doxylink{classWebSocketSession}{Web\+Socket\+Session} 对象与之通信。 函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d7/d21/classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/classWebSocketServer_a642d78d18aa6109e93b47cfda728ea2e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketServer_ae675bf0cca76459e3f9c7747b192145f}\index{WebSocketServer@{WebSocketServer}!fail@{fail}}
+\index{fail@{fail}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{fail()}{fail()}}
+{\footnotesize\ttfamily \label{classWebSocketServer_ae675bf0cca76459e3f9c7747b192145f} 
+void Web\+Socket\+Server\+::fail (\begin{DoxyParamCaption}\item[{const beast\+::error\+\_\+code \&}]{ec}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{what}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+处理错误 
+
+
+\begin{DoxyParams}{参数}
+{\em ec} & 错误码 \\
+\hline
+{\em what} & 错误信息 \\
+\hline
+\end{DoxyParams}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/classWebSocketServer_ae675bf0cca76459e3f9c7747b192145f_icgraph}
+\end{center}
+\end{figure}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{network_8hpp}{network.\+hpp}}\item 
+src/\mbox{\hyperlink{network_8cpp}{network.\+cpp}}\end{DoxyCompactItemize}

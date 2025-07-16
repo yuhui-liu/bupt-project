@@ -1,0 +1,90 @@
+\doxysection{Lookup类 参考}
+\hypertarget{classLookup}{}\label{classLookup}\index{Lookup@{Lookup}}
+
+
+表示lookup语句的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Lookup 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{d0/d98/classLookup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Lookup 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d9/dcc/classLookup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLookup_aad61e1abc73abefd728fd616fc97a61a}{Lookup}} (std\+::string \mbox{\hyperlink{classLookup_af305f6e240ed552dba34cb31bb309a90}{value}}, std\+::string \mbox{\hyperlink{classLookup_a46be6f16fc2c0e703525c16185b67543}{db}}, std\+::string \mbox{\hyperlink{classLookup_a16d3e872c21927f453ead45f7270cd3a}{table}})
+\item 
+\Hypertarget{classLookup_a04c198a2b2a4f4b7d08a16db60863324}\label{classLookup_a04c198a2b2a4f4b7d08a16db60863324} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classLookup_a03026224253064aa707efd4989412ce3}\label{classLookup_a03026224253064aa707efd4989412ce3} 
+auto {\bfseries get\+Value} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classLookup_a0e3792de25fefa5c76fb186a4266c118}\label{classLookup_a0e3792de25fefa5c76fb186a4266c118} 
+auto {\bfseries get\+Db} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classLookup_a5a5dcd7003cd590320fcfe5a67497ca1}\label{classLookup_a5a5dcd7003cd590320fcfe5a67497ca1} 
+auto {\bfseries get\+Table} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLookup_af305f6e240ed552dba34cb31bb309a90}\label{classLookup_af305f6e240ed552dba34cb31bb309a90} 
+std\+::string {\bfseries value}
+\begin{DoxyCompactList}\small\item\em lookup语句查询的值 \end{DoxyCompactList}\item 
+\Hypertarget{classLookup_a46be6f16fc2c0e703525c16185b67543}\label{classLookup_a46be6f16fc2c0e703525c16185b67543} 
+std\+::string {\bfseries db}
+\begin{DoxyCompactList}\small\item\em lookup语句查询的数据库 \end{DoxyCompactList}\item 
+\Hypertarget{classLookup_a16d3e872c21927f453ead45f7270cd3a}\label{classLookup_a16d3e872c21927f453ead45f7270cd3a} 
+std\+::string {\bfseries table}
+\begin{DoxyCompactList}\small\item\em lookup语句查询的表 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示lookup语句的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classLookup_aad61e1abc73abefd728fd616fc97a61a}\index{Lookup@{Lookup}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Lookup@{Lookup}}
+\doxysubsubsection{\texorpdfstring{Lookup()}{Lookup()}}
+{\footnotesize\ttfamily \label{classLookup_aad61e1abc73abefd728fd616fc97a61a} 
+Lookup\+::\+Lookup (\begin{DoxyParamCaption}\item[{std\+::string}]{value}{, }\item[{std\+::string}]{db}{, }\item[{std\+::string}]{table}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em value} & lookup语句查询的值 \\
+\hline
+{\em db} & lookup语句查询的数据库 \\
+\hline
+{\em table} & lookup语句查询的表 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

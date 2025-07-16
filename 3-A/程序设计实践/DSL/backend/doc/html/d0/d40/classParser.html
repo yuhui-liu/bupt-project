@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: Parser类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/d40/classParser.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d5/d77/classParser-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Parser类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>解析器类。解析token流，生成AST。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d46/parser_8hpp_source.html">parser.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Parser 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/db0/classParser__coll__graph.png" border="0" usemap="#aParser_coll__map" alt="Collaboration graph"/></div>
+<map name="aParser_coll__map" id="aParser_coll__map">
+<area shape="rect" title="解析器类。解析token流，生成AST。" alt="" coords="53,359,116,384"/>
+<area shape="rect" title=" " alt="" coords="5,271,164,296"/>
+<area shape="poly" title=" " alt="" coords="87,310,87,358,82,358,82,310"/>
+<area shape="rect" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。" alt="" coords="55,183,114,208"/>
+<area shape="poly" title=" " alt="" coords="87,222,87,270,82,270,82,222"/>
+<area shape="rect" title=" " alt="" coords="41,95,128,120"/>
+<area shape="poly" title=" " alt="" coords="87,134,87,182,82,182,82,134"/>
+<area shape="rect" title=" " alt="" coords="15,5,154,45"/>
+<area shape="poly" title=" " alt="" coords="87,59,87,94,82,94,82,59"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac93b3201fac5ebaf8c398054c7fec2b9" id="r_ac93b3201fac5ebaf8c398054c7fec2b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac93b3201fac5ebaf8c398054c7fec2b9">Parser</a> (std::vector&lt; <a class="el" href="../../d2/d6e/classToken.html">Token</a> &gt; <a class="el" href="#a247983c66efec033f5dab3d57a71baf9">tokens</a>)</td></tr>
+<tr class="separator:ac93b3201fac5ebaf8c398054c7fec2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0c4cfabb48792a42536f70a0fb936d" id="r_a6a0c4cfabb48792a42536f70a0fb936d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a0c4cfabb48792a42536f70a0fb936d">parse</a> () -&gt; std::shared_ptr&lt; <a class="el" href="../../dc/db5/classProgram.html">Program</a> &gt;</td></tr>
+<tr class="separator:a6a0c4cfabb48792a42536f70a0fb936d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ae8fa6d0592f138e5fe7296e54182e2e2" id="r_ae8fa6d0592f138e5fe7296e54182e2e2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8fa6d0592f138e5fe7296e54182e2e2">match</a> (const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;) -&gt; bool</td></tr>
+<tr class="memdesc:ae8fa6d0592f138e5fe7296e54182e2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查当前 token 是否与给定类型匹配，如果匹配则前进到下一个 token。  <br /></td></tr>
+<tr class="separator:ae8fa6d0592f138e5fe7296e54182e2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa223c550c78a3b85c32d81e7a019304e" id="r_aa223c550c78a3b85c32d81e7a019304e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa223c550c78a3b85c32d81e7a019304e">check</a> (const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;) const -&gt; bool</td></tr>
+<tr class="memdesc:aa223c550c78a3b85c32d81e7a019304e"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查当前令牌是否为指定类型。  <br /></td></tr>
+<tr class="separator:aa223c550c78a3b85c32d81e7a019304e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f3611a2b31c54e8c291e27d59fd982" id="r_a01f3611a2b31c54e8c291e27d59fd982"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01f3611a2b31c54e8c291e27d59fd982">isEnd</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a01f3611a2b31c54e8c291e27d59fd982"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查当前是否已经到达文件末尾。  <br /></td></tr>
+<tr class="separator:a01f3611a2b31c54e8c291e27d59fd982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889d99815b4afebedd911652c75ed946" id="r_a889d99815b4afebedd911652c75ed946"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a889d99815b4afebedd911652c75ed946">getToken</a> () const -&gt; const <a class="el" href="../../d2/d6e/classToken.html">Token</a> &amp;</td></tr>
+<tr class="memdesc:a889d99815b4afebedd911652c75ed946"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前 token。  <br /></td></tr>
+<tr class="separator:a889d99815b4afebedd911652c75ed946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e7418ee4a86e8cd4495f7eeeb355e5" id="r_a21e7418ee4a86e8cd4495f7eeeb355e5"><td class="memItemLeft" align="right" valign="top"><a id="a21e7418ee4a86e8cd4495f7eeeb355e5" name="a21e7418ee4a86e8cd4495f7eeeb355e5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>forward</b> ()</td></tr>
+<tr class="memdesc:a21e7418ee4a86e8cd4495f7eeeb355e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">前进到下一个 token。 <br /></td></tr>
+<tr class="separator:a21e7418ee4a86e8cd4495f7eeeb355e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b70e46a785bffc59bafd3c9c0eec64" id="r_a74b70e46a785bffc59bafd3c9c0eec64"><td class="memItemLeft" align="right" valign="top"><a id="a74b70e46a785bffc59bafd3c9c0eec64" name="a74b70e46a785bffc59bafd3c9c0eec64"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>backward</b> ()</td></tr>
+<tr class="memdesc:a74b70e46a785bffc59bafd3c9c0eec64"><td class="mdescLeft">&#160;</td><td class="mdescRight">后退到上一个 token。 <br /></td></tr>
+<tr class="separator:a74b70e46a785bffc59bafd3c9c0eec64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c73f849c019cb0f84cda0562d24a2eb" id="r_a8c73f849c019cb0f84cda0562d24a2eb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c73f849c019cb0f84cda0562d24a2eb">constant</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:a8c73f849c019cb0f84cda0562d24a2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析常量定义  <br /></td></tr>
+<tr class="separator:a8c73f849c019cb0f84cda0562d24a2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b77e2f261e13df895295eb986073ab" id="r_a42b77e2f261e13df895295eb986073ab"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42b77e2f261e13df895295eb986073ab">procedure</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="separator:a42b77e2f261e13df895295eb986073ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347b6f799c4ecc6ef18b30864944fe00" id="r_a347b6f799c4ecc6ef18b30864944fe00"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347b6f799c4ecc6ef18b30864944fe00">statement</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:a347b6f799c4ecc6ef18b30864944fe00"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析并返回一个语句节点。  <br /></td></tr>
+<tr class="separator:a347b6f799c4ecc6ef18b30864944fe00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc69a9006235872f6a6641037e0481c8" id="r_adc69a9006235872f6a6641037e0481c8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc69a9006235872f6a6641037e0481c8">say</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:adc69a9006235872f6a6641037e0481c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析并生成一个表示“say”语句的抽象语法树节点。  <br /></td></tr>
+<tr class="separator:adc69a9006235872f6a6641037e0481c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff4afe52c7a459405ccc78badab61ca" id="r_adff4afe52c7a459405ccc78badab61ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adff4afe52c7a459405ccc78badab61ca">listen</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:adff4afe52c7a459405ccc78badab61ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析 "listen" 语句。  <br /></td></tr>
+<tr class="separator:adff4afe52c7a459405ccc78badab61ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00d7103e9d2d03f7b9b7b81dd4ac457" id="r_ac00d7103e9d2d03f7b9b7b81dd4ac457"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00d7103e9d2d03f7b9b7b81dd4ac457">clause</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:ac00d7103e9d2d03f7b9b7b81dd4ac457"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析一个子句。  <br /></td></tr>
+<tr class="separator:ac00d7103e9d2d03f7b9b7b81dd4ac457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4c9b12c37032b09dc613a11ef24a24" id="r_a7b4c9b12c37032b09dc613a11ef24a24"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b4c9b12c37032b09dc613a11ef24a24">lookup</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:a7b4c9b12c37032b09dc613a11ef24a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析并生成一个 <a class="el" href="../../d3/d08/classLookup.html" title="表示lookup语句的结点">Lookup</a> 节点。  <br /></td></tr>
+<tr class="separator:a7b4c9b12c37032b09dc613a11ef24a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3734b1aa800b66ba862b97d7f80f70e" id="r_ad3734b1aa800b66ba862b97d7f80f70e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3734b1aa800b66ba862b97d7f80f70e">idOrString</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:ad3734b1aa800b66ba862b97d7f80f70e"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析标识符或字符串。  <br /></td></tr>
+<tr class="separator:ad3734b1aa800b66ba862b97d7f80f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ccc41cd0f9d299a25e447fb4d52104" id="r_a08ccc41cd0f9d299a25e447fb4d52104"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08ccc41cd0f9d299a25e447fb4d52104">id</a> () -&gt; ASTNodePtr</td></tr>
+<tr class="memdesc:a08ccc41cd0f9d299a25e447fb4d52104"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析标识符并返回一个AST节点指针。  <br /></td></tr>
+<tr class="separator:a08ccc41cd0f9d299a25e447fb4d52104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6acc89881b075da79a2d0704ad43f12a" id="r_a6acc89881b075da79a2d0704ad43f12a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6acc89881b075da79a2d0704ad43f12a">consume</a> (const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;, const std::string &amp;) -&gt; <a class="el" href="../../d2/d6e/classToken.html">Token</a></td></tr>
+<tr class="memdesc:a6acc89881b075da79a2d0704ad43f12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">消费一个指定类型的 token。  <br /></td></tr>
+<tr class="separator:a6acc89881b075da79a2d0704ad43f12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a247983c66efec033f5dab3d57a71baf9" id="r_a247983c66efec033f5dab3d57a71baf9"><td class="memItemLeft" align="right" valign="top"><a id="a247983c66efec033f5dab3d57a71baf9" name="a247983c66efec033f5dab3d57a71baf9"></a>
+std::vector&lt; <a class="el" href="../../d2/d6e/classToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tokens</b></td></tr>
+<tr class="memdesc:a247983c66efec033f5dab3d57a71baf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">待解析的token流。 <br /></td></tr>
+<tr class="separator:a247983c66efec033f5dab3d57a71baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b6072efdde04c75621fa21181829db" id="r_a43b6072efdde04c75621fa21181829db"><td class="memItemLeft" align="right" valign="top"><a id="a43b6072efdde04c75621fa21181829db" name="a43b6072efdde04c75621fa21181829db"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>current</b> = 0</td></tr>
+<tr class="memdesc:a43b6072efdde04c75621fa21181829db"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前解析的token的索引。 <br /></td></tr>
+<tr class="separator:a43b6072efdde04c75621fa21181829db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>解析器类。解析token流，生成AST。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac93b3201fac5ebaf8c398054c7fec2b9" name="ac93b3201fac5ebaf8c398054c7fec2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93b3201fac5ebaf8c398054c7fec2b9">&#9670;&#160;</a></span>Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d2/d6e/classToken.html">Token</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tokens</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tokens</td><td>一个包含所有token的vector。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa223c550c78a3b85c32d81e7a019304e" name="aa223c550c78a3b85c32d81e7a019304e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa223c550c78a3b85c32d81e7a019304e">&#9670;&#160;</a></span>check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::check </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查当前令牌是否为指定类型。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>要检查的令牌类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果当前令牌是指定类型且未到达文件末尾，则返回 true；否则返回 false。 </dd></dl>
+
+</div>
+</div>
+<a id="ac00d7103e9d2d03f7b9b7b81dd4ac457" name="ac00d7103e9d2d03f7b9b7b81dd4ac457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00d7103e9d2d03f7b9b7b81dd4ac457">&#9670;&#160;</a></span>clause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::clause </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析一个子句。 </p>
+<p>该函数解析一个子句，并根据匹配的Token类型设置子句的类型和相应的属性。</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 返回解析后的子句节点。</dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../df/d55/classParserException.html" title="语法分析异常">ParserException</a></td><td>当子句不符合预期格式时抛出异常。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c73f849c019cb0f84cda0562d24a2eb" name="a8c73f849c019cb0f84cda0562d24a2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c73f849c019cb0f84cda0562d24a2eb">&#9670;&#160;</a></span>constant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::constant </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析常量定义 </p>
+<p>该函数解析一个常量定义语句，期望的语法格式为： &lt;identifier&gt; = &lt;string&gt;</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 返回一个指向常量定义节点的智能指针 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果语法不符合预期，将抛出异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6acc89881b075da79a2d0704ad43f12a" name="a6acc89881b075da79a2d0704ad43f12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6acc89881b075da79a2d0704ad43f12a">&#9670;&#160;</a></span>consume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::consume </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;) -&gt; <a class="el" href="../../d2/d6e/classToken.html">Token</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消费一个指定类型的 token。 </p>
+<p>如果当前 token 的类型与给定类型不匹配，则抛出异常。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>要消费的 token 类型。 </td></tr>
+    <tr><td class="paramname">msg</td><td>错误消息。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>消费的 token。 </dd></dl>
+
+</div>
+</div>
+<a id="a889d99815b4afebedd911652c75ed946" name="a889d99815b4afebedd911652c75ed946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889d99815b4afebedd911652c75ed946">&#9670;&#160;</a></span>getToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::getToken </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../d2/d6e/classToken.html">Token</a>&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前 token。 </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="../../d2/d6e/classToken.html" title="该类表示一个标记（Token）。">Token</a>&amp; 当前 token。 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d40/classParser_a889d99815b4afebedd911652c75ed946_icgraph.png" border="0" usemap="#ad0/d40/classParser_a889d99815b4afebedd911652c75ed946_icgraph" alt=""/></div>
+<map name="ad0/d40/classParser_a889d99815b4afebedd911652c75ed946_icgraph" id="ad0/d40/classParser_a889d99815b4afebedd911652c75ed946_icgraph">
+<area shape="rect" title="获取当前 token。" alt="" coords="159,5,287,31"/>
+<area shape="rect" href="../../d0/d40/classParser.html#a01f3611a2b31c54e8c291e27d59fd982" title="检查当前是否已经到达文件末尾。" alt="" coords="5,5,111,31"/>
+<area shape="poly" title=" " alt="" coords="145,21,111,21,111,15,145,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08ccc41cd0f9d299a25e447fb4d52104" name="a08ccc41cd0f9d299a25e447fb4d52104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ccc41cd0f9d299a25e447fb4d52104">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析标识符并返回一个AST节点指针。 </p>
+<p>该函数从输入流中消费一个标识符，并将其封装在一个Identifier对象中， 然后返回一个指向该对象的唯一指针。</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 指向Identifier对象的唯一指针。 </dd></dl>
+
+</div>
+</div>
+<a id="ad3734b1aa800b66ba862b97d7f80f70e" name="ad3734b1aa800b66ba862b97d7f80f70e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3734b1aa800b66ba862b97d7f80f70e">&#9670;&#160;</a></span>idOrString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::idOrString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析标识符或字符串。 </p>
+<p>如果当前标记是标识符，则解析并返回标识符节点。 否则，解析并返回字符串节点。</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 指向解析后的抽象语法树节点的智能指针。 </dd></dl>
+
+</div>
+</div>
+<a id="a01f3611a2b31c54e8c291e27d59fd982" name="a01f3611a2b31c54e8c291e27d59fd982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f3611a2b31c54e8c291e27d59fd982">&#9670;&#160;</a></span>isEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::isEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查当前是否已经到达文件末尾。 </p>
+<dl class="section return"><dt>返回</dt><dd>如果当前已经到达文件末尾，则返回 true；否则返回 false。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d40/classParser_a01f3611a2b31c54e8c291e27d59fd982_cgraph.png" border="0" usemap="#ad0/d40/classParser_a01f3611a2b31c54e8c291e27d59fd982_cgraph" alt=""/></div>
+<map name="ad0/d40/classParser_a01f3611a2b31c54e8c291e27d59fd982_cgraph" id="ad0/d40/classParser_a01f3611a2b31c54e8c291e27d59fd982_cgraph">
+<area shape="rect" title="检查当前是否已经到达文件末尾。" alt="" coords="5,5,111,31"/>
+<area shape="rect" href="../../d0/d40/classParser.html#a889d99815b4afebedd911652c75ed946" title="获取当前 token。" alt="" coords="159,5,287,31"/>
+<area shape="poly" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adff4afe52c7a459405ccc78badab61ca" name="adff4afe52c7a459405ccc78badab61ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff4afe52c7a459405ccc78badab61ca">&#9670;&#160;</a></span>listen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::listen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析 "listen" 语句。 </p>
+<p>该函数解析一个 "listen" 语句，该语句包含一个时间限制和一个或多个子句。</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 返回解析后的 AST 节点。</dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果解析过程中遇到语法错误，将抛出运行时错误。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>解析步骤：</p><ol type="1">
+<li>消费 "timelimit" 关键字。</li>
+<li>消费一个数字，作为时间限制。</li>
+<li>消费左大括号 '{'。</li>
+<li>循环解析子句，直到遇到右大括号 '}'。</li>
+<li>消费右大括号 '}'。 </li>
+</ol>
+
+</div>
+</div>
+<a id="a7b4c9b12c37032b09dc613a11ef24a24" name="a7b4c9b12c37032b09dc613a11ef24a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4c9b12c37032b09dc613a11ef24a24">&#9670;&#160;</a></span>lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::lookup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析并生成一个 <a class="el" href="../../d3/d08/classLookup.html" title="表示lookup语句的结点">Lookup</a> 节点。 </p>
+<p>该函数解析一个 lookup 语句，并生成相应的 AST 节点。具体的语法格式如下：</p>
+<div class="fragment"><div class="line">lookup_statement ::= IDENTIFIER <span class="stringliteral">&quot;in&quot;</span> IDENTIFIER <span class="stringliteral">&quot;:&quot;</span> IDENTIFIER</div>
+</div><!-- fragment --><dl class="section return"><dt>返回</dt><dd>ASTNodePtr 指向生成的 <a class="el" href="../../d3/d08/classLookup.html" title="表示lookup语句的结点">Lookup</a> 节点的智能指针。</dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果解析过程中遇到语法错误，将抛出运行时错误。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8fa6d0592f138e5fe7296e54182e2e2" name="ae8fa6d0592f138e5fe7296e54182e2e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8fa6d0592f138e5fe7296e54182e2e2">&#9670;&#160;</a></span>match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查当前 token 是否与给定类型匹配，如果匹配则前进到下一个 token。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>要匹配的 token 类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果当前 token 与给定类型匹配则返回 true，否则返回 false。 </dd></dl>
+
+</div>
+</div>
+<a id="a6a0c4cfabb48792a42536f70a0fb936d" name="a6a0c4cfabb48792a42536f70a0fb936d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0c4cfabb48792a42536f70a0fb936d">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::parse </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; std::shared_ptr&lt;<a class="el" href="../../dc/db5/classProgram.html">Program</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>解析程序并返回一个包含所有常量和过程的Program对象。</p>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;Program&gt; 包含所有常量和过程的Program对象。 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../df/d55/classParserException.html" title="语法分析异常">ParserException</a></td><td>如果在所有过程之后没有遇到EOF，则抛出异常。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a42b77e2f261e13df895295eb986073ab" name="a42b77e2f261e13df895295eb986073ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b77e2f261e13df895295eb986073ab">&#9670;&#160;</a></span>procedure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::procedure </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>解析一个过程。</p>
+<p>该函数期望以下的标记序列：</p><ul>
+<li>一个表示过程名称的标识符。</li>
+<li>一个左大括号 '{' 表示过程体的开始。</li>
+<li>一系列构成过程体的语句。</li>
+<li>一个右大括号 '}' 表示过程体的结束。</li>
+</ul>
+<dl class="section return"><dt>返回</dt><dd>一个指向解析后的Procedure AST节点的唯一指针。 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果未找到预期的标记，将抛出异常。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc69a9006235872f6a6641037e0481c8" name="adc69a9006235872f6a6641037e0481c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc69a9006235872f6a6641037e0481c8">&#9670;&#160;</a></span>say()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::say </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析并生成一个表示“say”语句的抽象语法树节点。 </p>
+<p>该函数创建一个新的 <a class="el" href="../../d7/db9/classSay.html" title="表示say语句的结点">Say</a> 节点，并将解析的内容添加到该节点中。 首先，它会解析第一个标识符或字符串并添加到 <a class="el" href="../../d7/db9/classSay.html" title="表示say语句的结点">Say</a> 节点中。 然后，它会检查是否存在逗号分隔的其他内容，如果存在，则继续解析并添加到 <a class="el" href="../../d7/db9/classSay.html" title="表示say语句的结点">Say</a> 节点中。</p>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 指向生成的 <a class="el" href="../../d7/db9/classSay.html" title="表示say语句的结点">Say</a> 节点的智能指针。 </dd></dl>
+
+</div>
+</div>
+<a id="a347b6f799c4ecc6ef18b30864944fe00" name="a347b6f799c4ecc6ef18b30864944fe00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347b6f799c4ecc6ef18b30864944fe00">&#9670;&#160;</a></span>statement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::statement </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; ASTNodePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析并返回一个语句节点。 </p>
+<p>该函数根据当前的标记类型解析不同类型的语句节点。</p><ul>
+<li>如果标记类型为 SAY，则解析并返回一个 <a class="el" href="../../d7/db9/classSay.html" title="表示say语句的结点">Say</a> 语句节点。</li>
+<li>如果标记类型为 LISTEN，则解析并返回一个 <a class="el" href="../../d1/d68/classListen.html" title="表示listen语句的结点">Listen</a> 语句节点。</li>
+<li>如果标记类型为 LOOKUP，则解析并返回一个 <a class="el" href="../../d3/d08/classLookup.html" title="表示lookup语句的结点">Lookup</a> 语句节点。</li>
+<li>如果标记类型为 EXIT，则返回一个 <a class="el" href="../../dc/d5b/classExit.html" title="表示exit语句的结点">Exit</a> 语句节点。</li>
+<li>否则，假定它是一个跳转语句，并返回一个 <a class="el" href="../../d9/d02/classJump.html" title="表示jump语句的结点">Jump</a> 语句节点。</li>
+</ul>
+<dl class="section return"><dt>返回</dt><dd>ASTNodePtr 指向解析后的语句节点的智能指针。 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="../../d1/d46/parser_8hpp_source.html">parser.hpp</a></li>
+<li>src/<a class="el" href="../../dc/ddd/parser_8cpp.html">parser.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/d40/classParser.html">Parser</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+\doxysection{include/network.hpp 文件参考}
+\hypertarget{network_8hpp}{}\label{network_8hpp}\index{include/network.hpp@{include/network.hpp}}
+
+
+Web\+Socket 服务器和会话类的声明。  
+
+
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/beast/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/beast/core/error.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/beast/websocket.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/beast/websocket/stream.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}ast.\+hpp"{}}\newline
+{\ttfamily \#include "{}interpreter.\+hpp"{}}\newline
+network.\+hpp 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df7/network_8hpp__incl}
+\end{center}
+\end{figure}
+此图展示该文件被哪些文件直接或间接地引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d0/db6/network_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classWebSocketServer}{Web\+Socket\+Server}}
+\begin{DoxyCompactList}\small\item\em Web\+Socket 服务器类 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classWebSocketSession}{Web\+Socket\+Session}}
+\begin{DoxyCompactList}\small\item\em Web\+Socket 会话类 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{network_8hpp_aacd32e7300ba1ea408f0cb79dbe33d86}\label{network_8hpp_aacd32e7300ba1ea408f0cb79dbe33d86} 
+using {\bfseries tcp} = boost\+::asio\+::ip\+::tcp
+\item 
+\Hypertarget{network_8hpp_a227fc630c8c5cb17a4f8106bf9ac0208}\label{network_8hpp_a227fc630c8c5cb17a4f8106bf9ac0208} 
+using {\bfseries Message\+Queue} = std\+::deque$<$std\+::string$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+Web\+Socket 服务器和会话类的声明。 
+

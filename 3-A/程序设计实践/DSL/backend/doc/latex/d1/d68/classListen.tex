@@ -1,0 +1,83 @@
+\doxysection{Listen类 参考}
+\hypertarget{classListen}{}\label{classListen}\index{Listen@{Listen}}
+
+
+表示listen语句的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Listen 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{db/df2/classListen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Listen 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d7/de8/classListen__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classListen_a8fd50a2c2166cc417dfa85fe9be083b7}{Listen}} (const int \mbox{\hyperlink{classListen_a9d113860f26f39a04674a95fd6fae6b4}{limit}})
+\item 
+\Hypertarget{classListen_ac5f65ff7d8bc68621e8dfe2d4d12bece}\label{classListen_ac5f65ff7d8bc68621e8dfe2d4d12bece} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classListen_aad3c09d66c7cf6b69180be8e63ee06be}\label{classListen_aad3c09d66c7cf6b69180be8e63ee06be} 
+void {\bfseries add\+Clause} (ASTNode\+Ptr clause)
+\begin{DoxyCompactList}\small\item\em 添加子语句 \end{DoxyCompactList}\item 
+\Hypertarget{classListen_a1e26502c8390c8127a5e6f719c0e83b9}\label{classListen_a1e26502c8390c8127a5e6f719c0e83b9} 
+auto {\bfseries get\+Clauses} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classListen_ac3d2389061019701bbac1decd5d8de74}\label{classListen_ac3d2389061019701bbac1decd5d8de74} 
+auto {\bfseries get\+Limit} () const -\/$>$ int
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classListen_a9d0be7a6b4301f658529a27784eb0ad7}\label{classListen_a9d0be7a6b4301f658529a27784eb0ad7} 
+std\+::vector$<$ ASTNode\+Ptr $>$ {\bfseries clauses}
+\begin{DoxyCompactList}\small\item\em listen语句的子语句 \end{DoxyCompactList}\item 
+\Hypertarget{classListen_a9d113860f26f39a04674a95fd6fae6b4}\label{classListen_a9d113860f26f39a04674a95fd6fae6b4} 
+int {\bfseries limit}
+\begin{DoxyCompactList}\small\item\em listen语句的时间限制 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示listen语句的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classListen_a8fd50a2c2166cc417dfa85fe9be083b7}\index{Listen@{Listen}!Listen@{Listen}}
+\index{Listen@{Listen}!Listen@{Listen}}
+\doxysubsubsection{\texorpdfstring{Listen()}{Listen()}}
+{\footnotesize\ttfamily \label{classListen_a8fd50a2c2166cc417dfa85fe9be083b7} 
+Listen\+::\+Listen (\begin{DoxyParamCaption}\item[{const int}]{limit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em limit} & listen语句的时间限制 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

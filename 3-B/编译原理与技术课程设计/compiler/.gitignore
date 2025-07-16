@@ -1,0 +1,9 @@
+/build/
+/.cache/
+compile_commands.json
+/.vscode/
+.env
+/.idea/
+/cmake-build-debug/
+/output_for_open_set/
+/doc/

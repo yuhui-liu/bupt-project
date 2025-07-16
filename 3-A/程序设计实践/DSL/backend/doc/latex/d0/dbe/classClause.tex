@@ -1,0 +1,133 @@
+\doxysection{Clause类 参考}
+\hypertarget{classClause}{}\label{classClause}\index{Clause@{Clause}}
+
+
+表示listen语句的子语句的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Clause 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{d0/dab/classClause__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Clause 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/da4/classClause__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClause_a4f889b644990fa42b52ae1f4b118a185}\label{classClause_a4f889b644990fa42b52ae1f4b118a185} 
+enum class \mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}} \{ {\bfseries HAS}
+, {\bfseries ANYTHING}
+, {\bfseries TIMEOUT}
+, {\bfseries DEFAULT}
+ \}
+\begin{DoxyCompactList}\small\item\em 子语句的类型枚举 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_a0066d758f4c891945fca046aebbdf546}\label{classClause_a0066d758f4c891945fca046aebbdf546} 
+enum class \mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}} \{ {\bfseries WRITETO}
+, {\bfseries JUMP}
+ \}
+\begin{DoxyCompactList}\small\item\em 子语句的动作枚举 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClause_aec4d0e3be07a5302e697ba7ba710fb39}\label{classClause_aec4d0e3be07a5302e697ba7ba710fb39} 
+void {\bfseries set\+Type} (\mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}} \mbox{\hyperlink{classClause_a34a80c68892beb446643fdd6ebd30468}{type}})
+\item 
+\Hypertarget{classClause_a4961cc86a20e07eb0f9e3fac2baee6bd}\label{classClause_a4961cc86a20e07eb0f9e3fac2baee6bd} 
+void {\bfseries set\+Action} (\mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}} \mbox{\hyperlink{classClause_a5d676a019dfd996ccf3d45646f3e2f94}{action}})
+\item 
+\Hypertarget{classClause_acf28f57e918384f82fbd0a99c5589dfd}\label{classClause_acf28f57e918384f82fbd0a99c5589dfd} 
+void {\bfseries set\+Branch} (const std\+::string \&\mbox{\hyperlink{classClause_a7e8ae21522e6a4c855d8b81cde6522b9}{branch}})
+\item 
+\Hypertarget{classClause_a8eff30664c287b6d75b15e744883e8da}\label{classClause_a8eff30664c287b6d75b15e744883e8da} 
+void {\bfseries set\+Pattern} (ASTNode\+Ptr \mbox{\hyperlink{classClause_ad49661b31b0e867d48491c85ad591bd7}{pattern}})
+\item 
+\Hypertarget{classClause_a7dbd737baa917fe6f1f8ffd32ea57965}\label{classClause_a7dbd737baa917fe6f1f8ffd32ea57965} 
+void {\bfseries set\+Db} (const std\+::string \&\mbox{\hyperlink{classClause_afb4e6348235b71a24e493feebc4b8a15}{db}})
+\item 
+\Hypertarget{classClause_a92f16d259e326cd9dc242b519f990f11}\label{classClause_a92f16d259e326cd9dc242b519f990f11} 
+void {\bfseries set\+Table} (const std\+::string \&\mbox{\hyperlink{classClause_a58871873e53e4d6e28301986b9f00bc9}{table}})
+\item 
+\Hypertarget{classClause_a8f25d9ce4c7f799205dc21d62d05b77e}\label{classClause_a8f25d9ce4c7f799205dc21d62d05b77e} 
+void {\bfseries set\+Column} (const std\+::string \&\mbox{\hyperlink{classClause_acdad62666cc41710990e299769817d88}{column}})
+\item 
+\Hypertarget{classClause_a0cf5e0980de659339b5faece28893c3c}\label{classClause_a0cf5e0980de659339b5faece28893c3c} 
+auto {\bfseries get\+Type} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_a2916c45980003149e51e892687b6d1ba}\label{classClause_a2916c45980003149e51e892687b6d1ba} 
+auto {\bfseries get\+Action} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_a51564af1d3f369a905bcdf89051b43b6}\label{classClause_a51564af1d3f369a905bcdf89051b43b6} 
+auto {\bfseries get\+Branch} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_a05a1f9bb8bc1cde0a93d02778ed560d6}\label{classClause_a05a1f9bb8bc1cde0a93d02778ed560d6} 
+auto {\bfseries get\+Pattern} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_aae4c054ddc172c2eeff286ac5adc7d11}\label{classClause_aae4c054ddc172c2eeff286ac5adc7d11} 
+auto {\bfseries get\+Db} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_a179aac429d18b6066e087d2346280fda}\label{classClause_a179aac429d18b6066e087d2346280fda} 
+auto {\bfseries get\+Table} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_ab0da735e79657d04508601d39f7575f2}\label{classClause_ab0da735e79657d04508601d39f7575f2} 
+auto {\bfseries get\+Column} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classClause_a0f69e553ba0c82ec5b8b9945e68f2d14}\label{classClause_a0f69e553ba0c82ec5b8b9945e68f2d14} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClause_a34a80c68892beb446643fdd6ebd30468}\label{classClause_a34a80c68892beb446643fdd6ebd30468} 
+\mbox{\hyperlink{classClause_a4f889b644990fa42b52ae1f4b118a185}{Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em 子语句的类型 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_a5d676a019dfd996ccf3d45646f3e2f94}\label{classClause_a5d676a019dfd996ccf3d45646f3e2f94} 
+\mbox{\hyperlink{classClause_a0066d758f4c891945fca046aebbdf546}{Action}} {\bfseries action}
+\begin{DoxyCompactList}\small\item\em 子语句的动作 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClause_a7e8ae21522e6a4c855d8b81cde6522b9}\label{classClause_a7e8ae21522e6a4c855d8b81cde6522b9} 
+std\+::string {\bfseries branch}
+\begin{DoxyCompactList}\small\item\em 当动作为\+JUMP时，branch为跳转的过程 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_afb4e6348235b71a24e493feebc4b8a15}\label{classClause_afb4e6348235b71a24e493feebc4b8a15} 
+std\+::string {\bfseries db}
+\begin{DoxyCompactList}\small\item\em 当动作为\+WRITETO时，db为写入的数据库 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_a58871873e53e4d6e28301986b9f00bc9}\label{classClause_a58871873e53e4d6e28301986b9f00bc9} 
+std\+::string {\bfseries table}
+\begin{DoxyCompactList}\small\item\em 当动作为\+WRITETO时，table为写入的表 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_acdad62666cc41710990e299769817d88}\label{classClause_acdad62666cc41710990e299769817d88} 
+std\+::string {\bfseries column}
+\begin{DoxyCompactList}\small\item\em 当动作为\+WRITETO时，column为写入的列 \end{DoxyCompactList}\item 
+\Hypertarget{classClause_ad49661b31b0e867d48491c85ad591bd7}\label{classClause_ad49661b31b0e867d48491c85ad591bd7} 
+ASTNode\+Ptr {\bfseries pattern}
+\begin{DoxyCompactList}\small\item\em 当类型为\+HAS时，pattern为匹配的模式 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示listen语句的子语句的结点 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

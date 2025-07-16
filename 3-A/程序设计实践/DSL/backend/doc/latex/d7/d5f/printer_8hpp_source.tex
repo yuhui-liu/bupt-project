@@ -1,0 +1,28 @@
+\doxysection{printer.\+hpp}
+\hypertarget{printer_8hpp_source}{}\label{printer_8hpp_source}\index{include/printer.hpp@{include/printer.hpp}}
+\mbox{\hyperlink{printer_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PRINTER\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PRINTER\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{visitor_8hpp}{visitor.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPrinter}{Printer}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVisitor}{Visitor}}\ \{}
+\DoxyCodeLine{00016\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProgram}{Program}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classConstantDefine}{ConstantDefine}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classProcedure}{Procedure}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSay}{Say}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListen}{Listen}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classClause}{Clause}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLookup}{Lookup}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classExit}{Exit}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJump}{Jump}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classIdentifier}{Identifier}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ visit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classString}{String}}\ \&)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PRINTER\_HPP}}
+
+\end{DoxyCode}

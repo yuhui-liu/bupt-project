@@ -1,0 +1,64 @@
+\chapter{客服机器人}
+\hypertarget{index}{}\label{index}\index{客服机器人@{客服机器人}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+
+
+本项目是一个基于\+DSL（\+Domain Specific Language）的客服机器人，可以根据用户输入的问题，自动回答问题。 用户可以通过\+DSL文件配置机器人的回答规则。 \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{项目结构}{项目结构}}\label{index_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{┌──\ CMakeLists.txt}
+\DoxyCodeLine{├──\ src}
+\DoxyCodeLine{│  \ ├──\ main.cpp}
+\DoxyCodeLine{│  \ ├──\ <...src\ files...>}
+\DoxyCodeLine{├──\ include}
+\DoxyCodeLine{│  \ ├──\ <...header\ files...>}
+\DoxyCodeLine{├──\ test}
+\DoxyCodeLine{│  \ ├──\ CMakelists.txt}
+\DoxyCodeLine{│  \ ├──\ <...test\ files...>}
+\DoxyCodeLine{└──\ doc}
+\DoxyCodeLine{\ \ \ \ └──\ <...doc\ files...>}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Requirements}{Requirements}}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/gabime/spdlog}{\texttt{ spdlog}}
+\item \href{https://www.boost.org/}{\texttt{ boost}}
+\item \href{https://github.com/google/googletest}{\texttt{ Google\+Test}}
+\item \href{https://www.sqlite.org/index.html}{\texttt{ sqlite}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Build}{Build}}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/S\ .\ -\/B\ build}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{语法}{语法}}\label{index_autotoc_md4}
+EBNF： 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{program\ \ \ \ \ \ \ \ \ ::=\ \{\ constant-\/define\ \}\ \{\ procedure\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constant-\/define\ ::=\ id\ "{}="{}\ string}
+\DoxyCodeLine{procedure\ \ \ \ \ \ \ ::=\ "{}procedure"{}\ id\ "{}\{"{}\ \{\ statement\ \}\ "{}\}"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{statement\ \ \ \ \ \ \ ::=\ say\ |\ listen\ |\ lookup\ |\ exit\ |\ id}
+\DoxyCodeLine{}
+\DoxyCodeLine{say\ \ \ \ \ \ \ \ \ \ \ \ \ ::=\ "{}say"{}\ id\ |\ string\ \{\ "{},"{}\ id|string\ \}}
+\DoxyCodeLine{listen\ \ \ \ \ \ \ \ \ \ ::=\ "{}listen"{}\ "{}timelimit"{}\ number\ "{}\{"{}\ \{\ has\ |\ timeout\ |\ default\ |\ anything\ \}\ "{}\}"{}}
+\DoxyCodeLine{lookup\ \ \ \ \ \ \ \ \ \ ::=\ "{}lookup"{}\ id\ "{}in"{}\ id\ "{}:"{}\ id}
+\DoxyCodeLine{}
+\DoxyCodeLine{anything\ \ \ \ \ \ \ \ ::=\ "{}anything"{}\ "{}?"{}\ id\ |\ writeto}
+\DoxyCodeLine{has\ \ \ \ \ \ \ \ \ \ \ \ \ ::=\ "{}has"{}\ id\ |\ string\ "{}?"{}\ id\ |\ writeto}
+\DoxyCodeLine{timeout\ \ \ \ \ \ \ \ \ ::=\ "{}timeout"{}\ "{}?"{}\ id\ |\ writeto}
+\DoxyCodeLine{default\ \ \ \ \ \ \ \ \ ::=\ "{}default"{}\ "{}?"{}\ id\ |\ writeto}
+\DoxyCodeLine{}
+\DoxyCodeLine{writeto\ \ \ \ \ \ \ \ \ ::=\ "{}writeto"{}\ id\ "{}:"{}\ id\ "{}:"{}\ id}
+\DoxyCodeLine{}
+\DoxyCodeLine{string\ \ \ \ \ \ \ \ \ \ ::=\ '"{}'\ \{\ allcharacters\ -\/\ '"{}'\ \}\ '"{}'}
+\DoxyCodeLine{id\ \ \ \ \ \ \ \ \ \ \ \ \ \ ::=\ [a-\/zA-\/Z]\ id\ |\ [a-\/zA-\/Z]}
+\DoxyCodeLine{}
+\DoxyCodeLine{allcharacters\ \ \ ::=\ ?\ all\ visible\ ascii\ characters\ ?}
+
+\end{DoxyCode}
+ 

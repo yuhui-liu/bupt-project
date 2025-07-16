@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/ast.hpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/dc8/ast_8hpp.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle"><div class="title">ast.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>抽象语法树（Abstract Syntax Tree）结点类的定义  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ast.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d1a/ast_8hpp__incl.png" border="0" usemap="#ainclude_2ast_8hpp" alt=""/></div>
+<map name="ainclude_2ast_8hpp" id="ainclude_2ast_8hpp">
+<area shape="rect" title="抽象语法树（Abstract Syntax Tree）结点类的定义" alt="" coords="117,5,238,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,83,104"/>
+<area shape="poly" title=" " alt="" coords="157,33,79,74,77,70,155,28"/>
+<area shape="rect" title=" " alt="" coords="107,79,165,104"/>
+<area shape="poly" title=" " alt="" coords="173,32,152,68,147,65,168,30"/>
+<area shape="rect" title=" " alt="" coords="190,79,250,104"/>
+<area shape="poly" title=" " alt="" coords="187,30,208,66,204,68,182,32"/>
+<area shape="rect" title=" " alt="" coords="274,79,337,104"/>
+<area shape="poly" title=" " alt="" coords="199,28,273,69,271,74,197,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d90/ast_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ast_8hppdep" alt=""/></div>
+<map name="ainclude_2ast_8hppdep" id="ainclude_2ast_8hppdep">
+<area shape="rect" title="抽象语法树（Abstract Syntax Tree）结点类的定义" alt="" coords="514,5,635,31"/>
+<area shape="rect" href="../../db/d42/interpreter_8hpp.html" title="Interpreter 类的声明。" alt="" coords="143,79,313,104"/>
+<area shape="poly" title=" " alt="" coords="506,36,285,81,284,76,505,31"/>
+<area shape="rect" href="../../d6/d67/network_8hpp.html" title="WebSocket 服务器和会话类的声明。" alt="" coords="5,152,160,177"/>
+<area shape="poly" title=" " alt="" coords="500,24,404,29,297,39,198,56,160,67,132,81,115,97,103,116,88,153,83,151,98,114,111,93,129,76,158,62,197,51,296,34,404,24,500,19"/>
+<area shape="rect" href="../../dc/d8a/network_8cpp.html" title="网络部分的实现。使用WebSocket协议实现前后端通信。" alt="" coords="135,225,260,251"/>
+<area shape="poly" title=" " alt="" coords="517,37,477,55,441,81,423,105,416,130,408,155,388,179,359,199,326,214,261,232,260,227,324,209,356,195,385,175,403,152,411,128,418,103,437,77,475,50,515,33"/>
+<area shape="rect" href="../../d2/de2/interpreter_8cpp.html" title="Interpreter 类的实现。" alt="" coords="235,152,375,177"/>
+<area shape="poly" title=" " alt="" coords="508,37,452,55,396,81,349,118,317,154,313,150,346,114,393,76,450,50,506,32"/>
+<area shape="rect" href="../../d1/d46/parser_8hpp.html" title="Parser 类的声明。" alt="" coords="451,79,592,104"/>
+<area shape="poly" title=" " alt="" coords="560,43,532,80,528,77,556,40"/>
+<area shape="rect" href="../../dc/ddd/parser_8cpp.html" title="Parser 类的实现。" alt="" coords="539,152,651,177"/>
+<area shape="poly" title=" " alt="" coords="592,42,607,78,608,119,601,152,596,151,603,118,601,79,587,44"/>
+<area shape="rect" href="../../df/da3/semantic__analysis_8hpp.html" title="SemanticAnalysis 类的声明。" alt="" coords="666,79,889,104"/>
+<area shape="poly" title=" " alt="" coords="621,33,745,76,744,81,619,38"/>
+<area shape="rect" href="../../d0/dc0/semantic__analysis_8cpp.html" title="SemanticAnalysis 类的实现。" alt="" coords="714,152,907,177"/>
+<area shape="poly" title=" " alt="" coords="649,20,720,25,795,36,861,52,885,63,902,77,908,89,908,101,893,122,868,140,840,154,838,150,865,136,889,118,903,99,903,90,898,80,882,68,859,57,794,41,720,31,649,25"/>
+<area shape="rect" href="../../d3/d24/ast_8cpp.html" title="AST各个结点的实现，包括adders &amp; setters和acceptors" alt="" coords="963,79,1055,104"/>
+<area shape="poly" title=" " alt="" coords="649,28,944,76,964,79,963,85,944,81,648,34"/>
+<area shape="rect" href="../../da/de9/printer_8cpp.html" title="Printer 类的实现。" alt="" coords="1080,79,1195,104"/>
+<area shape="poly" title=" " alt="" coords="650,25,840,46,1068,76,1080,78,1079,83,1068,81,839,52,649,30"/>
+<area shape="poly" title=" " alt="" coords="194,112,108,154,105,149,191,108"/>
+<area shape="poly" title=" " alt="" coords="225,118,202,226,197,225,220,117"/>
+<area shape="poly" title=" " alt="" coords="252,111,294,150,291,154,249,115"/>
+<area shape="poly" title=" " alt="" coords="114,182,180,223,177,227,111,187"/>
+<area shape="poly" title=" " alt="" coords="545,112,585,150,581,154,541,116"/>
+<area shape="poly" title=" " alt="" coords="791,115,808,151,803,153,786,118"/>
+</map>
+</div>
+</div>
+<p><a href="../../dd/dc8/ast_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d3a/classASTNode.html">ASTNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">抽象语法树结点  <a href="../../d2/d3a/classASTNode.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db5/classProgram.html">Program</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示程序的结点  <a href="../../dc/db5/classProgram.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示常量定义的结点  <a href="../../d5/d53/classConstantDefine.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d54/classProcedure.html">Procedure</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示过程的结点  <a href="../../d1/d54/classProcedure.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/db9/classSay.html">Say</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示say语句的结点  <a href="../../d7/db9/classSay.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d68/classListen.html">Listen</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示listen语句的结点  <a href="../../d1/d68/classListen.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dbe/classClause.html">Clause</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示listen语句的子语句的结点  <a href="../../d0/dbe/classClause.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d08/classLookup.html">Lookup</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示lookup语句的结点  <a href="../../d3/d08/classLookup.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5b/classExit.html">Exit</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示exit语句的结点  <a href="../../dc/d5b/classExit.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classJump.html">Jump</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示jump语句的结点  <a href="../../d9/d02/classJump.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de3/classIdentifier.html">Identifier</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示Identifier的结点  <a href="../../d1/de3/classIdentifier.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dee/classString.html">String</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示字符串字面量的结点  <a href="../../d3/dee/classString.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ae4711e9daf48fef14880c8c83aa92c9c" id="r_ae4711e9daf48fef14880c8c83aa92c9c"><td class="memItemLeft" align="right" valign="top"><a id="ae4711e9daf48fef14880c8c83aa92c9c" name="ae4711e9daf48fef14880c8c83aa92c9c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ASTNodePtr</b> = std::unique_ptr&lt;<a class="el" href="../../d2/d3a/classASTNode.html">ASTNode</a>&gt;</td></tr>
+<tr class="separator:ae4711e9daf48fef14880c8c83aa92c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>抽象语法树（Abstract Syntax Tree）结点类的定义 </p>
+<p>定义了抽象语法树的各个结点 </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dd/dc8/ast_8hpp.html">ast.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<map id="WebSocketSession::doRead" name="WebSocketSession::doRead">
+<area shape="rect" id="Node000001" title="开始读取数据" alt="" coords="484,55,684,80"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#a74a5fea9db2a070da22dd570fd1eebe2" title="处理 WebSocket 连接接受事件" alt="" coords="225,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,55,396,33,397,28,505,49"/>
+<area shape="rect" id="Node000004" href="$de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="231,55,431,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="470,79,431,79,431,73,470,74"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#aa60a520432526e90b74fd97713469a56" title="启动 WebSocket 会话" alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,21,178,21,178,15,212,15"/>
+<area shape="poly" id="edge4_Node000004_Node000001" title=" " alt="" coords="445,56,484,56,484,61,445,61"/>
+</map>

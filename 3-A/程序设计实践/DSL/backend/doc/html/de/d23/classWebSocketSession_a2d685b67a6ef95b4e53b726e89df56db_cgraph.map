@@ -1,0 +1,8 @@
+<map id="WebSocketSession::send" name="WebSocketSession::send">
+<area shape="rect" id="Node000001" title="发送消息" alt="" coords="5,29,188,55"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#aa142263d3ee614b76eaaabee72dd4e3d" title="处理写事件" alt="" coords="236,29,439,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,39,222,39,222,45,188,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="299,31,291,21,295,11,311,5,337,3,370,7,383,16,380,20,368,11,337,8,312,10,299,15,296,20,303,27"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#afa424ac9c7515c33ce8cc1baaeccfeb5" title="处理错误" alt="" coords="487,29,659,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,39,473,39,473,45,439,45"/>
+</map>

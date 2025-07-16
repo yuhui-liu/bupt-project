@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/interpreter.hpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('db/d42/interpreter_8hpp_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interpreter.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d42/interpreter_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef INTERPRETER_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define INTERPRETER_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/dc8/ast_8hpp.html">ast.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="../../d8/da6/sqlite__interface_8hpp.html">sqlite_interface.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/df0/visitor_8hpp.html">visitor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/dea/classInterpreter.html">Interpreter</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d4/d14/classVisitor.html">Visitor</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#aeb518e633c77d52fdb39d932fe99df29">   35</a></span>  <a class="code hl_function" href="../../dd/dea/classInterpreter.html#aeb518e633c77d52fdb39d932fe99df29">Interpreter</a>(std::shared_ptr&lt;Program&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">program</a>, std::string <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">mode</a>, std::map&lt;std::string, std::string&gt; c,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>              std::map&lt;std::string, std::size_t&gt; p)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      : <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">mode</a>(std::move(<a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">mode</a>)), <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#aa4e492b8c13f2cf700dd0ad7abb2e28d">constants</a>(std::move(c)), <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a6418c92af2a867770770a7687d57ee03">procedures</a>(std::move(p)), <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">program</a>(std::move(<a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">program</a>)) {}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">// Visitor 接口声明</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/db5/classProgram.html">Program</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/d53/classConstantDefine.html">ConstantDefine</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d54/classProcedure.html">Procedure</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d7/db9/classSay.html">Say</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d68/classListen.html">Listen</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/dbe/classClause.html">Clause</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/d08/classLookup.html">Lookup</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/d5b/classExit.html">Exit</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d9/d02/classJump.html">Jump</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/de3/classIdentifier.html">Identifier</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">visit</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/dee/classString.html">String</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// Visitor 接口声明结束</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#ac47bcb0f1ba98246c48b6c17c92e2fe1">   54</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#ac47bcb0f1ba98246c48b6c17c92e2fe1">setSend</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> std::string&amp;)&gt; s) { <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a2e4c676d785488218fa25420645223f9">send</a> = std::move(s); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#aed44e319d6acc68ec728467d667bbb8f">setInputFromNetwork</a>(<span class="keyword">const</span> std::string&amp; input) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a70c449dedd4b03a3b4d69d2c59b1f341">   58</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a70c449dedd4b03a3b4d69d2c59b1f341">setUid</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> userId) { <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#af5252a94f72103259e3597b7d2776a04">uid</a> = userId; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#afc55e6e1c0811ffa159a6f7b21feeeba">clauseAction</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/dbe/classClause.html">Clause</a>&amp; clause) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#aec40dd04f71e570b781d52c5918c6d45">   63</a></span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#aec40dd04f71e570b781d52c5918c6d45">clause_accepted</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">   66</a></span>  std::string <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">mode</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#aa4e492b8c13f2cf700dd0ad7abb2e28d">   68</a></span>  <span class="keyword">mutable</span> std::map&lt;std::string, std::string&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#aa4e492b8c13f2cf700dd0ad7abb2e28d">constants</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a6418c92af2a867770770a7687d57ee03">   70</a></span>  std::map&lt;std::string, std::size_t&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a6418c92af2a867770770a7687d57ee03">procedures</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">   72</a></span>  std::shared_ptr&lt;Program&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">program</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#ad725f641a5cf052bac767047cbf7b493">getCliInput</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a22c8f851b6fb4d7192a9733b34f1ea12">   76</a></span>  <span class="keyword">mutable</span> std::string <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a22c8f851b6fb4d7192a9733b34f1ea12">input_buffer</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a3c51640a9779576fd1a289ad9a84460e">   78</a></span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a3c51640a9779576fd1a289ad9a84460e">input_received</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#adb14f17c7f0015fb5335f2028b47bc96">   80</a></span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#adb14f17c7f0015fb5335f2028b47bc96">real_input_received</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a6cc3fd74480c5d47737dc57d4413c9db">   82</a></span>  <span class="keyword">mutable</span> std::atomic&lt;bool&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a6cc3fd74480c5d47737dc57d4413c9db">is_reading</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a81322f808ca6c8b09d1840734c2eb3ce">   84</a></span>  <span class="keyword">mutable</span> std::mutex <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a81322f808ca6c8b09d1840734c2eb3ce">mtx</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a18740eabfc9b2b639050b233c78b58ee">   86</a></span>  <span class="keyword">mutable</span> std::condition_variable <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a18740eabfc9b2b639050b233c78b58ee">cv</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#a2a606afcff5f90e3cae3e17cd45f4e53">output</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#ab14e1805c380db7d09e245ff5a9dcbac">   90</a></span>  <span class="keyword">mutable</span> std::string <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#ab14e1805c380db7d09e245ff5a9dcbac">output_buffer</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a39d37390dea404d834d2bc1f967f16e3">   93</a></span>  <span class="keyword">mutable</span> std::map&lt;std::string, std::unique_ptr&lt;SQLiteDB&gt;&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a39d37390dea404d834d2bc1f967f16e3">dbs</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/dea/classInterpreter.html#af4cd87a6447218bec8eda3e52aab9014">getIdOrString</a>(<span class="keyword">const</span> ASTNodePtr&amp; p) -&gt; std::string;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#a2e4c676d785488218fa25420645223f9">   97</a></span>  std::function&lt;void(<span class="keyword">const</span> std::string&amp;)&gt; <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#a2e4c676d785488218fa25420645223f9">send</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULTUID = 101;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../dd/dea/classInterpreter.html#af5252a94f72103259e3597b7d2776a04">  100</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/dea/classInterpreter.html#af5252a94f72103259e3597b7d2776a04">uid</a>{DEFAULTUID};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif  </span><span class="comment">// INTERPRETER_HPP</span></div>
+<div class="ttc" id="aast_8hpp_html"><div class="ttname"><a href="../../dd/dc8/ast_8hpp.html">ast.hpp</a></div><div class="ttdoc">抽象语法树（Abstract Syntax Tree）结点类的定义</div></div>
+<div class="ttc" id="aclassClause_html"><div class="ttname"><a href="../../d0/dbe/classClause.html">Clause</a></div><div class="ttdoc">表示listen语句的子语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:144</div></div>
+<div class="ttc" id="aclassConstantDefine_html"><div class="ttname"><a href="../../d5/d53/classConstantDefine.html">ConstantDefine</a></div><div class="ttdoc">表示常量定义的结点</div><div class="ttdef"><b>定义</b> ast.hpp:57</div></div>
+<div class="ttc" id="aclassExit_html"><div class="ttname"><a href="../../dc/d5b/classExit.html">Exit</a></div><div class="ttdoc">表示exit语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:219</div></div>
+<div class="ttc" id="aclassIdentifier_html"><div class="ttname"><a href="../../d1/de3/classIdentifier.html">Identifier</a></div><div class="ttdoc">表示Identifier的结点</div><div class="ttdef"><b>定义</b> ast.hpp:246</div></div>
+<div class="ttc" id="aclassInterpreter_html"><div class="ttname"><a href="../../dd/dea/classInterpreter.html">Interpreter</a></div><div class="ttdoc">解释器类。解释程序并执行。</div><div class="ttdef"><b>定义</b> interpreter.hpp:26</div></div>
+<div class="ttc" id="aclassInterpreter_html_a18740eabfc9b2b639050b233c78b58ee"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a18740eabfc9b2b639050b233c78b58ee">Interpreter::cv</a></div><div class="ttdeci">std::condition_variable cv</div><div class="ttdoc">条件变量，用于等待输入</div><div class="ttdef"><b>定义</b> interpreter.hpp:86</div></div>
+<div class="ttc" id="aclassInterpreter_html_a22731a37463e70b822ba79e6ecbbb125"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a22731a37463e70b822ba79e6ecbbb125">Interpreter::mode</a></div><div class="ttdeci">std::string mode</div><div class="ttdoc">当前运行模式</div><div class="ttdef"><b>定义</b> interpreter.hpp:66</div></div>
+<div class="ttc" id="aclassInterpreter_html_a22c8f851b6fb4d7192a9733b34f1ea12"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a22c8f851b6fb4d7192a9733b34f1ea12">Interpreter::input_buffer</a></div><div class="ttdeci">std::string input_buffer</div><div class="ttdoc">输入缓冲区</div><div class="ttdef"><b>定义</b> interpreter.hpp:76</div></div>
+<div class="ttc" id="aclassInterpreter_html_a2a606afcff5f90e3cae3e17cd45f4e53"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a2a606afcff5f90e3cae3e17cd45f4e53">Interpreter::output</a></div><div class="ttdeci">void output() const</div><div class="ttdoc">输出缓冲区内容</div><div class="ttdef"><b>定义</b> interpreter.cpp:237</div></div>
+<div class="ttc" id="aclassInterpreter_html_a2e4c676d785488218fa25420645223f9"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a2e4c676d785488218fa25420645223f9">Interpreter::send</a></div><div class="ttdeci">std::function&lt; void(const std::string &amp;)&gt; send</div><div class="ttdoc">回调函数，用于向网络发送数据</div><div class="ttdef"><b>定义</b> interpreter.hpp:97</div></div>
+<div class="ttc" id="aclassInterpreter_html_a39d37390dea404d834d2bc1f967f16e3"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a39d37390dea404d834d2bc1f967f16e3">Interpreter::dbs</a></div><div class="ttdeci">std::map&lt; std::string, std::unique_ptr&lt; SQLiteDB &gt; &gt; dbs</div><div class="ttdoc">数据库连接</div><div class="ttdef"><b>定义</b> interpreter.hpp:93</div></div>
+<div class="ttc" id="aclassInterpreter_html_a3c51640a9779576fd1a289ad9a84460e"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a3c51640a9779576fd1a289ad9a84460e">Interpreter::input_received</a></div><div class="ttdeci">bool input_received</div><div class="ttdoc">收到输入标志</div><div class="ttdef"><b>定义</b> interpreter.hpp:78</div></div>
+<div class="ttc" id="aclassInterpreter_html_a46a354b5759e7d83428e4687cdbb928a"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a46a354b5759e7d83428e4687cdbb928a">Interpreter::program</a></div><div class="ttdeci">std::shared_ptr&lt; Program &gt; program</div><div class="ttdoc">待解释的程序</div><div class="ttdef"><b>定义</b> interpreter.hpp:72</div></div>
+<div class="ttc" id="aclassInterpreter_html_a6418c92af2a867770770a7687d57ee03"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a6418c92af2a867770770a7687d57ee03">Interpreter::procedures</a></div><div class="ttdeci">std::map&lt; std::string, std::size_t &gt; procedures</div><div class="ttdoc">过程表</div><div class="ttdef"><b>定义</b> interpreter.hpp:70</div></div>
+<div class="ttc" id="aclassInterpreter_html_a6cc3fd74480c5d47737dc57d4413c9db"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a6cc3fd74480c5d47737dc57d4413c9db">Interpreter::is_reading</a></div><div class="ttdeci">std::atomic&lt; bool &gt; is_reading</div><div class="ttdoc">正在读取输入标志</div><div class="ttdef"><b>定义</b> interpreter.hpp:82</div></div>
+<div class="ttc" id="aclassInterpreter_html_a70c449dedd4b03a3b4d69d2c59b1f341"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a70c449dedd4b03a3b4d69d2c59b1f341">Interpreter::setUid</a></div><div class="ttdeci">void setUid(const int userId)</div><div class="ttdoc">设置用户id</div><div class="ttdef"><b>定义</b> interpreter.hpp:58</div></div>
+<div class="ttc" id="aclassInterpreter_html_a81322f808ca6c8b09d1840734c2eb3ce"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a81322f808ca6c8b09d1840734c2eb3ce">Interpreter::mtx</a></div><div class="ttdeci">std::mutex mtx</div><div class="ttdoc">互斥量，用于保护输入缓冲区</div><div class="ttdef"><b>定义</b> interpreter.hpp:84</div></div>
+<div class="ttc" id="aclassInterpreter_html_a90d980f97d8d50b2410062abb87ed0da"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#a90d980f97d8d50b2410062abb87ed0da">Interpreter::visit</a></div><div class="ttdeci">void visit(const Program &amp;) const override</div><div class="ttdoc">访问程序节点</div><div class="ttdef"><b>定义</b> interpreter.cpp:27</div></div>
+<div class="ttc" id="aclassInterpreter_html_aa4e492b8c13f2cf700dd0ad7abb2e28d"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#aa4e492b8c13f2cf700dd0ad7abb2e28d">Interpreter::constants</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; constants</div><div class="ttdoc">常量表</div><div class="ttdef"><b>定义</b> interpreter.hpp:68</div></div>
+<div class="ttc" id="aclassInterpreter_html_ab14e1805c380db7d09e245ff5a9dcbac"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#ab14e1805c380db7d09e245ff5a9dcbac">Interpreter::output_buffer</a></div><div class="ttdeci">std::string output_buffer</div><div class="ttdoc">输出缓冲区</div><div class="ttdef"><b>定义</b> interpreter.hpp:90</div></div>
+<div class="ttc" id="aclassInterpreter_html_ac47bcb0f1ba98246c48b6c17c92e2fe1"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#ac47bcb0f1ba98246c48b6c17c92e2fe1">Interpreter::setSend</a></div><div class="ttdeci">void setSend(std::function&lt; void(const std::string &amp;)&gt; s)</div><div class="ttdoc">设置 send 回调函数</div><div class="ttdef"><b>定义</b> interpreter.hpp:54</div></div>
+<div class="ttc" id="aclassInterpreter_html_ad725f641a5cf052bac767047cbf7b493"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#ad725f641a5cf052bac767047cbf7b493">Interpreter::getCliInput</a></div><div class="ttdeci">void getCliInput() const</div><div class="ttdoc">获取CLI输入</div><div class="ttdef"><b>定义</b> interpreter.cpp:254</div></div>
+<div class="ttc" id="aclassInterpreter_html_adb14f17c7f0015fb5335f2028b47bc96"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#adb14f17c7f0015fb5335f2028b47bc96">Interpreter::real_input_received</a></div><div class="ttdeci">bool real_input_received</div><div class="ttdoc">真实输入接收标志，用于同步时防止混淆</div><div class="ttdef"><b>定义</b> interpreter.hpp:80</div></div>
+<div class="ttc" id="aclassInterpreter_html_aeb518e633c77d52fdb39d932fe99df29"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#aeb518e633c77d52fdb39d932fe99df29">Interpreter::Interpreter</a></div><div class="ttdeci">Interpreter(std::shared_ptr&lt; Program &gt; program, std::string mode, std::map&lt; std::string, std::string &gt; c, std::map&lt; std::string, std::size_t &gt; p)</div><div class="ttdoc">构造一个新的 Interpreter 对象。</div><div class="ttdef"><b>定义</b> interpreter.hpp:35</div></div>
+<div class="ttc" id="aclassInterpreter_html_aec40dd04f71e570b781d52c5918c6d45"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#aec40dd04f71e570b781d52c5918c6d45">Interpreter::clause_accepted</a></div><div class="ttdeci">bool clause_accepted</div><div class="ttdoc">标识当前Clause是否被接受</div><div class="ttdef"><b>定义</b> interpreter.hpp:63</div></div>
+<div class="ttc" id="aclassInterpreter_html_aed44e319d6acc68ec728467d667bbb8f"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#aed44e319d6acc68ec728467d667bbb8f">Interpreter::setInputFromNetwork</a></div><div class="ttdeci">void setInputFromNetwork(const std::string &amp;input) const</div><div class="ttdoc">设置网络输入</div><div class="ttdef"><b>定义</b> interpreter.cpp:278</div></div>
+<div class="ttc" id="aclassInterpreter_html_af4cd87a6447218bec8eda3e52aab9014"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#af4cd87a6447218bec8eda3e52aab9014">Interpreter::getIdOrString</a></div><div class="ttdeci">static auto getIdOrString(const ASTNodePtr &amp;p) -&gt; std::string</div><div class="ttdoc">获取标识符或字符串</div><div class="ttdef"><b>定义</b> interpreter.cpp:294</div></div>
+<div class="ttc" id="aclassInterpreter_html_af5252a94f72103259e3597b7d2776a04"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#af5252a94f72103259e3597b7d2776a04">Interpreter::uid</a></div><div class="ttdeci">int uid</div><div class="ttdoc">用户id</div><div class="ttdef"><b>定义</b> interpreter.hpp:100</div></div>
+<div class="ttc" id="aclassInterpreter_html_afc55e6e1c0811ffa159a6f7b21feeeba"><div class="ttname"><a href="../../dd/dea/classInterpreter.html#afc55e6e1c0811ffa159a6f7b21feeeba">Interpreter::clauseAction</a></div><div class="ttdeci">void clauseAction(const Clause &amp;clause) const</div><div class="ttdoc">执行Clause节点的操作</div><div class="ttdef"><b>定义</b> interpreter.cpp:129</div></div>
+<div class="ttc" id="aclassJump_html"><div class="ttname"><a href="../../d9/d02/classJump.html">Jump</a></div><div class="ttdoc">表示jump语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:228</div></div>
+<div class="ttc" id="aclassListen_html"><div class="ttname"><a href="../../d1/d68/classListen.html">Listen</a></div><div class="ttdoc">表示listen语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:121</div></div>
+<div class="ttc" id="aclassLookup_html"><div class="ttname"><a href="../../d3/d08/classLookup.html">Lookup</a></div><div class="ttdoc">表示lookup语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:192</div></div>
+<div class="ttc" id="aclassProcedure_html"><div class="ttname"><a href="../../d1/d54/classProcedure.html">Procedure</a></div><div class="ttdoc">表示过程的结点</div><div class="ttdef"><b>定义</b> ast.hpp:80</div></div>
+<div class="ttc" id="aclassProgram_html"><div class="ttname"><a href="../../dc/db5/classProgram.html">Program</a></div><div class="ttdoc">表示程序的结点</div><div class="ttdef"><b>定义</b> ast.hpp:33</div></div>
+<div class="ttc" id="aclassSay_html"><div class="ttname"><a href="../../d7/db9/classSay.html">Say</a></div><div class="ttdoc">表示say语句的结点</div><div class="ttdef"><b>定义</b> ast.hpp:103</div></div>
+<div class="ttc" id="aclassString_html"><div class="ttname"><a href="../../d3/dee/classString.html">String</a></div><div class="ttdoc">表示字符串字面量的结点</div><div class="ttdef"><b>定义</b> ast.hpp:264</div></div>
+<div class="ttc" id="aclassVisitor_html"><div class="ttname"><a href="../../d4/d14/classVisitor.html">Visitor</a></div><div class="ttdoc">Visitor 类</div><div class="ttdef"><b>定义</b> visitor.hpp:26</div></div>
+<div class="ttc" id="asqlite__interface_8hpp_html"><div class="ttname"><a href="../../d8/da6/sqlite__interface_8hpp.html">sqlite_interface.hpp</a></div><div class="ttdoc">SQLiteDB 类的声明。</div></div>
+<div class="ttc" id="avisitor_8hpp_html"><div class="ttname"><a href="../../d2/df0/visitor_8hpp.html">visitor.hpp</a></div><div class="ttdoc">Visitor 类的声明。</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../db/d42/interpreter_8hpp.html">interpreter.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<map id="include/sqlite_interface.hpp" name="include/sqlite_interface.hpp">
+<area shape="rect" id="Node000001" title="SQLiteDB 类的声明。" alt="" coords="193,5,396,31"/>
+<area shape="rect" id="Node000002" href="$db/d42/interpreter_8hpp.html" title="Interpreter 类的声明。" alt="" coords="113,79,282,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,41,215,81,212,76,266,37"/>
+<area shape="rect" id="Node000006" href="$d5/d33/sqlite__interface_8cpp.html" title="SQLiteDB 类的实现。" alt="" coords="307,79,480,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="323,36,379,76,376,81,320,41"/>
+<area shape="rect" id="Node000003" href="$d6/d67/network_8hpp.html" title="WebSocket 服务器和会话类的声明。" alt="" coords="5,152,160,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,113,103,154,100,150,166,109"/>
+<area shape="rect" id="Node000004" href="$dc/d8a/network_8cpp.html" title="网络部分的实现。使用WebSocket协议实现前后端通信。" alt="" coords="77,225,203,251"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="194,119,174,178,149,226,145,224,170,176,189,117"/>
+<area shape="rect" id="Node000005" href="$d2/de2/interpreter_8cpp.html" title="Interpreter 类的实现。" alt="" coords="235,152,375,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="227,109,289,150,286,154,225,114"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,186,133,224,129,227,98,190"/>
+</map>

@@ -1,0 +1,398 @@
+\doxysection{Parser类 参考}
+\hypertarget{classParser}{}\label{classParser}\index{Parser@{Parser}}
+
+
+解析器类。解析token流，生成\+AST。  
+
+
+
+
+{\ttfamily \#include $<$parser.\+hpp$>$}
+
+
+
+Parser 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{d8/db0/classParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParser_ac93b3201fac5ebaf8c398054c7fec2b9}{Parser}} (std\+::vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classParser_a247983c66efec033f5dab3d57a71baf9}{tokens}})
+\item 
+auto \mbox{\hyperlink{classParser_a6a0c4cfabb48792a42536f70a0fb936d}{parse}} () -\/$>$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classParser_ae8fa6d0592f138e5fe7296e54182e2e2}{match}} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&) -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 检查当前 token 是否与给定类型匹配，如果匹配则前进到下一个 token。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_aa223c550c78a3b85c32d81e7a019304e}{check}} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&) const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 检查当前令牌是否为指定类型。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a01f3611a2b31c54e8c291e27d59fd982}{is\+End}} () const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em 检查当前是否已经到达文件末尾。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a889d99815b4afebedd911652c75ed946}{get\+Token}} () const -\/$>$ const \mbox{\hyperlink{classToken}{Token}} \&
+\begin{DoxyCompactList}\small\item\em 获取当前 token。 \end{DoxyCompactList}\item 
+\Hypertarget{classParser_a21e7418ee4a86e8cd4495f7eeeb355e5}\label{classParser_a21e7418ee4a86e8cd4495f7eeeb355e5} 
+void {\bfseries forward} ()
+\begin{DoxyCompactList}\small\item\em 前进到下一个 token。 \end{DoxyCompactList}\item 
+\Hypertarget{classParser_a74b70e46a785bffc59bafd3c9c0eec64}\label{classParser_a74b70e46a785bffc59bafd3c9c0eec64} 
+void {\bfseries backward} ()
+\begin{DoxyCompactList}\small\item\em 后退到上一个 token。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a8c73f849c019cb0f84cda0562d24a2eb}{constant}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析常量定义 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a42b77e2f261e13df895295eb986073ab}{procedure}} () -\/$>$ ASTNode\+Ptr
+\item 
+auto \mbox{\hyperlink{classParser_a347b6f799c4ecc6ef18b30864944fe00}{statement}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析并返回一个语句节点。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_adc69a9006235872f6a6641037e0481c8}{say}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析并生成一个表示“say”语句的抽象语法树节点。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_adff4afe52c7a459405ccc78badab61ca}{listen}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析 "{}listen"{} 语句。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_ac00d7103e9d2d03f7b9b7b81dd4ac457}{clause}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析一个子句。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a7b4c9b12c37032b09dc613a11ef24a24}{lookup}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析并生成一个 \doxylink{classLookup}{Lookup} 节点。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_ad3734b1aa800b66ba862b97d7f80f70e}{id\+Or\+String}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析标识符或字符串。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a08ccc41cd0f9d299a25e447fb4d52104}{id}} () -\/$>$ ASTNode\+Ptr
+\begin{DoxyCompactList}\small\item\em 解析标识符并返回一个\+AST节点指针。 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classParser_a6acc89881b075da79a2d0704ad43f12a}{consume}} (const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&, const std\+::string \&) -\/$>$ \mbox{\hyperlink{classToken}{Token}}
+\begin{DoxyCompactList}\small\item\em 消费一个指定类型的 token。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classParser_a247983c66efec033f5dab3d57a71baf9}\label{classParser_a247983c66efec033f5dab3d57a71baf9} 
+std\+::vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ {\bfseries tokens}
+\begin{DoxyCompactList}\small\item\em 待解析的token流。 \end{DoxyCompactList}\item 
+\Hypertarget{classParser_a43b6072efdde04c75621fa21181829db}\label{classParser_a43b6072efdde04c75621fa21181829db} 
+std\+::size\+\_\+t {\bfseries current} = 0
+\begin{DoxyCompactList}\small\item\em 当前解析的token的索引。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+解析器类。解析token流，生成\+AST。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classParser_ac93b3201fac5ebaf8c398054c7fec2b9}\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily \label{classParser_ac93b3201fac5ebaf8c398054c7fec2b9} 
+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$}]{tokens}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em tokens} & 一个包含所有token的vector。 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classParser_aa223c550c78a3b85c32d81e7a019304e}\index{Parser@{Parser}!check@{check}}
+\index{check@{check}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily \label{classParser_aa223c550c78a3b85c32d81e7a019304e} 
+auto Parser\+::check (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&}]{type}{}\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [private]}}
+
+
+
+检查当前令牌是否为指定类型。 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 要检查的令牌类型。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+如果当前令牌是指定类型且未到达文件末尾，则返回 true；否则返回 false。 
+\end{DoxyReturn}
+\Hypertarget{classParser_ac00d7103e9d2d03f7b9b7b81dd4ac457}\index{Parser@{Parser}!clause@{clause}}
+\index{clause@{clause}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{clause()}{clause()}}
+{\footnotesize\ttfamily \label{classParser_ac00d7103e9d2d03f7b9b7b81dd4ac457} 
+auto Parser\+::clause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析一个子句。 
+
+该函数解析一个子句，并根据匹配的\+Token类型设置子句的类型和相应的属性。
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 返回解析后的子句节点。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em \doxylink{classParserException}{Parser\+Exception}} & 当子句不符合预期格式时抛出异常。 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classParser_a8c73f849c019cb0f84cda0562d24a2eb}\index{Parser@{Parser}!constant@{constant}}
+\index{constant@{constant}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{constant()}{constant()}}
+{\footnotesize\ttfamily \label{classParser_a8c73f849c019cb0f84cda0562d24a2eb} 
+auto Parser\+::constant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析常量定义 
+
+该函数解析一个常量定义语句，期望的语法格式为： $<$identifier$>$ = $<$string$>$
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 返回一个指向常量定义节点的智能指针 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果语法不符合预期，将抛出异常 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classParser_a6acc89881b075da79a2d0704ad43f12a}\index{Parser@{Parser}!consume@{consume}}
+\index{consume@{consume}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily \label{classParser_a6acc89881b075da79a2d0704ad43f12a} 
+auto Parser\+::consume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&}]{type}{, }\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classToken}{Token}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+消费一个指定类型的 token。 
+
+如果当前 token 的类型与给定类型不匹配，则抛出异常。
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 要消费的 token 类型。 \\
+\hline
+{\em msg} & 错误消息。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+消费的 token。 
+\end{DoxyReturn}
+\Hypertarget{classParser_a889d99815b4afebedd911652c75ed946}\index{Parser@{Parser}!getToken@{getToken}}
+\index{getToken@{getToken}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{getToken()}{getToken()}}
+{\footnotesize\ttfamily \label{classParser_a889d99815b4afebedd911652c75ed946} 
+auto Parser\+::get\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ const \mbox{\hyperlink{classToken}{Token}}\&\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [private]}}
+
+
+
+获取当前 token。 
+
+\begin{DoxyReturn}{返回}
+const \doxylink{classToken}{Token}\& 当前 token。 
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d0/d40/classParser_a889d99815b4afebedd911652c75ed946_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a08ccc41cd0f9d299a25e447fb4d52104}\index{Parser@{Parser}!id@{id}}
+\index{id@{id}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{classParser_a08ccc41cd0f9d299a25e447fb4d52104} 
+auto Parser\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析标识符并返回一个\+AST节点指针。 
+
+该函数从输入流中消费一个标识符，并将其封装在一个\+Identifier对象中， 然后返回一个指向该对象的唯一指针。
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 指向\+Identifier对象的唯一指针。 
+\end{DoxyReturn}
+\Hypertarget{classParser_ad3734b1aa800b66ba862b97d7f80f70e}\index{Parser@{Parser}!idOrString@{idOrString}}
+\index{idOrString@{idOrString}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{idOrString()}{idOrString()}}
+{\footnotesize\ttfamily \label{classParser_ad3734b1aa800b66ba862b97d7f80f70e} 
+auto Parser\+::id\+Or\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析标识符或字符串。 
+
+如果当前标记是标识符，则解析并返回标识符节点。 否则，解析并返回字符串节点。
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 指向解析后的抽象语法树节点的智能指针。 
+\end{DoxyReturn}
+\Hypertarget{classParser_a01f3611a2b31c54e8c291e27d59fd982}\index{Parser@{Parser}!isEnd@{isEnd}}
+\index{isEnd@{isEnd}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{isEnd()}{isEnd()}}
+{\footnotesize\ttfamily \label{classParser_a01f3611a2b31c54e8c291e27d59fd982} 
+auto Parser\+::is\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [private]}}
+
+
+
+检查当前是否已经到达文件末尾。 
+
+\begin{DoxyReturn}{返回}
+如果当前已经到达文件末尾，则返回 true；否则返回 false。 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d0/d40/classParser_a01f3611a2b31c54e8c291e27d59fd982_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_adff4afe52c7a459405ccc78badab61ca}\index{Parser@{Parser}!listen@{listen}}
+\index{listen@{listen}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily \label{classParser_adff4afe52c7a459405ccc78badab61ca} 
+auto Parser\+::listen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析 "{}listen"{} 语句。 
+
+该函数解析一个 "{}listen"{} 语句，该语句包含一个时间限制和一个或多个子句。
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 返回解析后的 AST 节点。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果解析过程中遇到语法错误，将抛出运行时错误。\\
+\hline
+\end{DoxyExceptions}
+解析步骤：
+\begin{DoxyEnumerate}
+\item 消费 "{}timelimit"{} 关键字。
+\item 消费一个数字，作为时间限制。
+\item 消费左大括号 \textquotesingle{}\{\textquotesingle{}。
+\item 循环解析子句，直到遇到右大括号 \textquotesingle{}\}\textquotesingle{}。
+\item 消费右大括号 \textquotesingle{}\}\textquotesingle{}。 
+\end{DoxyEnumerate}\Hypertarget{classParser_a7b4c9b12c37032b09dc613a11ef24a24}\index{Parser@{Parser}!lookup@{lookup}}
+\index{lookup@{lookup}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily \label{classParser_a7b4c9b12c37032b09dc613a11ef24a24} 
+auto Parser\+::lookup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析并生成一个 \doxylink{classLookup}{Lookup} 节点。 
+
+该函数解析一个 lookup 语句，并生成相应的 AST 节点。具体的语法格式如下：
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{lookup\_statement\ ::=\ IDENTIFIER\ \textcolor{stringliteral}{"{}in"{}}\ IDENTIFIER\ \textcolor{stringliteral}{"{}:"{}}\ IDENTIFIER}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 指向生成的 \doxylink{classLookup}{Lookup} 节点的智能指针。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果解析过程中遇到语法错误，将抛出运行时错误。 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classParser_ae8fa6d0592f138e5fe7296e54182e2e2}\index{Parser@{Parser}!match@{match}}
+\index{match@{match}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily \label{classParser_ae8fa6d0592f138e5fe7296e54182e2e2} 
+auto Parser\+::match (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \&}]{type}{}\end{DoxyParamCaption}) -\/$>$ bool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+检查当前 token 是否与给定类型匹配，如果匹配则前进到下一个 token。 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 要匹配的 token 类型。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+如果当前 token 与给定类型匹配则返回 true，否则返回 false。 
+\end{DoxyReturn}
+\Hypertarget{classParser_a6a0c4cfabb48792a42536f70a0fb936d}\index{Parser@{Parser}!parse@{parse}}
+\index{parse@{parse}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{classParser_a6a0c4cfabb48792a42536f70a0fb936d} 
+auto Parser\+::parse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classProgram}{Program}}$>$}
+
+解析程序并返回一个包含所有常量和过程的\+Program对象。
+
+\begin{DoxyReturn}{返回}
+std\+::shared\+\_\+ptr$<$\+Program$>$ 包含所有常量和过程的\+Program对象。 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em \doxylink{classParserException}{Parser\+Exception}} & 如果在所有过程之后没有遇到\+EOF，则抛出异常。 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classParser_a42b77e2f261e13df895295eb986073ab}\index{Parser@{Parser}!procedure@{procedure}}
+\index{procedure@{procedure}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{procedure()}{procedure()}}
+{\footnotesize\ttfamily \label{classParser_a42b77e2f261e13df895295eb986073ab} 
+auto Parser\+::procedure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+解析一个过程。
+
+该函数期望以下的标记序列：
+\begin{DoxyItemize}
+\item 一个表示过程名称的标识符。
+\item 一个左大括号 \textquotesingle{}\{\textquotesingle{} 表示过程体的开始。
+\item 一系列构成过程体的语句。
+\item 一个右大括号 \textquotesingle{}\}\textquotesingle{} 表示过程体的结束。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{返回}
+一个指向解析后的\+Procedure AST节点的唯一指针。 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{异常}
+{\em std\+::runtime\+\_\+error} & 如果未找到预期的标记，将抛出异常。 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classParser_adc69a9006235872f6a6641037e0481c8}\index{Parser@{Parser}!say@{say}}
+\index{say@{say}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{say()}{say()}}
+{\footnotesize\ttfamily \label{classParser_adc69a9006235872f6a6641037e0481c8} 
+auto Parser\+::say (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析并生成一个表示“say”语句的抽象语法树节点。 
+
+该函数创建一个新的 \doxylink{classSay}{Say} 节点，并将解析的内容添加到该节点中。 首先，它会解析第一个标识符或字符串并添加到 \doxylink{classSay}{Say} 节点中。 然后，它会检查是否存在逗号分隔的其他内容，如果存在，则继续解析并添加到 \doxylink{classSay}{Say} 节点中。
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 指向生成的 \doxylink{classSay}{Say} 节点的智能指针。 
+\end{DoxyReturn}
+\Hypertarget{classParser_a347b6f799c4ecc6ef18b30864944fe00}\index{Parser@{Parser}!statement@{statement}}
+\index{statement@{statement}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{statement()}{statement()}}
+{\footnotesize\ttfamily \label{classParser_a347b6f799c4ecc6ef18b30864944fe00} 
+auto Parser\+::statement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ ASTNode\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解析并返回一个语句节点。 
+
+该函数根据当前的标记类型解析不同类型的语句节点。
+\begin{DoxyItemize}
+\item 如果标记类型为 SAY，则解析并返回一个 \doxylink{classSay}{Say} 语句节点。
+\item 如果标记类型为 LISTEN，则解析并返回一个 \doxylink{classListen}{Listen} 语句节点。
+\item 如果标记类型为 LOOKUP，则解析并返回一个 \doxylink{classLookup}{Lookup} 语句节点。
+\item 如果标记类型为 EXIT，则返回一个 \doxylink{classExit}{Exit} 语句节点。
+\item 否则，假定它是一个跳转语句，并返回一个 \doxylink{classJump}{Jump} 语句节点。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{返回}
+ASTNode\+Ptr 指向解析后的语句节点的智能指针。 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{parser_8hpp}{parser.\+hpp}}\item 
+src/\mbox{\hyperlink{parser_8cpp}{parser.\+cpp}}\end{DoxyCompactItemize}

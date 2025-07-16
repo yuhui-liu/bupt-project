@@ -1,0 +1,12 @@
+<map id="Interpreter::setInputFromNetwork" name="Interpreter::setInputFromNetwork">
+<area shape="rect" id="Node000001" title="设置网络输入" alt="" coords="980,5,1165,45"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="732,13,932,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="966,28,932,28,932,23,966,23"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#aa9aab05a7bc6aa4674d03a4a8c66f997" title="开始读取数据" alt="" coords="484,13,684,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="719,37,684,37,684,32,719,32"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="698,14,732,14,732,19,698,19"/>
+<area shape="rect" id="Node000004" href="$de/d23/classWebSocketSession.html#a74a5fea9db2a070da22dd570fd1eebe2" title="处理 WebSocket 连接接受事件" alt="" coords="225,13,436,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,28,436,28,436,23,470,23"/>
+<area shape="rect" id="Node000005" href="$de/d23/classWebSocketSession.html#aa60a520432526e90b74fd97713469a56" title="启动 WebSocket 会话" alt="" coords="5,13,177,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="212,28,178,28,178,23,212,23"/>
+</map>

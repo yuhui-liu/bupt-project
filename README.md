@@ -1,0 +1,1 @@
+This repository contains some undergraduate curriculum design projects and course assignments for the Computer Science and Technology major at Beijing University of Posts and Telecommunications. You may refer to it, but correctness is not guaranteed.

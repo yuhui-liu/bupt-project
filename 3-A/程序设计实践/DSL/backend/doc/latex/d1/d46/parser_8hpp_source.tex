@@ -1,0 +1,46 @@
+\doxysection{parser.\+hpp}
+\hypertarget{parser_8hpp_source}{}\label{parser_8hpp_source}\index{include/parser.hpp@{include/parser.hpp}}
+\mbox{\hyperlink{parser_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PARSER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PARSER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ast_8hpp}{ast.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{token_8hpp}{token.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParser}{Parser}}\ \{}
+\DoxyCodeLine{00022\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classParser_ac93b3201fac5ebaf8c398054c7fec2b9}{Parser}}(std::vector<Token>\ \mbox{\hyperlink{classParser_a247983c66efec033f5dab3d57a71baf9}{tokens}})\ :\ \mbox{\hyperlink{classParser_a247983c66efec033f5dab3d57a71baf9}{tokens}}(std::move(\mbox{\hyperlink{classParser_a247983c66efec033f5dab3d57a71baf9}{tokens}}))\ \{\}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classParser_a6a0c4cfabb48792a42536f70a0fb936d}{parse}}()\ -\/>\ std::shared\_ptr<Program>;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ std::vector<Token>\ \mbox{\hyperlink{classParser_a247983c66efec033f5dab3d57a71baf9}{tokens}};}
+\DoxyCodeLine{00031\ \ \ std::size\_t\ \mbox{\hyperlink{classParser_a43b6072efdde04c75621fa21181829db}{current}}\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classParser_ae8fa6d0592f138e5fe7296e54182e2e2}{match}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\&)\ -\/>\ bool;}
+\DoxyCodeLine{00034\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classParser_aa223c550c78a3b85c32d81e7a019304e}{check}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\&)\ \textcolor{keyword}{const}\ -\/>\ bool;}
+\DoxyCodeLine{00035\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classParser_a01f3611a2b31c54e8c291e27d59fd982}{isEnd}}()\ const\ -\/>\ \textcolor{keywordtype}{bool};}
+\DoxyCodeLine{00036\ \ \ [[nodiscard]]\ auto\ \mbox{\hyperlink{classParser_a889d99815b4afebedd911652c75ed946}{getToken}}()\ const\ -\/>\ const\ \mbox{\hyperlink{classToken}{Token}}\&;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a21e7418ee4a86e8cd4495f7eeeb355e5}{forward}}();}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a74b70e46a785bffc59bafd3c9c0eec64}{backward}}();}
+\DoxyCodeLine{00039\ \ \ auto\ \mbox{\hyperlink{classParser_a8c73f849c019cb0f84cda0562d24a2eb}{constant}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00040\ \ \ auto\ \mbox{\hyperlink{classParser_a42b77e2f261e13df895295eb986073ab}{procedure}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00041\ \ \ auto\ \mbox{\hyperlink{classParser_a347b6f799c4ecc6ef18b30864944fe00}{statement}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00042\ \ \ auto\ \mbox{\hyperlink{classParser_adc69a9006235872f6a6641037e0481c8}{say}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00043\ \ \ auto\ \mbox{\hyperlink{classParser_adff4afe52c7a459405ccc78badab61ca}{listen}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00044\ \ \ auto\ \mbox{\hyperlink{classParser_ac00d7103e9d2d03f7b9b7b81dd4ac457}{clause}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00045\ \ \ auto\ \mbox{\hyperlink{classParser_a7b4c9b12c37032b09dc613a11ef24a24}{lookup}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00046\ \ \ auto\ \mbox{\hyperlink{classParser_ad3734b1aa800b66ba862b97d7f80f70e}{idOrString}}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00047\ \ \ auto\ \textcolor{keywordtype}{id}()\ -\/>\ ASTNodePtr;}
+\DoxyCodeLine{00048\ \ \ auto\ \mbox{\hyperlink{classParser_a6acc89881b075da79a2d0704ad43f12a}{consume}}(const\ \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\&,\ const\ std::\textcolor{keywordtype}{string}\&)\ -\/>\ \mbox{\hyperlink{classToken}{Token}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PARSER\_HPP}}
+
+\end{DoxyCode}

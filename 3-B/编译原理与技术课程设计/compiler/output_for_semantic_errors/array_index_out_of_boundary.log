@@ -1,0 +1,2 @@
+[Semantic Error] Array out of bounds: Array index 0 is out of range [1..5] for array 'arr' at dimension 1
+[Semantic Error] Array out of bounds: Array index 6 is out of range [1..5] for array 'arr' at dimension 1

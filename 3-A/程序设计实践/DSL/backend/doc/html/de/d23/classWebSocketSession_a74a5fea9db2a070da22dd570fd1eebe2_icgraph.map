@@ -1,0 +1,5 @@
+<map id="WebSocketSession::onAccept" name="WebSocketSession::onAccept">
+<area shape="rect" id="Node000001" title="处理 WebSocket 连接接受事件" alt="" coords="225,5,436,31"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#aa60a520432526e90b74fd97713469a56" title="启动 WebSocket 会话" alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,21,178,21,178,15,212,15"/>
+</map>

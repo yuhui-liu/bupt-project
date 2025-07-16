@@ -1,0 +1,17 @@
+<map id="WebSocketSession::run" name="WebSocketSession::run">
+<area shape="rect" id="Node000001" title="启动 WebSocket 会话" alt="" coords="5,70,177,95"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#a74a5fea9db2a070da22dd570fd1eebe2" title="处理 WebSocket 连接接受事件" alt="" coords="225,45,436,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,71,211,67,212,73,178,76"/>
+<area shape="rect" id="Node000007" href="$dd/dea/classInterpreter.html#ac47bcb0f1ba98246c48b6c17c92e2fe1" title="设置 send 回调函数" alt="" coords="255,94,406,119"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="178,89,242,95,241,100,177,94"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#aa9aab05a7bc6aa4674d03a4a8c66f997" title="开始读取数据" alt="" coords="484,19,684,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,44,470,41,471,46,436,49"/>
+<area shape="rect" id="Node000005" href="$de/d23/classWebSocketSession.html#afa424ac9c7515c33ce8cc1baaeccfeb5" title="处理错误" alt="" coords="987,70,1159,95"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="436,58,973,77,973,82,436,64"/>
+<area shape="rect" id="Node000004" href="$de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="732,19,932,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="684,38,718,38,718,44,684,44"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="732,26,697,26,697,20,732,20"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="894,42,999,65,998,70,893,47"/>
+<area shape="rect" id="Node000006" href="$dd/dea/classInterpreter.html#aed44e319d6acc68ec728467d667bbb8f" title="设置网络输入" alt="" coords="980,5,1165,45"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="932,27,966,26,966,31,932,32"/>
+</map>

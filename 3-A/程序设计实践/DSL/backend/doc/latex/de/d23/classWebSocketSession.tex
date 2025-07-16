@@ -1,0 +1,292 @@
+\doxysection{Web\+Socket\+Session类 参考}
+\hypertarget{classWebSocketSession}{}\label{classWebSocketSession}\index{WebSocketSession@{WebSocketSession}}
+
+
+Web\+Socket 会话类  
+
+
+
+
+{\ttfamily \#include $<$network.\+hpp$>$}
+
+
+
+类 Web\+Socket\+Session 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{db/d5c/classWebSocketSession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Web\+Socket\+Session 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/db4/classWebSocketSession__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSocketSession_a07f984d95ba590b509fb414332acf3f4}{Web\+Socket\+Session}} (tcp\+::socket socket, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ \&\mbox{\hyperlink{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}{program}}, std\+::map$<$ std\+::string, std\+::string $>$ c, std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$ p)
+\item 
+void \mbox{\hyperlink{classWebSocketSession_aa60a520432526e90b74fd97713469a56}{run}} ()
+\begin{DoxyCompactList}\small\item\em 启动 Web\+Socket 会话 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2}{on\+Accept}} (const beast\+::error\+\_\+code \&)
+\begin{DoxyCompactList}\small\item\em 处理 Web\+Socket 连接接受事件 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997}{do\+Read}} ()
+\begin{DoxyCompactList}\small\item\em 开始读取数据 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca}{on\+Read}} (const beast\+::error\+\_\+code \&, std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em 处理读取事件 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d}{on\+Write}} (const beast\+::error\+\_\+code \&, std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em 处理写事件 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSocketSession_a2d685b67a6ef95b4e53b726e89df56db}{send}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em 发送消息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWebSocketSession_afa424ac9c7515c33ce8cc1baaeccfeb5}{fail}} (const beast\+::error\+\_\+code \&, const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em 处理错误 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWebSocketSession_a2e90735fc4e174aedc0a5b1ea854cfd1}\label{classWebSocketSession_a2e90735fc4e174aedc0a5b1ea854cfd1} 
+websocket\+::stream$<$ tcp\+::socket $>$ {\bfseries ws}
+\begin{DoxyCompactList}\small\item\em Web\+Socket流 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketSession_a276a9b0080cc1feb67618d82a1d0161c}\label{classWebSocketSession_a276a9b0080cc1feb67618d82a1d0161c} 
+beast\+::flat\+\_\+buffer {\bfseries buffer}
+\begin{DoxyCompactList}\small\item\em 用于接收数据的缓冲区 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketSession_a7e22b4a0826accfafbda191bb9070d07}\label{classWebSocketSession_a7e22b4a0826accfafbda191bb9070d07} 
+\mbox{\hyperlink{classInterpreter}{Interpreter}} {\bfseries interpreter}
+\begin{DoxyCompactList}\small\item\em 解释器 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8}\label{classWebSocketSession_ab0fc08afe7c9d1d476652022ccbc5ce8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ {\bfseries program}
+\begin{DoxyCompactList}\small\item\em 指向program的智能指针 \end{DoxyCompactList}\item 
+\Hypertarget{classWebSocketSession_a795337cc2dd1334df3002ed1202be8c2}\label{classWebSocketSession_a795337cc2dd1334df3002ed1202be8c2} 
+Message\+Queue {\bfseries write\+\_\+msgs}
+\begin{DoxyCompactList}\small\item\em 待发送消息队列 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+Web\+Socket 会话类 
+
+该类表示一个\+Web\+Socket会话，用于与客户端通信。 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classWebSocketSession_a07f984d95ba590b509fb414332acf3f4}\index{WebSocketSession@{WebSocketSession}!WebSocketSession@{WebSocketSession}}
+\index{WebSocketSession@{WebSocketSession}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{WebSocketSession()}{WebSocketSession()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_a07f984d95ba590b509fb414332acf3f4} 
+Web\+Socket\+Session\+::\+Web\+Socket\+Session (\begin{DoxyParamCaption}\item[{tcp\+::socket}]{socket}{, }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classProgram}{Program}} $>$ \&}]{program}{, }\item[{std\+::map$<$ std\+::string, std\+::string $>$}]{c}{, }\item[{std\+::map$<$ std\+::string, std\+::size\+\_\+t $>$}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em socket} & 用于通信的socket \\
+\hline
+{\em program} & 指向program的智能指针 \\
+\hline
+{\em c} & 常量表 \\
+\hline
+{\em p} & 过程表 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997}\index{WebSocketSession@{WebSocketSession}!doRead@{doRead}}
+\index{doRead@{doRead}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{doRead()}{doRead()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997} 
+void Web\+Socket\+Session\+::do\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+开始读取数据 
+
+该函数开始异步读取数据。 函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_aa9aab05a7bc6aa4674d03a4a8c66f997_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_afa424ac9c7515c33ce8cc1baaeccfeb5}\index{WebSocketSession@{WebSocketSession}!fail@{fail}}
+\index{fail@{fail}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{fail()}{fail()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_afa424ac9c7515c33ce8cc1baaeccfeb5} 
+void Web\+Socket\+Session\+::fail (\begin{DoxyParamCaption}\item[{const beast\+::error\+\_\+code \&}]{ec}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{what}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+处理错误 
+
+
+\begin{DoxyParams}{参数}
+{\em ec} & 错误码 \\
+\hline
+{\em what} & 错误信息 \\
+\hline
+\end{DoxyParams}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_afa424ac9c7515c33ce8cc1baaeccfeb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2}\index{WebSocketSession@{WebSocketSession}!onAccept@{onAccept}}
+\index{onAccept@{onAccept}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{onAccept()}{onAccept()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2} 
+void Web\+Socket\+Session\+::on\+Accept (\begin{DoxyParamCaption}\item[{const beast\+::error\+\_\+code \&}]{ec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理 Web\+Socket 连接接受事件 
+
+该函数在 Web\+Socket 连接接受后被调用。 如果接受成功，则在新线程中调用程序的 accept 函数。并且开始读取数据。
+
+
+\begin{DoxyParams}{参数}
+{\em ec} & 错误码 \\
+\hline
+\end{DoxyParams}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_a74a5fea9db2a070da22dd570fd1eebe2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca}\index{WebSocketSession@{WebSocketSession}!onRead@{onRead}}
+\index{onRead@{onRead}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{onRead()}{onRead()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca} 
+void Web\+Socket\+Session\+::on\+Read (\begin{DoxyParamCaption}\item[{const beast\+::error\+\_\+code \&}]{ec}{, }\item[{std\+::size\+\_\+t}]{bytes\+Transferred}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理读取事件 
+
+该函数在读取到数据后被调用。 读取到的数据会被解析，并传递给解释器。
+
+
+\begin{DoxyParams}{参数}
+{\em ec} & 错误码 \\
+\hline
+{\em bytes\+Transferred} & 读取的字节数 \\
+\hline
+\end{DoxyParams}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_afe5999f708c22586d1b00cb4de03d1ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d}\index{WebSocketSession@{WebSocketSession}!onWrite@{onWrite}}
+\index{onWrite@{onWrite}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{onWrite()}{onWrite()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d} 
+void Web\+Socket\+Session\+::on\+Write (\begin{DoxyParamCaption}\item[{const beast\+::error\+\_\+code \&}]{ec}{, }\item[{std\+::size\+\_\+t}]{bytes\+Transferred}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理写事件 
+
+该函数在写入数据后被调用。 如果还有未发送的消息，则继续发送下一个消息。
+
+
+\begin{DoxyParams}{参数}
+{\em ec} & 错误码 \\
+\hline
+{\em bytes\+Transferred} & 写入的字节数 \\
+\hline
+\end{DoxyParams}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_aa142263d3ee614b76eaaabee72dd4e3d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_aa60a520432526e90b74fd97713469a56}\index{WebSocketSession@{WebSocketSession}!run@{run}}
+\index{run@{run}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_aa60a520432526e90b74fd97713469a56} 
+void Web\+Socket\+Session\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+启动 Web\+Socket 会话 
+
+该函数设置发送消息的回调函数，并异步接受 Web\+Socket 连接。 函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_aa60a520432526e90b74fd97713469a56_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWebSocketSession_a2d685b67a6ef95b4e53b726e89df56db}\index{WebSocketSession@{WebSocketSession}!send@{send}}
+\index{send@{send}!WebSocketSession@{WebSocketSession}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily \label{classWebSocketSession_a2d685b67a6ef95b4e53b726e89df56db} 
+void Web\+Socket\+Session\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+发送消息 
+
+该函数将消息添加到待发送消息队列，并尝试发送。
+
+
+\begin{DoxyParams}{参数}
+{\em message} & 消息内容 \\
+\hline
+\end{DoxyParams}
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d23/classWebSocketSession_a2d685b67a6ef95b4e53b726e89df56db_cgraph}
+\end{center}
+\end{figure}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{network_8hpp}{network.\+hpp}}\item 
+src/\mbox{\hyperlink{network_8cpp}{network.\+cpp}}\end{DoxyCompactItemize}

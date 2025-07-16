@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/parser.hpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d46/parser_8hpp_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">parser.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d46/parser_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PARSER_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PARSER_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/dc8/ast_8hpp.html">ast.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d44/token_8hpp.html">token.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d0/d40/classParser.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d0/d40/classParser.html">Parser</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d0/d40/classParser.html#ac93b3201fac5ebaf8c398054c7fec2b9">   24</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d0/d40/classParser.html#ac93b3201fac5ebaf8c398054c7fec2b9">Parser</a>(std::vector&lt;Token&gt; <a class="code hl_variable" href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">tokens</a>) : <a class="code hl_variable" href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">tokens</a>(std::move(<a class="code hl_variable" href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">tokens</a>)) {}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d0/d40/classParser.html#a6a0c4cfabb48792a42536f70a0fb936d">parse</a>() -&gt; std::shared_ptr&lt;Program&gt;;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">   29</a></span>  std::vector&lt;Token&gt; <a class="code hl_variable" href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">tokens</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d0/d40/classParser.html#a43b6072efdde04c75621fa21181829db">   31</a></span>  std::size_t <a class="code hl_variable" href="../../d0/d40/classParser.html#a43b6072efdde04c75621fa21181829db">current</a> = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d0/d40/classParser.html#ae8fa6d0592f138e5fe7296e54182e2e2">match</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a>&amp;) -&gt; bool;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="../../d0/d40/classParser.html#aa223c550c78a3b85c32d81e7a019304e">check</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a>&amp;) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="../../d0/d40/classParser.html#a01f3611a2b31c54e8c291e27d59fd982">isEnd</a>() const -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  [[nodiscard]] auto <a class="code hl_function" href="../../d0/d40/classParser.html#a889d99815b4afebedd911652c75ed946">getToken</a>() const -&gt; const <a class="code hl_class" href="../../d2/d6e/classToken.html">Token</a>&amp;;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d40/classParser.html#a21e7418ee4a86e8cd4495f7eeeb355e5">forward</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d40/classParser.html#a74b70e46a785bffc59bafd3c9c0eec64">backward</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#a8c73f849c019cb0f84cda0562d24a2eb">constant</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#a42b77e2f261e13df895295eb986073ab">procedure</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#a347b6f799c4ecc6ef18b30864944fe00">statement</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#adc69a9006235872f6a6641037e0481c8">say</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#adff4afe52c7a459405ccc78badab61ca">listen</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#ac00d7103e9d2d03f7b9b7b81dd4ac457">clause</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#a7b4c9b12c37032b09dc613a11ef24a24">lookup</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#ad3734b1aa800b66ba862b97d7f80f70e">idOrString</a>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  auto <span class="keywordtype">id</span>() -&gt; ASTNodePtr;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  auto <a class="code hl_function" href="../../d0/d40/classParser.html#a6acc89881b075da79a2d0704ad43f12a">consume</a>(const <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a>&amp;, const std::<span class="keywordtype">string</span>&amp;) -&gt; <a class="code hl_class" href="../../d2/d6e/classToken.html">Token</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif  </span><span class="comment">// PARSER_HPP</span></div>
+<div class="ttc" id="aast_8hpp_html"><div class="ttname"><a href="../../dd/dc8/ast_8hpp.html">ast.hpp</a></div><div class="ttdoc">抽象语法树（Abstract Syntax Tree）结点类的定义</div></div>
+<div class="ttc" id="aclassParser_html"><div class="ttname"><a href="../../d0/d40/classParser.html">Parser</a></div><div class="ttdoc">解析器类。解析token流，生成AST。</div><div class="ttdef"><b>定义</b> parser.hpp:21</div></div>
+<div class="ttc" id="aclassParser_html_a01f3611a2b31c54e8c291e27d59fd982"><div class="ttname"><a href="../../d0/d40/classParser.html#a01f3611a2b31c54e8c291e27d59fd982">Parser::isEnd</a></div><div class="ttdeci">auto isEnd() const -&gt; bool</div><div class="ttdoc">检查当前是否已经到达文件末尾。</div><div class="ttdef"><b>定义</b> parser.cpp:273</div></div>
+<div class="ttc" id="aclassParser_html_a21e7418ee4a86e8cd4495f7eeeb355e5"><div class="ttname"><a href="../../d0/d40/classParser.html#a21e7418ee4a86e8cd4495f7eeeb355e5">Parser::forward</a></div><div class="ttdeci">void forward()</div><div class="ttdoc">前进到下一个 token。</div><div class="ttdef"><b>定义</b> parser.cpp:283</div></div>
+<div class="ttc" id="aclassParser_html_a247983c66efec033f5dab3d57a71baf9"><div class="ttname"><a href="../../d0/d40/classParser.html#a247983c66efec033f5dab3d57a71baf9">Parser::tokens</a></div><div class="ttdeci">std::vector&lt; Token &gt; tokens</div><div class="ttdoc">待解析的token流。</div><div class="ttdef"><b>定义</b> parser.hpp:29</div></div>
+<div class="ttc" id="aclassParser_html_a347b6f799c4ecc6ef18b30864944fe00"><div class="ttname"><a href="../../d0/d40/classParser.html#a347b6f799c4ecc6ef18b30864944fe00">Parser::statement</a></div><div class="ttdeci">auto statement() -&gt; ASTNodePtr</div><div class="ttdoc">解析并返回一个语句节点。</div><div class="ttdef"><b>定义</b> parser.cpp:86</div></div>
+<div class="ttc" id="aclassParser_html_a42b77e2f261e13df895295eb986073ab"><div class="ttname"><a href="../../d0/d40/classParser.html#a42b77e2f261e13df895295eb986073ab">Parser::procedure</a></div><div class="ttdeci">auto procedure() -&gt; ASTNodePtr</div><div class="ttdef"><b>定义</b> parser.cpp:64</div></div>
+<div class="ttc" id="aclassParser_html_a43b6072efdde04c75621fa21181829db"><div class="ttname"><a href="../../d0/d40/classParser.html#a43b6072efdde04c75621fa21181829db">Parser::current</a></div><div class="ttdeci">std::size_t current</div><div class="ttdoc">当前解析的token的索引。</div><div class="ttdef"><b>定义</b> parser.hpp:31</div></div>
+<div class="ttc" id="aclassParser_html_a6a0c4cfabb48792a42536f70a0fb936d"><div class="ttname"><a href="../../d0/d40/classParser.html#a6a0c4cfabb48792a42536f70a0fb936d">Parser::parse</a></div><div class="ttdeci">auto parse() -&gt; std::shared_ptr&lt; Program &gt;</div><div class="ttdef"><b>定义</b> parser.cpp:22</div></div>
+<div class="ttc" id="aclassParser_html_a6acc89881b075da79a2d0704ad43f12a"><div class="ttname"><a href="../../d0/d40/classParser.html#a6acc89881b075da79a2d0704ad43f12a">Parser::consume</a></div><div class="ttdeci">auto consume(const TokenType &amp;, const std::string &amp;) -&gt; Token</div><div class="ttdoc">消费一个指定类型的 token。</div><div class="ttdef"><b>定义</b> parser.cpp:297</div></div>
+<div class="ttc" id="aclassParser_html_a74b70e46a785bffc59bafd3c9c0eec64"><div class="ttname"><a href="../../d0/d40/classParser.html#a74b70e46a785bffc59bafd3c9c0eec64">Parser::backward</a></div><div class="ttdeci">void backward()</div><div class="ttdoc">后退到上一个 token。</div><div class="ttdef"><b>定义</b> parser.cpp:286</div></div>
+<div class="ttc" id="aclassParser_html_a7b4c9b12c37032b09dc613a11ef24a24"><div class="ttname"><a href="../../d0/d40/classParser.html#a7b4c9b12c37032b09dc613a11ef24a24">Parser::lookup</a></div><div class="ttdeci">auto lookup() -&gt; ASTNodePtr</div><div class="ttdoc">解析并生成一个 Lookup 节点。</div><div class="ttdef"><b>定义</b> parser.cpp:205</div></div>
+<div class="ttc" id="aclassParser_html_a889d99815b4afebedd911652c75ed946"><div class="ttname"><a href="../../d0/d40/classParser.html#a889d99815b4afebedd911652c75ed946">Parser::getToken</a></div><div class="ttdeci">auto getToken() const -&gt; const Token &amp;</div><div class="ttdoc">获取当前 token。</div><div class="ttdef"><b>定义</b> parser.cpp:280</div></div>
+<div class="ttc" id="aclassParser_html_a8c73f849c019cb0f84cda0562d24a2eb"><div class="ttname"><a href="../../d0/d40/classParser.html#a8c73f849c019cb0f84cda0562d24a2eb">Parser::constant</a></div><div class="ttdeci">auto constant() -&gt; ASTNodePtr</div><div class="ttdoc">解析常量定义</div><div class="ttdef"><b>定义</b> parser.cpp:45</div></div>
+<div class="ttc" id="aclassParser_html_aa223c550c78a3b85c32d81e7a019304e"><div class="ttname"><a href="../../d0/d40/classParser.html#aa223c550c78a3b85c32d81e7a019304e">Parser::check</a></div><div class="ttdeci">auto check(const TokenType &amp;) const -&gt; bool</div><div class="ttdoc">检查当前令牌是否为指定类型。</div><div class="ttdef"><b>定义</b> parser.cpp:261</div></div>
+<div class="ttc" id="aclassParser_html_ac00d7103e9d2d03f7b9b7b81dd4ac457"><div class="ttname"><a href="../../d0/d40/classParser.html#ac00d7103e9d2d03f7b9b7b81dd4ac457">Parser::clause</a></div><div class="ttdeci">auto clause() -&gt; ASTNodePtr</div><div class="ttdoc">解析一个子句。</div><div class="ttdef"><b>定义</b> parser.cpp:158</div></div>
+<div class="ttc" id="aclassParser_html_ac93b3201fac5ebaf8c398054c7fec2b9"><div class="ttname"><a href="../../d0/d40/classParser.html#ac93b3201fac5ebaf8c398054c7fec2b9">Parser::Parser</a></div><div class="ttdeci">Parser(std::vector&lt; Token &gt; tokens)</div><div class="ttdef"><b>定义</b> parser.hpp:24</div></div>
+<div class="ttc" id="aclassParser_html_ad3734b1aa800b66ba862b97d7f80f70e"><div class="ttname"><a href="../../d0/d40/classParser.html#ad3734b1aa800b66ba862b97d7f80f70e">Parser::idOrString</a></div><div class="ttdeci">auto idOrString() -&gt; ASTNodePtr</div><div class="ttdoc">解析标识符或字符串。</div><div class="ttdef"><b>定义</b> parser.cpp:222</div></div>
+<div class="ttc" id="aclassParser_html_adc69a9006235872f6a6641037e0481c8"><div class="ttname"><a href="../../d0/d40/classParser.html#adc69a9006235872f6a6641037e0481c8">Parser::say</a></div><div class="ttdeci">auto say() -&gt; ASTNodePtr</div><div class="ttdoc">解析并生成一个表示“say”语句的抽象语法树节点。</div><div class="ttdef"><b>定义</b> parser.cpp:112</div></div>
+<div class="ttc" id="aclassParser_html_adff4afe52c7a459405ccc78badab61ca"><div class="ttname"><a href="../../d0/d40/classParser.html#adff4afe52c7a459405ccc78badab61ca">Parser::listen</a></div><div class="ttdeci">auto listen() -&gt; ASTNodePtr</div><div class="ttdoc">解析 &quot;listen&quot; 语句。</div><div class="ttdef"><b>定义</b> parser.cpp:137</div></div>
+<div class="ttc" id="aclassParser_html_ae8fa6d0592f138e5fe7296e54182e2e2"><div class="ttname"><a href="../../d0/d40/classParser.html#ae8fa6d0592f138e5fe7296e54182e2e2">Parser::match</a></div><div class="ttdeci">auto match(const TokenType &amp;) -&gt; bool</div><div class="ttdoc">检查当前 token 是否与给定类型匹配，如果匹配则前进到下一个 token。</div><div class="ttdef"><b>定义</b> parser.cpp:247</div></div>
+<div class="ttc" id="aclassToken_html"><div class="ttname"><a href="../../d2/d6e/classToken.html">Token</a></div><div class="ttdoc">该类表示一个标记（Token）。</div><div class="ttdef"><b>定义</b> token.hpp:45</div></div>
+<div class="ttc" id="atoken_8hpp_html"><div class="ttname"><a href="../../d4/d44/token_8hpp.html">token.hpp</a></div><div class="ttdoc">该文件定义了标记（Token）类和标记类型枚举（Token_t）。</div></div>
+<div class="ttc" id="atoken_8hpp_html_aa520fbf142ba1e7e659590c07da31921"><div class="ttname"><a href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">该枚举表示标记的类型。</div><div class="ttdef"><b>定义</b> token.hpp:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d1/d46/parser_8hpp.html">parser.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+\doxysection{Constant\+Define类 参考}
+\hypertarget{classConstantDefine}{}\label{classConstantDefine}\index{ConstantDefine@{ConstantDefine}}
+
+
+表示常量定义的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Constant\+Define 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d3/d5a/classConstantDefine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Constant\+Define 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{dc/d69/classConstantDefine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConstantDefine_a7a1e24f55c752471f39a9b83fe9dfaeb}{Constant\+Define}} (std\+::string \mbox{\hyperlink{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}{id}}, std\+::string \mbox{\hyperlink{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}{value}})
+\begin{DoxyCompactList}\small\item\em 构造函数，对于"{}id=value"{}进行构造。 \end{DoxyCompactList}\item 
+\Hypertarget{classConstantDefine_ac87cff205d542dd54fc131d295493661}\label{classConstantDefine_ac87cff205d542dd54fc131d295493661} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classConstantDefine_a4e73c3e85e29b65b4698397540746ee7}\label{classConstantDefine_a4e73c3e85e29b65b4698397540746ee7} 
+auto {\bfseries get\+Id} () const -\/$>$ const auto \&
+\item 
+\Hypertarget{classConstantDefine_aa93656be79d10ec5f4500bad24504557}\label{classConstantDefine_aa93656be79d10ec5f4500bad24504557} 
+auto {\bfseries get\+Value} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179}\label{classConstantDefine_a15da70e3c8e2c8584ed96d8e0aee5179} 
+std\+::string {\bfseries id}
+\begin{DoxyCompactList}\small\item\em 常量名 \end{DoxyCompactList}\item 
+\Hypertarget{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb}\label{classConstantDefine_a1f7e6a5786c01481337c882e33357eeb} 
+std\+::string {\bfseries value}
+\begin{DoxyCompactList}\small\item\em 常量值 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示常量定义的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classConstantDefine_a7a1e24f55c752471f39a9b83fe9dfaeb}\index{ConstantDefine@{ConstantDefine}!ConstantDefine@{ConstantDefine}}
+\index{ConstantDefine@{ConstantDefine}!ConstantDefine@{ConstantDefine}}
+\doxysubsubsection{\texorpdfstring{ConstantDefine()}{ConstantDefine()}}
+{\footnotesize\ttfamily \label{classConstantDefine_a7a1e24f55c752471f39a9b83fe9dfaeb} 
+Constant\+Define\+::\+Constant\+Define (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{, }\item[{std\+::string}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数，对于"{}id=value"{}进行构造。 
+
+
+\begin{DoxyParams}{参数}
+{\em id} & 常量名 \\
+\hline
+{\em value} & 常量值 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

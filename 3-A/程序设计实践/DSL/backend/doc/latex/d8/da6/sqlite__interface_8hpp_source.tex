@@ -1,0 +1,46 @@
+\doxysection{sqlite\+\_\+interface.\+hpp}
+\hypertarget{sqlite__interface_8hpp_source}{}\label{sqlite__interface_8hpp_source}\index{include/sqlite\_interface.hpp@{include/sqlite\_interface.hpp}}
+\mbox{\hyperlink{sqlite__interface_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SQLITE\_INTERFACE\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SQLITE\_INTERFACE\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <spdlog/spdlog.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDB}{DB}}\ \{}
+\DoxyCodeLine{00015\ \ \ std::string\ tbl\_name,\ col\_name;}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSQLiteDB}{SQLiteDB}}\ \{}
+\DoxyCodeLine{00024\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSQLiteDB_a66987ccd4c68115e7a817f6667ae3bbd}{SQLiteDB}}(\textcolor{keyword}{const}\ std::string\&\ dbName)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (sqlite3\_open(dbName.c\_str(),\ \&\mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}})\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ spdlog::error(\textcolor{stringliteral}{"{}无法打开数据库：\{\}"{}},\ sqlite3\_errmsg(\mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}}));}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classSQLiteDB_a7baa2b62855a8922719fa1890c9c85da}{\string~SQLiteDB}}()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}}\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ sqlite3\_close(\mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}});}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classSQLiteDB_a8df57e9dc1df726add7f93ca63874d1f}{query}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structDB}{DB}}\&\ dbInfo)\ \textcolor{keyword}{const}\ -\/>\ std::string;}
+\DoxyCodeLine{00044\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classSQLiteDB_a7a620cfe86e74a3ee6d5279031cb4f4c}{write}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structDB}{DB}}\&\ dbInfo,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const}\ -\/>\ bool;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ 禁用默认拷贝构造函数和赋值运算符，确保对象不会被复制，保证数据库连接的唯一性}}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classSQLiteDB_a66987ccd4c68115e7a817f6667ae3bbd}{SQLiteDB}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSQLiteDB}{SQLiteDB}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{auto}\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSQLiteDB}{SQLiteDB}}\&)\ -\/>\ \mbox{\hyperlink{classSQLiteDB}{SQLiteDB}}\&\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ sqlite3*\ \mbox{\hyperlink{classSQLiteDB_ad7ea8b7afbd4806b2f2db38665e2e4a7}{db}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SQLITE\_INTERFACE\_HPP}}
+
+\end{DoxyCode}

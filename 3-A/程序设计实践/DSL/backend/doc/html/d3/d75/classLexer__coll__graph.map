@@ -1,0 +1,18 @@
+<map id="Lexer" name="Lexer">
+<area shape="rect" id="Node000001" title="词法分析器类。将字节流转换为 Token 序列。" alt="" coords="141,388,198,413"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,102,118,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,141,65,179,61,225,65,276,80,324,93,344,110,361,147,386,144,390,107,365,89,347,75,326,60,277,56,225,59,178,66,140"/>
+<area shape="rect" id="Node000005" href="$d2/d6e/classToken.html" title="该类表示一个标记（Token）。" alt="" coords="112,197,171,223"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="93,137,135,196,131,199,89,140"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,59,77,102,72,102,72,59"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="90,293,249,318"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,332,172,388,167,388,167,332"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="151,235,168,292,163,293,146,237"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="273,285,431,325"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="304,334,193,390,191,386,302,329"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="289,197,415,223"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="355,236,355,285,349,285,349,236"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="269,95,435,135"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="355,149,355,197,349,197,349,149"/>
+</map>

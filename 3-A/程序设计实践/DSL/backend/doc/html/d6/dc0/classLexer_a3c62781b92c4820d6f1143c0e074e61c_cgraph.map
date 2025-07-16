@@ -1,0 +1,18 @@
+<map id="Lexer::scan" name="Lexer::scan">
+<area shape="rect" id="Node000001" title="扫描输入源代码并生成标记。" alt="" coords="5,5,100,31"/>
+<area shape="rect" id="Node000002" href="$d6/dc0/classLexer.html#a4a00ce5900a7f802a467082f1ac45a79" title="判断是否到达源代码末尾" alt="" coords="633,31,733,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,13,301,9,431,11,562,19,620,28,619,33,561,25,430,17,301,14,100,18"/>
+<area shape="rect" id="Node000003" href="$d6/dc0/classLexer.html#ae8edcbfeea2de068a3bacbcde21632c6" title="扫描下一个标记（Token）。" alt="" coords="148,56,311,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,28,172,50,171,55,97,33"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="282,53,358,41,498,34,619,37,619,42,498,40,359,46,283,59"/>
+<area shape="rect" id="Node000004" href="$d6/dc0/classLexer.html#aa956caa52a392f8a59a5a237f9160957" title="获取下一个字符" alt="" coords="609,113,756,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,80,293,120,325,140,360,155,395,164,432,168,506,166,575,155,631,140,633,145,576,160,507,171,432,173,394,169,358,161,322,145,289,124,242,84"/>
+<area shape="rect" id="Node000005" href="$d6/dc0/classLexer.html#a983c6984a12571f871dd4fffd2fbb16c" title="处理关键字和标识符的词法分析函数。" alt="" coords="359,106,561,146"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="282,79,367,100,365,105,281,84"/>
+<area shape="rect" id="Node000006" href="$d6/dc0/classLexer.html#a27d34416cef6b0d46b828e67b2d4cb9d" title="处理数字字面量的词法分析函数。" alt="" coords="377,56,543,81"/>
+<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="311,66,363,66,363,71,311,71"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="526,103,560,92,639,59,641,64,562,96,528,108"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="562,123,595,123,595,129,562,129"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="544,57,619,48,619,53,544,62"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="513,79,562,91,621,107,620,112,561,97,512,84"/>
+</map>

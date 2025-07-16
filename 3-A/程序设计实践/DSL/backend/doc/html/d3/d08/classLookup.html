@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: Lookup类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d3/d08/classLookup.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d1/d8b/classLookup-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Lookup类 参考<span class="mlabels"><span class="mlabel">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>表示lookup语句的结点  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/dc8/ast_8hpp_source.html">ast.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 Lookup 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d98/classLookup__inherit__graph.png" border="0" usemap="#aLookup_inherit__map" alt="Inheritance graph"/></div>
+<map name="aLookup_inherit__map" id="aLookup_inherit__map">
+<area shape="rect" title="表示lookup语句的结点" alt="" coords="12,79,80,104"/>
+<area shape="rect" href="../../d2/d3a/classASTNode.html" title="抽象语法树结点" alt="" coords="5,5,87,31"/>
+<area shape="poly" title=" " alt="" coords="49,44,49,79,43,79,43,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+Lookup 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/dcc/classLookup__coll__graph.png" border="0" usemap="#aLookup_coll__map" alt="Collaboration graph"/></div>
+<map name="aLookup_coll__map" id="aLookup_coll__map">
+<area shape="rect" title="表示lookup语句的结点" alt="" coords="49,212,117,237"/>
+<area shape="rect" href="../../d2/d3a/classASTNode.html" title="抽象语法树结点" alt="" coords="5,95,87,120"/>
+<area shape="poly" title=" " alt="" coords="56,132,82,211,77,213,51,134"/>
+<area shape="rect" title=" " alt="" coords="111,95,197,120"/>
+<area shape="poly" title=" " alt="" coords="142,133,93,213,88,211,137,131"/>
+<area shape="rect" title=" " alt="" coords="85,5,223,45"/>
+<area shape="poly" title=" " alt="" coords="157,59,157,94,151,94,151,59"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aad61e1abc73abefd728fd616fc97a61a" id="r_aad61e1abc73abefd728fd616fc97a61a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad61e1abc73abefd728fd616fc97a61a">Lookup</a> (std::string <a class="el" href="#af305f6e240ed552dba34cb31bb309a90">value</a>, std::string <a class="el" href="#a46be6f16fc2c0e703525c16185b67543">db</a>, std::string <a class="el" href="#a16d3e872c21927f453ead45f7270cd3a">table</a>)</td></tr>
+<tr class="separator:aad61e1abc73abefd728fd616fc97a61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c198a2b2a4f4b7d08a16db60863324" id="r_a04c198a2b2a4f4b7d08a16db60863324"><td class="memItemLeft" align="right" valign="top"><a id="a04c198a2b2a4f4b7d08a16db60863324" name="a04c198a2b2a4f4b7d08a16db60863324"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> (const <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a> &amp;) const override</td></tr>
+<tr class="separator:a04c198a2b2a4f4b7d08a16db60863324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03026224253064aa707efd4989412ce3" id="r_a03026224253064aa707efd4989412ce3"><td class="memItemLeft" align="right" valign="top"><a id="a03026224253064aa707efd4989412ce3" name="a03026224253064aa707efd4989412ce3"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>getValue</b> () const -&gt; const auto &amp;</td></tr>
+<tr class="separator:a03026224253064aa707efd4989412ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3792de25fefa5c76fb186a4266c118" id="r_a0e3792de25fefa5c76fb186a4266c118"><td class="memItemLeft" align="right" valign="top"><a id="a0e3792de25fefa5c76fb186a4266c118" name="a0e3792de25fefa5c76fb186a4266c118"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>getDb</b> () const -&gt; const auto &amp;</td></tr>
+<tr class="separator:a0e3792de25fefa5c76fb186a4266c118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5dcd7003cd590320fcfe5a67497ca1" id="r_a5a5dcd7003cd590320fcfe5a67497ca1"><td class="memItemLeft" align="right" valign="top"><a id="a5a5dcd7003cd590320fcfe5a67497ca1" name="a5a5dcd7003cd590320fcfe5a67497ca1"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>getTable</b> () const -&gt; const auto &amp;</td></tr>
+<tr class="separator:a5a5dcd7003cd590320fcfe5a67497ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classASTNode"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classASTNode')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d2/d3a/classASTNode.html">ASTNode</a></td></tr>
+<tr class="memitem:abdf575199be1e3acec431cfa4cd1ff51 inherit pub_methods_classASTNode" id="r_abdf575199be1e3acec431cfa4cd1ff51"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> (const class <a class="el" href="../../d4/d14/classVisitor.html">Visitor</a> &amp;visitor) const =0</td></tr>
+<tr class="memdesc:abdf575199be1e3acec431cfa4cd1ff51 inherit pub_methods_classASTNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">接受visitor <br /></td></tr>
+<tr class="separator:abdf575199be1e3acec431cfa4cd1ff51 inherit pub_methods_classASTNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af305f6e240ed552dba34cb31bb309a90" id="r_af305f6e240ed552dba34cb31bb309a90"><td class="memItemLeft" align="right" valign="top"><a id="af305f6e240ed552dba34cb31bb309a90" name="af305f6e240ed552dba34cb31bb309a90"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="memdesc:af305f6e240ed552dba34cb31bb309a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">lookup语句查询的值 <br /></td></tr>
+<tr class="separator:af305f6e240ed552dba34cb31bb309a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46be6f16fc2c0e703525c16185b67543" id="r_a46be6f16fc2c0e703525c16185b67543"><td class="memItemLeft" align="right" valign="top"><a id="a46be6f16fc2c0e703525c16185b67543" name="a46be6f16fc2c0e703525c16185b67543"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>db</b></td></tr>
+<tr class="memdesc:a46be6f16fc2c0e703525c16185b67543"><td class="mdescLeft">&#160;</td><td class="mdescRight">lookup语句查询的数据库 <br /></td></tr>
+<tr class="separator:a46be6f16fc2c0e703525c16185b67543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d3e872c21927f453ead45f7270cd3a" id="r_a16d3e872c21927f453ead45f7270cd3a"><td class="memItemLeft" align="right" valign="top"><a id="a16d3e872c21927f453ead45f7270cd3a" name="a16d3e872c21927f453ead45f7270cd3a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>table</b></td></tr>
+<tr class="memdesc:a16d3e872c21927f453ead45f7270cd3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">lookup语句查询的表 <br /></td></tr>
+<tr class="separator:a16d3e872c21927f453ead45f7270cd3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>表示lookup语句的结点 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aad61e1abc73abefd728fd616fc97a61a" name="aad61e1abc73abefd728fd616fc97a61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad61e1abc73abefd728fd616fc97a61a">&#9670;&#160;</a></span>Lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lookup::Lookup </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>db</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>table</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>lookup语句查询的值 </td></tr>
+    <tr><td class="paramname">db</td><td>lookup语句查询的数据库 </td></tr>
+    <tr><td class="paramname">table</td><td>lookup语句查询的表 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="../../dd/dc8/ast_8hpp_source.html">ast.hpp</a></li>
+<li>src/<a class="el" href="../../d3/d24/ast_8cpp.html">ast.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d3/d08/classLookup.html">Lookup</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

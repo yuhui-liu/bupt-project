@@ -1,0 +1,68 @@
+\doxysection{include/token.hpp 文件参考}
+\hypertarget{token_8hpp}{}\label{token_8hpp}\index{include/token.hpp@{include/token.hpp}}
+
+
+该文件定义了标记（\+Token）类和标记类型枚举（\+Token\+\_\+t）。  
+
+
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+token.\+hpp 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{d7/d82/token_8hpp__incl}
+\end{center}
+\end{figure}
+此图展示该文件被哪些文件直接或间接地引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d70/token_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classToken}{Token}}
+\begin{DoxyCompactList}\small\item\em 该类表示一个标记（\+Token）。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{token_8hpp_aa520fbf142ba1e7e659590c07da31921}\label{token_8hpp_aa520fbf142ba1e7e659590c07da31921} 
+enum class \mbox{\hyperlink{token_8hpp_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \{ \newline
+{\bfseries EQUAL}
+, {\bfseries COMMA}
+, {\bfseries QUESTION}
+, {\bfseries LBRACE}
+, \newline
+{\bfseries RBRACE}
+, {\bfseries COLON}
+, {\bfseries HAS}
+, {\bfseries PROCEDURE}
+, \newline
+{\bfseries SAY}
+, {\bfseries LISTEN}
+, {\bfseries TIMELIMIT}
+, {\bfseries TIMEOUT}
+, \newline
+{\bfseries DEFAULT}
+, {\bfseries LOOKUP}
+, {\bfseries IN}
+, {\bfseries WRITETO}
+, \newline
+{\bfseries EXIT}
+, {\bfseries ANYTHING}
+, {\bfseries STRING}
+, {\bfseries NUMBER}
+, \newline
+{\bfseries IDENTIFIER}
+, {\bfseries EOF\+\_\+}
+ \}
+\begin{DoxyCompactList}\small\item\em 该枚举表示标记的类型。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+该文件定义了标记（\+Token）类和标记类型枚举（\+Token\+\_\+t）。 
+

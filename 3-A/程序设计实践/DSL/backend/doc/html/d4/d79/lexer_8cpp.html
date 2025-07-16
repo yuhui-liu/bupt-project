@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: src/lexer.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d79/lexer_8cpp.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">lexer.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="../../d6/dc0/classLexer.html" title="词法分析器类。将字节流转换为 Token 序列。">Lexer</a> 类的实现。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d2e/lexer_8hpp_source.html">lexer.hpp</a>&quot;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d1e/exception_8hpp_source.html">exception.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d44/token_8hpp_source.html">token.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+lexer.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d9f/lexer_8cpp__incl.png" border="0" usemap="#asrc_2lexer_8cpp" alt=""/></div>
+<map name="asrc_2lexer_8cpp" id="asrc_2lexer_8cpp">
+<area shape="rect" title="Lexer 类的实现。" alt="" coords="534,5,637,31"/>
+<area shape="rect" href="../../d0/d2e/lexer_8hpp.html" title="Lexer 类的声明。" alt="" coords="342,79,423,104"/>
+<area shape="poly" title=" " alt="" coords="554,33,429,77,427,72,552,28"/>
+<area shape="rect" title=" " alt="" coords="554,152,617,177"/>
+<area shape="poly" title=" " alt="" coords="588,31,588,138,583,138,583,31"/>
+<area shape="rect" href="../../d4/d44/token_8hpp.html" title="该文件定义了标记（Token）类和标记类型枚举（Token_t）。" alt="" coords="195,152,282,177"/>
+<area shape="poly" title=" " alt="" coords="534,26,436,43,382,59,331,81,290,110,258,143,255,139,286,106,328,76,380,54,435,38,533,21"/>
+<area shape="rect" title=" " alt="" coords="462,225,522,251"/>
+<area shape="poly" title=" " alt="" coords="597,30,615,57,634,96,643,138,640,159,632,179,612,200,588,216,537,233,535,228,586,211,609,196,627,176,635,158,637,138,629,97,611,60,592,33"/>
+<area shape="rect" title=" " alt="" coords="693,79,758,104"/>
+<area shape="poly" title=" " alt="" coords="609,28,692,70,689,75,607,33"/>
+<area shape="rect" title=" " alt="" coords="783,79,863,104"/>
+<area shape="poly" title=" " alt="" coords="624,28,772,72,770,77,623,33"/>
+<area shape="rect" href="../../d7/d1e/exception_8hpp.html" title="与异常相关的类的定义。" alt="" coords="5,152,120,177"/>
+<area shape="poly" title=" " alt="" coords="534,30,422,50,290,81,188,115,103,149,101,144,186,110,289,76,420,45,533,24"/>
+<area shape="rect" title=" " alt="" coords="122,225,193,251"/>
+<area shape="poly" title=" " alt="" coords="342,96,304,101,262,111,220,128,185,154,175,167,168,182,161,212,156,211,163,180,170,164,181,150,218,123,260,106,303,96,341,91"/>
+<area shape="rect" title=" " alt="" coords="357,152,408,177"/>
+<area shape="poly" title=" " alt="" coords="385,104,385,138,380,138,380,104"/>
+<area shape="rect" title=" " alt="" coords="217,225,276,251"/>
+<area shape="poly" title=" " alt="" coords="373,106,269,217,265,214,370,103"/>
+<area shape="rect" title=" " alt="" coords="433,152,530,177"/>
+<area shape="poly" title=" " alt="" coords="400,102,456,142,453,146,397,106"/>
+<area shape="poly" title=" " alt="" coords="416,102,542,145,540,150,414,107"/>
+<area shape="poly" title=" " alt="" coords="361,106,276,148,273,143,358,102"/>
+<area shape="poly" title=" " alt="" coords="227,179,183,218,179,214,224,175"/>
+<area shape="poly" title=" " alt="" coords="243,177,247,212,241,212,237,178"/>
+<area shape="poly" title=" " alt="" coords="280,175,449,222,448,227,279,180"/>
+<area shape="poly" title=" " alt="" coords="79,175,132,215,129,219,76,179"/>
+<area shape="poly" title=" " alt="" coords="93,175,205,218,203,223,91,180"/>
+<area shape="rect" title=" " alt="" coords="11,225,98,251"/>
+<area shape="poly" title=" " alt="" coords="64,178,60,212,55,212,59,177"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a726215e6c9867a986a9ff93bcec88a73" id="r_a726215e6c9867a986a9ff93bcec88a73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a726215e6c9867a986a9ff93bcec88a73">INSERT</a>(e)</td></tr>
+<tr class="separator:a726215e6c9867a986a9ff93bcec88a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d6/dc0/classLexer.html" title="词法分析器类。将字节流转换为 Token 序列。">Lexer</a> 类的实现。 </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a726215e6c9867a986a9ff93bcec88a73" name="a726215e6c9867a986a9ff93bcec88a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726215e6c9867a986a9ff93bcec88a73">&#9670;&#160;</a></span>INSERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">result.emplace(e, #e)</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d4/d79/lexer_8cpp.html">lexer.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

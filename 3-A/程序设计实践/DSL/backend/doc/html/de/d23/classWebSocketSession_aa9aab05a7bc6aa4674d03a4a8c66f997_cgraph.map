@@ -1,0 +1,10 @@
+<map id="WebSocketSession::doRead" name="WebSocketSession::doRead">
+<area shape="rect" id="Node000001" title="开始读取数据" alt="" coords="5,35,205,60"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#afe5999f708c22586d1b00cb4de03d1ca" title="处理读取事件" alt="" coords="253,35,453,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,54,240,54,240,59,205,59"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="253,41,219,41,219,36,253,36"/>
+<area shape="rect" id="Node000003" href="$de/d23/classWebSocketSession.html#afa424ac9c7515c33ce8cc1baaeccfeb5" title="处理错误" alt="" coords="508,5,680,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="453,33,494,27,495,33,454,38"/>
+<area shape="rect" id="Node000004" href="$dd/dea/classInterpreter.html#aed44e319d6acc68ec728467d667bbb8f" title="设置网络输入" alt="" coords="501,55,687,95"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="454,56,488,60,487,66,453,62"/>
+</map>

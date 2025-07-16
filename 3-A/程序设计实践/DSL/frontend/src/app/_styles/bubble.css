@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bubble {
+  @apply text-wrap rounded-full p-3 my-3;
+}
+
+.my-bubble {
+  background-color: #b2ebf2;
+}
+
+.your-bubble {
+  background-color: #ffe082;
+}
+
+/* 对方气泡的箭头 */
+.left {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 15px solid #ffe082;
+  position: relative;
+  top: -40%;
+  left: 0.2%;
+  transform: rotate(60deg);
+}
+
+/* 己方气泡的箭头 */
+.right {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 15px solid #b2ebf2;
+  align-self: flex-end;
+  position: relative;
+  top: -40%;
+  right: 0.2%;
+  transform: rotate(-60deg);
+}
+
+/* 支持日间/夜间模式 */
+@media (prefers-color-scheme: dark) {
+  .my-bubble {
+    background-color: #2a2d55;
+  }
+  .your-bubble {
+    background-color: #3e4551;
+  }
+  .left {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 15px solid #3e4551;
+    position: relative;
+    top: -40%;
+    left: 0.2%;
+    transform: rotate(60deg);
+  }
+
+  .right {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 15px solid #2a2d55;
+    align-self: flex-end;
+    position: relative;
+    top: -40%;
+    right: 0.2%;
+    transform: rotate(-60deg);
+  }
+}

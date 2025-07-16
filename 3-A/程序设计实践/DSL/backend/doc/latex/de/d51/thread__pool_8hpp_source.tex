@@ -1,0 +1,43 @@
+\doxysection{thread\+\_\+pool.\+hpp}
+\hypertarget{thread__pool_8hpp_source}{}\label{thread__pool_8hpp_source}\index{include/thread\_pool.hpp@{include/thread\_pool.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ THREAD\_POOL\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ THREAD\_POOL\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classThreadPool}{ThreadPool}}\ \{}
+\DoxyCodeLine{00014\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{classThreadPool}{ThreadPool}}(std::size\_t\ numThreads);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ enqueue(F\&\&\ f)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(queueMutex);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stop)\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}enqueue\ on\ stopped\ ThreadPool"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ tasks.emplace(std::forward<F>(f));}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ condition.notify\_one();}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classThreadPool}{\string~ThreadPool}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ std::vector<std::thread>\ workers;}
+\DoxyCodeLine{00031\ \ \ std::queue<std::function<void()>>\ tasks;}
+\DoxyCodeLine{00032\ \ \ std::mutex\ queueMutex;}
+\DoxyCodeLine{00033\ \ \ std::condition\_variable\ condition;}
+\DoxyCodeLine{00034\ \ \ std::atomic<bool>\ stop;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ THREAD\_POOL\_HPP}}
+
+\end{DoxyCode}

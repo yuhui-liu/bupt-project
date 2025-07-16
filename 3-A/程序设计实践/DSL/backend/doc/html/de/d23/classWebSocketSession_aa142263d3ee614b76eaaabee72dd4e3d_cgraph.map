@@ -1,0 +1,6 @@
+<map id="WebSocketSession::onWrite" name="WebSocketSession::onWrite">
+<area shape="rect" id="Node000001" title="处理写事件" alt="" coords="5,29,208,55"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="69,31,60,21,65,11,80,5,107,3,140,7,152,16,149,20,138,11,107,8,82,10,68,15,65,20,72,27"/>
+<area shape="rect" id="Node000002" href="$de/d23/classWebSocketSession.html#afa424ac9c7515c33ce8cc1baaeccfeb5" title="处理错误" alt="" coords="256,29,428,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,39,242,39,242,45,208,45"/>
+</map>

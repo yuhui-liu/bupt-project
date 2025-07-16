@@ -1,0 +1,34 @@
+\doxysection{argument\+\_\+parser.\+hpp}
+\hypertarget{argument__parser_8hpp_source}{}\label{argument__parser_8hpp_source}\index{include/argument\_parser.hpp@{include/argument\_parser.hpp}}
+\mbox{\hyperlink{argument__parser_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ARGUMENT\_PARSER\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ARGUMENT\_PARSER\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <boost/program\_options.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }po\ =\ boost::program\_options;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classArgumentParser}{ArgumentParser}}\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classArgumentParser_af0c93fcd4e06c59c309bc5fb7f73d8e4}{ArgumentParser}}();}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArgumentParser_a5b4da76128eadc43dc0944e0df8a4bbd}{parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00023\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getScript()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArgumentParser_ad18ea4b0cdf7a2005b0d671c91d51f61}{script}};\ \}}
+\DoxyCodeLine{00024\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getMode()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArgumentParser_a3d9397c5ba9b7fbf92b28f48e78e1ee6}{mode}};\ \}}
+\DoxyCodeLine{00025\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getDesc()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArgumentParser_aedec0c55c7bcc907f3c6b6e646519c89}{desc}};\ \}}
+\DoxyCodeLine{00026\ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ getUid()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArgumentParser_abd40d94224f449d1fc1f4cfcf9054a5e}{uid}};\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ po::options\_description\ \mbox{\hyperlink{classArgumentParser_aedec0c55c7bcc907f3c6b6e646519c89}{desc}}\{\textcolor{stringliteral}{"{}Options"{}}\};}
+\DoxyCodeLine{00032\ \ \ po::variables\_map\ \mbox{\hyperlink{classArgumentParser_abfc6dcacf4fcd345d3f1208f7732e0ac}{vm}};}
+\DoxyCodeLine{00034\ \ \ std::string\ \mbox{\hyperlink{classArgumentParser_a3d9397c5ba9b7fbf92b28f48e78e1ee6}{mode}};}
+\DoxyCodeLine{00036\ \ \ std::string\ \mbox{\hyperlink{classArgumentParser_ad18ea4b0cdf7a2005b0d671c91d51f61}{script}};}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ DEFAULTUID\ =\ 101;}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classArgumentParser_abd40d94224f449d1fc1f4cfcf9054a5e}{uid}}\{DEFAULTUID\};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ ARGUMENT\_PARSER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,177 @@
+\doxysection{Printer类 参考}
+\hypertarget{classPrinter}{}\label{classPrinter}\index{Printer@{Printer}}
+
+
+打印\+AST的访问者类  
+
+
+
+
+{\ttfamily \#include $<$printer.\+hpp$>$}
+
+
+
+类 Printer 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{dc/d62/classPrinter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Printer 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{d2/dea/classPrinter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPrinter_a79c7a6708110398059b3ecb63456a550}{visit}} (const \mbox{\hyperlink{classProgram}{Program}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_ad4b78de4b5761a0f3cdb1af4e5230a8b}{visit}} (const \mbox{\hyperlink{classConstantDefine}{Constant\+Define}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a178ff30b169dd4f2f28cbe4eb64db547}{visit}} (const \mbox{\hyperlink{classProcedure}{Procedure}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a6301cd22b7c0c857c108036579a71810}{visit}} (const \mbox{\hyperlink{classSay}{Say}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a28ef5d7fdbcd9f98e060c0eb4ad60adf}{visit}} (const \mbox{\hyperlink{classListen}{Listen}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a26b59c4afb3f9e474d96f75bb5af03b1}{visit}} (const \mbox{\hyperlink{classClause}{Clause}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a4aaeb9b5ef77a216f9f8c4ba323fb088}{visit}} (const \mbox{\hyperlink{classLookup}{Lookup}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_ad77500dafc84e9b782ef30a4374b9a44}{visit}} (const \mbox{\hyperlink{classExit}{Exit}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_a73d0ad7154053b68b1f9aefb3fdc9366}{visit}} (const \mbox{\hyperlink{classJump}{Jump}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_ab1d2012639ba170e18da5eff685e17b4}{visit}} (const \mbox{\hyperlink{classIdentifier}{Identifier}} \&) const override
+\item 
+void \mbox{\hyperlink{classPrinter_ae0ad503b5252685045dd3fdd1f24fa19}{visit}} (const \mbox{\hyperlink{classString}{String}} \&) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classVisitor}{Visitor}}}
+
+
+\doxysubsection{详细描述}
+打印\+AST的访问者类 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classPrinter_a26b59c4afb3f9e474d96f75bb5af03b1}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a26b59c4afb3f9e474d96f75bb5af03b1} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classClause}{Clause}} \&}]{c}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_ad4b78de4b5761a0f3cdb1af4e5230a8b}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily \label{classPrinter_ad4b78de4b5761a0f3cdb1af4e5230a8b} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classConstantDefine}{Constant\+Define}} \&}]{c}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_ad77500dafc84e9b782ef30a4374b9a44}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily \label{classPrinter_ad77500dafc84e9b782ef30a4374b9a44} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classExit}{Exit}} \&}]{e}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_ab1d2012639ba170e18da5eff685e17b4}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily \label{classPrinter_ab1d2012639ba170e18da5eff685e17b4} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIdentifier}{Identifier}} \&}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a73d0ad7154053b68b1f9aefb3fdc9366}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a73d0ad7154053b68b1f9aefb3fdc9366} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJump}{Jump}} \&}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a28ef5d7fdbcd9f98e060c0eb4ad60adf}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a28ef5d7fdbcd9f98e060c0eb4ad60adf} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classListen}{Listen}} \&}]{listen}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a4aaeb9b5ef77a216f9f8c4ba323fb088}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a4aaeb9b5ef77a216f9f8c4ba323fb088} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLookup}{Lookup}} \&}]{l}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a178ff30b169dd4f2f28cbe4eb64db547}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a178ff30b169dd4f2f28cbe4eb64db547} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProcedure}{Procedure}} \&}]{procedure}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a79c7a6708110398059b3ecb63456a550}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a79c7a6708110398059b3ecb63456a550} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProgram}{Program}} \&}]{program}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_a6301cd22b7c0c857c108036579a71810}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily \label{classPrinter_a6301cd22b7c0c857c108036579a71810} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSay}{Say}} \&}]{say}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+\Hypertarget{classPrinter_ae0ad503b5252685045dd3fdd1f24fa19}\index{Printer@{Printer}!visit@{visit}}
+\index{visit@{visit}!Printer@{Printer}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily \label{classPrinter_ae0ad503b5252685045dd3fdd1f24fa19} 
+void Printer\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classString}{String}} \&}]{s}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{classVisitor}{Visitor}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{printer_8hpp}{printer.\+hpp}}\item 
+src/\mbox{\hyperlink{printer_8cpp}{printer.\+cpp}}\end{DoxyCompactItemize}

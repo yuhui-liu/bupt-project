@@ -1,0 +1,5 @@
+<map id="Parser::isEnd" name="Parser::isEnd">
+<area shape="rect" id="Node000001" title="检查当前是否已经到达文件末尾。" alt="" coords="5,5,111,31"/>
+<area shape="rect" id="Node000002" href="$d0/d40/classParser.html#a889d99815b4afebedd911652c75ed946" title="获取当前 token。" alt="" coords="159,5,287,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
+</map>

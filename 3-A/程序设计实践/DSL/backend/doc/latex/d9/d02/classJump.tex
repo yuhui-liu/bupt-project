@@ -1,0 +1,74 @@
+\doxysection{Jump类 参考}
+\hypertarget{classJump}{}\label{classJump}\index{Jump@{Jump}}
+
+
+表示jump语句的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Jump 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{d8/d46/classJump__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Jump 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{dc/da1/classJump__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJump_ac4fe3957eadd5cb44c60807c5f2290f1}{Jump}} (std\+::string \mbox{\hyperlink{classJump_a8d6edf00bb6626046b7c601e4612025d}{id}})
+\item 
+\Hypertarget{classJump_af9e54c0d138727f6611e7debe203dcb1}\label{classJump_af9e54c0d138727f6611e7debe203dcb1} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classJump_a9c7472ffff30d060316796ad0db2eb64}\label{classJump_a9c7472ffff30d060316796ad0db2eb64} 
+auto {\bfseries get\+Id} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classJump_a8d6edf00bb6626046b7c601e4612025d}\label{classJump_a8d6edf00bb6626046b7c601e4612025d} 
+std\+::string {\bfseries id}
+\begin{DoxyCompactList}\small\item\em jump语句跳转的过程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示jump语句的结点 
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{classJump_ac4fe3957eadd5cb44c60807c5f2290f1}\index{Jump@{Jump}!Jump@{Jump}}
+\index{Jump@{Jump}!Jump@{Jump}}
+\doxysubsubsection{\texorpdfstring{Jump()}{Jump()}}
+{\footnotesize\ttfamily \label{classJump_ac4fe3957eadd5cb44c60807c5f2290f1} 
+Jump\+::\+Jump (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{参数}
+{\em id} & jump语句跳转的过程 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

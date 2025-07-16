@@ -1,0 +1,100 @@
+procedure main {
+  say "我可以告诉你美国的历届总统是谁"
+  say "你想知道哪一届的总统？"
+  listen timelimit 10 {
+    has "第一届" ? A
+    has "第二届" ? B
+    has "第三届" ? C
+    has "第四届" ? D
+    has "第五届" ? E
+    has "第六届" ? F
+    has "第七届" ? G
+    has "第八届" ? H
+    has "第九届" ? I
+    has "第十届" ? J
+    has "第十一届" ? K
+    has "第十二届" ? L
+    has "第十三届" ? M
+    has "第十四届" ? N
+    has "第十五届" ? O
+    has "第十六届" ? P
+    has "第十七届" ? Q
+    has "第十八届" ? R
+    has "第十九届" ? S
+    has "第二十届" ? T
+    has "第二十一届" ? U
+    has "第二十二届" ? V
+    has "第二十三届" ? W
+    has "第二十四届" ? X
+    has "第二十五届" ? Y
+    has "第二十六届" ? Z
+    has "第二十七届" ? AA
+    has "第二十八届" ? AB
+    has "第二十九届" ? AC
+    has "第三十届" ? AD
+    has "第三十一届" ? AE
+    has "第三十二届" ? AF
+    has "第三十三届" ? AG
+    has "第三十四届" ? AH
+    has "第三十五届" ? AI
+    has "第三十六届" ? AJ
+    has "第三十七届" ? AK
+    has "第三十八届" ? AL
+    has "第三十九届" ? AM
+    has "第四十届" ? AN
+    has "第四十一届" ? AO
+    has "第四十二届" ? AP
+    has "第四十三届" ? AQ
+    has "第四十四届" ? AR
+    has "第四十五届" ? AS
+    has "第四十六届" ? AT
+    has "第四十七届" ? AU
+  }
+}
+procedure A { say "第一届总统是乔治·华盛顿" }
+procedure B { say "第二届总统是约翰·亚当斯" }
+procedure C { say "第三届总统是托马斯·杰斐逊" }
+procedure D { say "第四届总统是詹姆斯·麦迪逊" }
+procedure E { say "第五届总统是詹姆斯·门罗" }
+procedure F { say "第六届总统是约翰·昆西·亚当斯" }
+procedure G { say "第七届总统是安德鲁·杰克逊" }
+procedure H { say "第八届总统是马丁·范布伦" }
+procedure I { say "第九届总统是威廉·亨利·哈里森" }
+procedure J { say "第十届总统是约翰·泰勒" }
+procedure K { say "第十一届总统是詹姆斯·诺克·波尔克" }
+procedure L { say "第十二届总统是扎卡里·泰勒" }
+procedure M { say "第十三届总统是米列德·菲尔莫尔" }
+procedure N { say "第十四届总统是富兰克林·皮尔斯" }
+procedure O { say "第十五届总统是詹姆斯·布坎南" }
+procedure P { say "第十六届总统是亚伯拉罕·林肯" }
+procedure Q { say "第十七届总统是安德鲁·约翰逊" }
+procedure R { say "第十八届总统是尤利西斯·辛普森·格兰特" }
+procedure S { say "第十九届总统是拉瑟福·伯查南" }
+procedure T { say "第二十届总统是詹姆斯·加菲尔德" }
+procedure U { say "第二十一届总统是切斯特·艾伦·阿瑟" }
+procedure V { say "第二十二届总统是格罗弗·克利夫兰" }
+procedure W { say "第二十三届总统是本杰明·哈里森" }
+procedure X { say "第二十四届总统是格罗弗·克利夫兰" }
+procedure Y { say "第二十五届总统是威廉·麦金莱" }
+procedure Z { say "第二十六届总统是西奥多·罗斯福" }
+procedure AA { say "第二十七届总统是威廉·霍华德·塔夫脱" }
+procedure AB { say "第二十八届总统是伍德罗·威尔逊" }
+procedure AC { say "第二十九届总统是沃伦·哈定" }
+procedure AD { say "第三十届总统是卡尔文·柯立芝" }
+procedure AE { say "第三十一届总统是赫伯特·胡佛" }
+procedure AF { say "第三十二届总统是富兰克林·罗斯福" }
+procedure AG { say "第三十三届总统是哈里·S·杜鲁门" }
+procedure AH { say "第三十四届总统是德怀特·艾森豪威尔" }
+procedure AI { say "第三十五届总统是约翰·肯尼迪" }
+procedure AJ { say "第三十六届总统是林登·约翰逊" }
+procedure AK { say "第三十七届总统是理查德·尼克松" }
+procedure AL { say "第三十八届总统是杰拉尔德·福特" }
+procedure AM { say "第三十九届总统是吉米·卡特" }
+procedure AN { say "第四十届总统是罗纳德·里根" }
+procedure AO { say "第四十一届总统是乔治·赫伯特·沃克·布什" }
+procedure AP { say "第四十二届总统是比尔·克林顿" }
+procedure AQ { say "第四十三届总统是乔治·沃克·布什" }
+procedure AR { say "第四十四届总统是巴拉克·奥巴马" }
+procedure AS { say "第四十五届总统是唐纳德·特朗普" }
+procedure AT { say "第四十六届总统是乔·拜登" }
+procedure AU { say "第四十七届总统是唐纳德·特朗普" }

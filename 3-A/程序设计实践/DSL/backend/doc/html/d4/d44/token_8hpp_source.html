@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSL: include/token.hpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DSL
+   </div>
+   <div id="projectbrief">DSL的后端</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d44/token_8hpp_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">token.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d44/token_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef TOKEN_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define TOKEN_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">   16</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  EQUAL,       <span class="comment">// =</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  COMMA,       <span class="comment">// ,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  QUESTION,    <span class="comment">// ?</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  LBRACE,      <span class="comment">// {</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  RBRACE,      <span class="comment">// }</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  COLON,       <span class="comment">// :</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  HAS,         <span class="comment">// has</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  PROCEDURE,   <span class="comment">// procedure</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  SAY,         <span class="comment">// say</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  LISTEN,      <span class="comment">// listen</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  TIMELIMIT,   <span class="comment">// timelimit</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  TIMEOUT,     <span class="comment">// timeout</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  DEFAULT,     <span class="comment">// default</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  LOOKUP,      <span class="comment">// lookup</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  IN,          <span class="comment">// in</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  WRITETO,     <span class="comment">// writeto</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  EXIT,        <span class="comment">// exit</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  ANYTHING,    <span class="comment">// anything</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  STRING,      <span class="comment">// &quot;&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  NUMBER,      <span class="comment">// 123</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  IDENTIFIER,  <span class="comment">// any identifier</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  EOF_         <span class="comment">// end-of-file</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d6e/classToken.html">Token</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#ab1bf3eae36a076f418dfe2ae7dfcec04">   50</a></span>  <a class="code hl_function" href="../../d2/d6e/classToken.html#ab1bf3eae36a076f418dfe2ae7dfcec04">Token</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> token_t, std::string s, <span class="keyword">const</span> std::size_t lineNum)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      : <a class="code hl_variable" href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">type</a>(token_t), <a class="code hl_variable" href="../../d2/d6e/classToken.html#a4b7142147b8598f8e24c404928d9263b">value</a>(std::move(s)), <a class="code hl_variable" href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">line</a>(lineNum){};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#a00b067250b19bf076b72e424cf4284ec">   54</a></span>  <a class="code hl_function" href="../../d2/d6e/classToken.html#a00b067250b19bf076b72e424cf4284ec">Token</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> token_t, <span class="keyword">const</span> std::size_t lineNum) : <a class="code hl_variable" href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">type</a>(token_t), <a class="code hl_variable" href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">line</a>(lineNum){};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">   56</a></span>  <a class="code hl_enumeration" href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> <a class="code hl_variable" href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">type</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#a4b7142147b8598f8e24c404928d9263b">   58</a></span>  std::string <a class="code hl_variable" href="../../d2/d6e/classToken.html#a4b7142147b8598f8e24c404928d9263b">value</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">   60</a></span>  std::size_t <a class="code hl_variable" href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">line</a>;</div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d2/d6e/classToken.html#a1de73f46f33923a80c1fb135dc896657">   62</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d2/d6e/classToken.html#a1de73f46f33923a80c1fb135dc896657">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d2/d6e/classToken.html">Token</a>&amp; other) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">type</a> == other.type &amp;&amp; <a class="code hl_variable" href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">line</a> == other.line &amp;&amp; <a class="code hl_variable" href="../../d2/d6e/classToken.html#a4b7142147b8598f8e24c404928d9263b">value</a> == other.value;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif  </span><span class="comment">// TOKEN_HPP</span></div>
+<div class="ttc" id="aclassToken_html"><div class="ttname"><a href="../../d2/d6e/classToken.html">Token</a></div><div class="ttdoc">该类表示一个标记（Token）。</div><div class="ttdef"><b>定义</b> token.hpp:45</div></div>
+<div class="ttc" id="aclassToken_html_a00b067250b19bf076b72e424cf4284ec"><div class="ttname"><a href="../../d2/d6e/classToken.html#a00b067250b19bf076b72e424cf4284ec">Token::Token</a></div><div class="ttdeci">Token(const TokenType token_t, const std::size_t lineNum)</div><div class="ttdef"><b>定义</b> token.hpp:54</div></div>
+<div class="ttc" id="aclassToken_html_a1de73f46f33923a80c1fb135dc896657"><div class="ttname"><a href="../../d2/d6e/classToken.html#a1de73f46f33923a80c1fb135dc896657">Token::operator==</a></div><div class="ttdeci">auto operator==(const Token &amp;other) const -&gt; bool</div><div class="ttdoc">重载等于运算符</div><div class="ttdef"><b>定义</b> token.hpp:62</div></div>
+<div class="ttc" id="aclassToken_html_a4b7142147b8598f8e24c404928d9263b"><div class="ttname"><a href="../../d2/d6e/classToken.html#a4b7142147b8598f8e24c404928d9263b">Token::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">标记值</div><div class="ttdef"><b>定义</b> token.hpp:58</div></div>
+<div class="ttc" id="aclassToken_html_a67919af9f3a80dc0b28a0ab1e6d5bf8a"><div class="ttname"><a href="../../d2/d6e/classToken.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">Token::type</a></div><div class="ttdeci">TokenType type</div><div class="ttdoc">标记类型</div><div class="ttdef"><b>定义</b> token.hpp:56</div></div>
+<div class="ttc" id="aclassToken_html_ab1bf3eae36a076f418dfe2ae7dfcec04"><div class="ttname"><a href="../../d2/d6e/classToken.html#ab1bf3eae36a076f418dfe2ae7dfcec04">Token::Token</a></div><div class="ttdeci">Token(const TokenType token_t, std::string s, const std::size_t lineNum)</div><div class="ttdef"><b>定义</b> token.hpp:50</div></div>
+<div class="ttc" id="aclassToken_html_ade6deee497c3814a319db092bc0f4f7f"><div class="ttname"><a href="../../d2/d6e/classToken.html#ade6deee497c3814a319db092bc0f4f7f">Token::line</a></div><div class="ttdeci">std::size_t line</div><div class="ttdoc">标记所在行号</div><div class="ttdef"><b>定义</b> token.hpp:60</div></div>
+<div class="ttc" id="atoken_8hpp_html_aa520fbf142ba1e7e659590c07da31921"><div class="ttname"><a href="../../d4/d44/token_8hpp.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">该枚举表示标记的类型。</div><div class="ttdef"><b>定义</b> token.hpp:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d4/d44/token_8hpp.html">token.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

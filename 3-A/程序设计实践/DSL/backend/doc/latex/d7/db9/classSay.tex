@@ -1,0 +1,61 @@
+\doxysection{Say类 参考}
+\hypertarget{classSay}{}\label{classSay}\index{Say@{Say}}
+
+
+表示say语句的结点  
+
+
+
+
+{\ttfamily \#include $<$ast.\+hpp$>$}
+
+
+
+类 Say 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{de/ded/classSay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Say 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d0/de4/classSay__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSay_a6d13cbd1ec50126ff03a19daab88f676}\label{classSay_a6d13cbd1ec50126ff03a19daab88f676} 
+void {\bfseries accept} (const \mbox{\hyperlink{classVisitor}{Visitor}} \&) const override
+\item 
+\Hypertarget{classSay_a32a159d2a73feaf8ab52241b398458b9}\label{classSay_a32a159d2a73feaf8ab52241b398458b9} 
+void {\bfseries add\+Content} (ASTNode\+Ptr \mbox{\hyperlink{classSay_ad0b739f01c7b35eaa2cda3b15144f255}{content}})
+\begin{DoxyCompactList}\small\item\em 添加内容 \end{DoxyCompactList}\item 
+\Hypertarget{classSay_a2134c9a043a1b45201032cc6933c21b2}\label{classSay_a2134c9a043a1b45201032cc6933c21b2} 
+auto {\bfseries get\+Contents} () const -\/$>$ const auto \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{classASTNode}{ASTNode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries accept} (const class \mbox{\hyperlink{classVisitor}{Visitor}} \&visitor) const =0
+\begin{DoxyCompactList}\small\item\em 接受visitor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSay_ad0b739f01c7b35eaa2cda3b15144f255}\label{classSay_ad0b739f01c7b35eaa2cda3b15144f255} 
+std\+::vector$<$ ASTNode\+Ptr $>$ {\bfseries content}
+\begin{DoxyCompactList}\small\item\em say语句的内容 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表示say语句的结点 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ast_8hpp}{ast.\+hpp}}\item 
+src/\mbox{\hyperlink{ast_8cpp}{ast.\+cpp}}\end{DoxyCompactItemize}

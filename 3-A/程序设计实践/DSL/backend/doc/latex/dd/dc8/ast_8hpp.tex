@@ -1,0 +1,64 @@
+\doxysection{include/ast.hpp 文件参考}
+\hypertarget{ast_8hpp}{}\label{ast_8hpp}\index{include/ast.hpp@{include/ast.hpp}}
+
+
+抽象语法树（\+Abstract Syntax Tree）结点类的定义  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+ast.\+hpp 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{df/d1a/ast_8hpp__incl}
+\end{center}
+\end{figure}
+此图展示该文件被哪些文件直接或间接地引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d90/ast_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classASTNode}{ASTNode}}
+\begin{DoxyCompactList}\small\item\em 抽象语法树结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProgram}{Program}}
+\begin{DoxyCompactList}\small\item\em 表示程序的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classConstantDefine}{Constant\+Define}}
+\begin{DoxyCompactList}\small\item\em 表示常量定义的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProcedure}{Procedure}}
+\begin{DoxyCompactList}\small\item\em 表示过程的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSay}{Say}}
+\begin{DoxyCompactList}\small\item\em 表示say语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classListen}{Listen}}
+\begin{DoxyCompactList}\small\item\em 表示listen语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classClause}{Clause}}
+\begin{DoxyCompactList}\small\item\em 表示listen语句的子语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLookup}{Lookup}}
+\begin{DoxyCompactList}\small\item\em 表示lookup语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classExit}{Exit}}
+\begin{DoxyCompactList}\small\item\em 表示exit语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJump}{Jump}}
+\begin{DoxyCompactList}\small\item\em 表示jump语句的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIdentifier}{Identifier}}
+\begin{DoxyCompactList}\small\item\em 表示\+Identifier的结点 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classString}{String}}
+\begin{DoxyCompactList}\small\item\em 表示字符串字面量的结点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ast_8hpp_ae4711e9daf48fef14880c8c83aa92c9c}\label{ast_8hpp_ae4711e9daf48fef14880c8c83aa92c9c} 
+using {\bfseries ASTNode\+Ptr} = std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classASTNode}{ASTNode}}$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+抽象语法树（\+Abstract Syntax Tree）结点类的定义 
+
+定义了抽象语法树的各个结点 
