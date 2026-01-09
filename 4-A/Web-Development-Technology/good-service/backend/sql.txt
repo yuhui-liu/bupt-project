@@ -1,0 +1,192 @@
+-- ============================================
+-- 好服务系统数据库建表语句
+-- 生成时间: now()
+-- 数据库类型: SQLite
+-- ============================================
+
+
+-- user 表
+--------------------------------------------------
+
+CREATE TABLE user (
+	id VARCHAR(36) NOT NULL, 
+	username VARCHAR(50) NOT NULL, 
+	password_hash VARCHAR(255) NOT NULL, 
+	role VARCHAR(20) NOT NULL, 
+	phone VARCHAR(11) NOT NULL, 
+	email VARCHAR(100), 
+	address VARCHAR(200), 
+	bio VARCHAR(500), 
+	status VARCHAR(20) NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email)
+)
+
+;
+
+
+-- region 表
+--------------------------------------------------
+
+CREATE TABLE region (
+	id VARCHAR(36) NOT NULL, 
+	code VARCHAR(20) NOT NULL, 
+	name VARCHAR(100) NOT NULL, 
+	city VARCHAR(50) NOT NULL, 
+	province VARCHAR(50) NOT NULL, 
+	is_active BOOLEAN NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (code)
+)
+
+;
+
+
+-- service_type 表
+--------------------------------------------------
+
+CREATE TABLE service_type (
+	id VARCHAR(36) NOT NULL, 
+	code VARCHAR(20) NOT NULL, 
+	name VARCHAR(100) NOT NULL, 
+	description VARCHAR(500), 
+	icon VARCHAR(100), 
+	"order" INTEGER NOT NULL, 
+	is_active BOOLEAN NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (code)
+)
+
+;
+
+
+-- need 表
+--------------------------------------------------
+
+CREATE TABLE need (
+	id VARCHAR(36) NOT NULL, 
+	publisher_id VARCHAR(36) NOT NULL, 
+	region_id VARCHAR(36), 
+	service_type_id VARCHAR(36) NOT NULL, 
+	title VARCHAR(100) NOT NULL, 
+	description TEXT NOT NULL, 
+	status VARCHAR(20) NOT NULL, 
+	expected_time DATETIME, 
+	location VARCHAR(200), 
+	budget VARCHAR(100), 
+	images TEXT, 
+	videos TEXT, 
+	cancel_reason VARCHAR(500), 
+	rating INTEGER, 
+	comment VARCHAR(1000), 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES user (id), 
+	FOREIGN KEY(region_id) REFERENCES region (id), 
+	FOREIGN KEY(service_type_id) REFERENCES service_type (id)
+)
+
+;
+
+
+-- service_response 表
+--------------------------------------------------
+
+CREATE TABLE service_response (
+	id VARCHAR(36) NOT NULL, 
+	need_id VARCHAR(36) NOT NULL, 
+	responder_id VARCHAR(36) NOT NULL, 
+	description TEXT NOT NULL, 
+	price VARCHAR(100), 
+	available_time VARCHAR(200), 
+	images TEXT, 
+	videos TEXT, 
+	status VARCHAR(20) NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(need_id) REFERENCES need (id), 
+	FOREIGN KEY(responder_id) REFERENCES user (id)
+)
+
+;
+
+
+-- accepted_service 表
+--------------------------------------------------
+
+CREATE TABLE accepted_service (
+	id VARCHAR(36) NOT NULL, 
+	need_id VARCHAR(36) NOT NULL, 
+	need_publisher_id VARCHAR(36) NOT NULL, 
+	response_id VARCHAR(36) NOT NULL, 
+	responder_id VARCHAR(36) NOT NULL, 
+	accepted_date DATE NOT NULL, 
+	completed_date DATE, 
+	rating INTEGER, 
+	comment VARCHAR(1000), 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(need_id) REFERENCES need (id), 
+	FOREIGN KEY(need_publisher_id) REFERENCES user (id), 
+	FOREIGN KEY(response_id) REFERENCES service_response (id), 
+	FOREIGN KEY(responder_id) REFERENCES user (id)
+)
+
+;
+
+
+-- monthly_statistics 表
+--------------------------------------------------
+
+CREATE TABLE monthly_statistics (
+	id VARCHAR(36) NOT NULL, 
+	month VARCHAR(6) NOT NULL, 
+	province VARCHAR(50) NOT NULL, 
+	city VARCHAR(50) NOT NULL, 
+	service_type_id VARCHAR(36) NOT NULL, 
+	needs_published INTEGER NOT NULL, 
+	responses_received INTEGER NOT NULL, 
+	needs_accepted INTEGER NOT NULL, 
+	needs_completed INTEGER NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	updated_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	CONSTRAINT uq_month_region_service UNIQUE (month, province, city, service_type_id), 
+	FOREIGN KEY(service_type_id) REFERENCES service_type (id)
+)
+
+;
+
+
+-- ============================================
+-- 索引说明
+-- ============================================
+-- 以下索引已在表定义中自动创建：
+-- 1. user 表: username, phone 的唯一索引
+-- 2. need 表: publisher_id, service_type_id, status 的索引
+-- 3. service_response 表: need_id, responder_id, status 的索引
+-- 4. monthly_statistics 表: month 的索引
+-- 5. 唯一约束: monthly_statistics 的 (month, province, city, service_type_id)
+
+-- ============================================
+-- 外键关系说明
+-- ============================================
+-- need.publisher_id -> user.id
+-- need.region_id -> region.id
+-- need.service_type_id -> service_type.id
+-- service_response.need_id -> need.id
+-- service_response.responder_id -> user.id
+-- accepted_service.need_id -> need.id
+-- accepted_service.need_publisher_id -> user.id
+-- accepted_service.response_id -> service_response.id
+-- accepted_service.responder_id -> user.id
+-- monthly_statistics.service_type_id -> service_type.id

@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/dnsrelay.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/dnsrelay.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/dnsrelay.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/dnsrelay.c.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/args_handler.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/args_handler.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/args_handler.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/args_handler.c.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/file_reader.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/file_reader.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/file_reader.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/file_reader.c.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/network.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/network.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/network.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/network.c.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/dns_parser.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/dns_parser.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/dns_parser.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/dns_parser.c.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/dnsrelay.dir/src/mapping.c.o -c \"/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/mapping.c\"",
+  "file": "/home/lyh/projects/bupt-proj/transfer/Computer Network curriculum design/src/mapping.c",
+  "output": "CMakeFiles/dnsrelay.dir/src/mapping.c.o"
+}
+]
