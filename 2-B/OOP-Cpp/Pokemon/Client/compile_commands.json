@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/mocs_compilation.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/main.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/main.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/main.cpp",
+  "output": "CMakeFiles/Client.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/mainwindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/mainwindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/mainwindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/mainwindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/Client.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/Client.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/Client.cpp",
+  "output": "CMakeFiles/Client.dir/src/Client.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/secondwindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/secondwindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/secondwindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/secondwindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/viewpokemonwindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/viewpokemonwindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/viewpokemonwindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/viewpokemonwindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/battlewindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/battlewindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/battlewindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/battlewindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/viewmypokemonswindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/viewmypokemonswindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/viewmypokemonswindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/viewmypokemonswindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/wpwindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/wpwindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/wpwindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/wpwindow.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -isystem /home/lyh/projects/bupt-project/transfer/Pokemon/Client/build/Client_autogen/include -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtCore -isystem /home/lyh/Qt/6.7.2/gcc_64/include -isystem /home/lyh/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtGui -isystem /home/lyh/Qt/6.7.2/gcc_64/include/QtWidgets -fPIC -o CMakeFiles/Client.dir/src/losewindow.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/losewindow.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/Client/src/losewindow.cpp",
+  "output": "CMakeFiles/Client.dir/src/losewindow.cpp.o"
+}
+]

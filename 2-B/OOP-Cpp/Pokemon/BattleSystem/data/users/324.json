@@ -1,0 +1,24 @@
+[
+  {
+    "att_interval": 2,
+    "att_point": 13.822713435582001,
+    "defensive": 6.548846079863999,
+    "exp": 14,
+    "hp": 1.56238428332799,
+    "level": 3,
+    "name": "可达鸭",
+    "skill": "摇尾巴",
+    "type": "Tank"
+  },
+  {
+    "att_interval": 63,
+    "att_point": 9.5793,
+    "defensive": 5.2956,
+    "exp": 0,
+    "hp": 43.187799999999996,
+    "level": 1,
+    "name": "爱心鱼",
+    "skill": "水枪",
+    "type": "Tank"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "阿柏蛇",
+    "type": "Agile",
+    "skill": "大蛇瞪眼"
+  },
+  {
+    "name": "阿尔宙斯",
+    "type": "Agile",
+    "skill": "制裁光砾"
+  },
+  {
+    "name": "艾姆利多",
+    "type": "Agile",
+    "skill": "精神利刃"
+  },
+  {
+    "name": "爱心鱼",
+    "type": "Tank",
+    "skill": "水枪"
+  },
+  {
+    "name": "安瓢虫",
+    "type": "Agile",
+    "skill": "虫鸣"
+  },
+  {
+    "name": "扒手猫",
+    "type": "Power",
+    "skill": "暗袭要害"
+  },
+  {
+    "name": "百变怪",
+    "type": "Tank",
+    "skill": "变身"
+  },
+  {
+    "name": "暴飞龙",
+    "type": "Tank",
+    "skill": "龙息"
+  },
+  {
+    "name": "爆香猿",
+    "type": "Power",
+    "skill": "大字爆炎"
+  },
+  {
+    "name": "比克提尼",
+    "type": "Agile",
+    "skill": "电光一闪"
+  },
+  {
+    "name": "超梦",
+    "type": "Power",
+    "skill": "念力"
+  },
+  {
+    "name": "大颚蚁",
+    "type": "Defensive",
+    "skill": "掷泥"
+  },
+  {
+    "name": "大岩蛇",
+    "type": "Defensive",
+    "skill": "尖石攻击"
+  },
+  {
+    "name": "多边兽",
+    "type": "Defensive",
+    "skill": "幻象光线"
+  },
+  {
+    "name": "火恐龙",
+    "type": "Power",
+    "skill": "喷射火焰"
+  },
+  {
+    "name": "卡比兽",
+    "type": "Tank",
+    "skill": "终极冲击"
+  },
+  {
+    "name": "卡咪龟",
+    "type": "Defensive",
+    "skill": "波动冲"
+  },
+  {
+    "name": "可达鸭",
+    "type": "Tank",
+    "skill": "摇尾巴"
+  },
+  {
+    "name": "玛力露",
+    "type": "Agile",
+    "skill": "水流尾"
+  },
+  {
+    "name": "喵喵",
+    "type": "Power",
+    "skill": "佯攻"
+  },
+  {
+    "name": "妙蛙种子",
+    "type": "Defensive",
+    "skill":"飞叶快刀"
+  },
+  {
+    "name": "皮卡丘",
+    "type": "Power",
+    "skill": "十万伏特"
+  }
+]

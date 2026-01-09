@@ -1,0 +1,47 @@
+
+/*
+ * 宠物个数：10 7 4
+ *         金 银 铜
+ * 高级（15级）宠物： 5 3 1
+ *                 金 银 铜
+*/
+
+ /*
+ [
+    {
+        "name":"tom",
+        "normal":10,
+        "duel":3,
+        "normal_wins":5,
+        "duel_wins":1,
+    },
+    ...
+ ]
+*/
+
+/*
+ tom.json:
+[
+        {
+            "name":"abc",
+            "type":"defensive",
+            "exp":123,
+            "level":3,
+            "hp":10,
+            "att_point":11,
+            "defensive":12,
+            "att_interval":13,
+            "skill":"cde"
+        },
+        {
+            ...
+        },
+        ...
+]
+
+*/
+//使用unique_ptr内存管理
+//解耦合性好
+//完善的socket  tcp
+//json
+//现代c++

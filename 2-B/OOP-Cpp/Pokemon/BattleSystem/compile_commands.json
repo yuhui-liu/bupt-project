@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/build",
+  "command": "/usr/bin/c++ -o CMakeFiles/BattleSystem.dir/src/main.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/main.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/main.cpp",
+  "output": "CMakeFiles/BattleSystem.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/build",
+  "command": "/usr/bin/c++ -o CMakeFiles/BattleSystem.dir/src/Pokemon.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Pokemon.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Pokemon.cpp",
+  "output": "CMakeFiles/BattleSystem.dir/src/Pokemon.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/build",
+  "command": "/usr/bin/c++ -o CMakeFiles/BattleSystem.dir/src/Tools.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Tools.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Tools.cpp",
+  "output": "CMakeFiles/BattleSystem.dir/src/Tools.cpp.o"
+},
+{
+  "directory": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/build",
+  "command": "/usr/bin/c++ -o CMakeFiles/BattleSystem.dir/src/Server.cpp.o -c /home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Server.cpp",
+  "file": "/home/lyh/projects/bupt-project/transfer/Pokemon/BattleSystem/src/Server.cpp",
+  "output": "CMakeFiles/BattleSystem.dir/src/Server.cpp.o"
+}
+]
